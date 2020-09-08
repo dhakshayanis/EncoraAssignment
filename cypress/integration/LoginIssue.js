@@ -7,7 +7,7 @@ import Dropdown from './examples/DemoApplication/DropDown'
 import TrackingAtAGlanceObjects from './examples/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceObjects'
 import PercentageCalculation from './examples/DemoApplication/TrackingAtAGlance/PercentageCalculation'
 
-describe('one',function()
+describe('login',function()
 {
 it('navigate to Tracking At a Glance',function()
 {
