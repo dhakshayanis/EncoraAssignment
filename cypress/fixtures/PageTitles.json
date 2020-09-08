@@ -1,0 +1,22 @@
+{
+    "TrackingAtAGlanceTitle":"At a Glance",
+    "PeopleAndDeviceTitle":"People and Device",
+    "UsageAnalysisTitle":"Usage Analysis",
+    "EdTechOverviewTitle":"ED Tech Overview",
+    "StudentLearning" : "Student Learning",
+    "TrackingAtAGlanceShort":"Tracking",
+    "PeopleAndDeviceShort":"People and",
+    "UsageAnalysisShort":"Usage",
+    "EdTechOverviewShort":"Ed Tech",
+    "UsageAnalysisSchoolView" : "School View",
+    "UsageAnalysisMapView" : "Map View",
+    "UsageAnalysisDimensionView" : "Dimension View",
+    "UsageAnalysisHeatMapAnalysisView" : "Heat Map Analysis",
+    "UsageAnalysisTimeSeries" : "Time Series",
+    "EdTechOverviewStudentDimension" : "Student Dimension View",
+    "EdTechOverviewMeetingInformation":"Meeting Information",
+    "EdTechOverviewMeetingDuration":"Meeting Duration",
+    "EdTechOverviewGoogleMeetTile" : "Google Meet"
+
+
+  }
