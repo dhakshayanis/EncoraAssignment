@@ -24,6 +24,6 @@ it('navigate to Tracking At a Glance',function()
 it('% check',function()
 {
     const np = new PercentageCalculation
-    np.percentageCheck()
+    np.percentageCheckInAllTiles()
 })
 })

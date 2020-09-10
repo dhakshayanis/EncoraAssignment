@@ -31,3 +31,17 @@ Cypress.Commands.add("login", (emailID,password) =>
         cy.get('[name=Password]').clear().type(password)
         cy.get('[type=submit]').click()         
            })
+   Cypress.Commands.add("checkIfEleExists",(ele) =>{
+    //return new Promise((resolve,reject)=>{
+        /// here if  ele exists or not
+        cy.get(ele).its('length').then(res=>{
+            if(res > 0){
+                //// do task that you want to perform
+                cy.log('dropdown is present')
+                //resolve();
+            }else{
+                 //reject();
+            }
+        });
+    //})
+})
