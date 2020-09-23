@@ -13,6 +13,7 @@ class NavigateToPage{
           cy.wait(10000)*/
           cy.wait(20000)
           cy.get('[class=external-generic-component-child2]').contains('Remote').click()
+          //cy.wait(30000)
           return this
         }
     goToPage(page)

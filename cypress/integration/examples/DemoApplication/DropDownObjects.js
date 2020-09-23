@@ -11,7 +11,7 @@ class DropDownObjects{
         options.set(TrackingAtAGlanceObjects.StudentDimensionDropDownID, TrackingAtAGlanceObjects.StudentDimensionDropDownOptions);
         //People and device
         options.set(PeopleAndDeviceObjects.deviceDistribution, PeopleAndDeviceObjects.deviceDistributionDropdownOptions);
-        options.set(PeopleAndDeviceObjects.districtEnrollemnt, PeopleAndDeviceObjects.districtEnrollmentDropdownOptions);
+        options.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentDropdownOptions);
         //Usage Analysis 
         options.set(TimeSeries.timeSeriesChartDropDownID, TimeSeries.timeSeriesDropDownOptions);
         //Edtech Overview
@@ -24,7 +24,7 @@ class DropDownObjects{
         name.set(TrackingAtAGlanceObjects.StudentDimensionDropDownID, TrackingAtAGlanceObjects.StudentDimensionDropDownName);
         //People and device
         name.set(PeopleAndDeviceObjects.deviceDistribution, PeopleAndDeviceObjects.deviceDistributionDropdownName);
-        name.set(PeopleAndDeviceObjects.districtEnrollemnt, PeopleAndDeviceObjects.districtEnrollmentDropdownName);
+        name.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentDropdownName);
         //Usage Analysis
         name.set(TimeSeries.timeSeriesChartDropDownID, TimeSeries.timeSeriesDropDownName);
         //Edtech Overview

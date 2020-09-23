@@ -40,7 +40,7 @@ describe('People and Device Sanity Test',function()
    it('District Enrollment sanity',function()
    {
        const sanity = new PeopleAndDeviceSanity
-       sanity.sanity(PeopleAndDeviceObjects.districtEnrollemnt)
+       sanity.sanity(PeopleAndDeviceObjects.districtEnrollment)
    })
    it('Device Distribution sanity',function()
    {
@@ -50,13 +50,13 @@ describe('People and Device Sanity Test',function()
    it('Dropdown sanity',function()
    {
        const dd = new dropdown
-       dd.dropDownSanity(PeopleAndDeviceObjects.districtEnrollemnt)
+       dd.dropDownSanity(PeopleAndDeviceObjects.districtEnrollment)
        dd.dropDownSanity(PeopleAndDeviceObjects.deviceDistribution)
    })
    it('Sanity checks after dropdown change',function()
    {
        const sanity = new PeopleAndDeviceSanity
-       sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.districtEnrollemnt)
+       sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.districtEnrollment)
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.deviceDistribution)
    })/*
    it('Schools Tab Chart and table sanity',function()

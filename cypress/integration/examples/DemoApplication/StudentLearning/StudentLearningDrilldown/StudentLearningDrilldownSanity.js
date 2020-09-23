@@ -3,6 +3,11 @@ import studentLearningSanity from '../StudentLearningSanity'
 
 class StudentLearningDrilldownSanity{
     drilldown(tileName){
+        cy.visit('https://demo.remotelearning.innive.io/student_learning.html', {
+            onBeforeLoad(win) {
+                cy.stub(win, 'open')
+            }
+        })
         const id = new studentLearningSanity
         let compID = '[id=\"'+id.getID(tileName)+'\"]'
         cy.get(compID).scrollIntoView()
@@ -22,7 +27,7 @@ class StudentLearningDrilldownSanity{
             cy.get('[viewBox="0 0 24 24"]').click()
         })
 // Do the action in your app like cy.get('.open-window-btn').click()
-        //cy.window().its('open').should('be.called')
+        cy.window().its('open').should('be.called')
         //cy.visit('https://demo.remotelearning.innive.io/student_learning_drilldown.html') 
         return this
     }
