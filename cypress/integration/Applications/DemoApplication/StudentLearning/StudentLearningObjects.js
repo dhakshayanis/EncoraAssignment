@@ -1,5 +1,6 @@
 class StudentLearningObjects{
 
+    static pageTitle ='Student Learning'
     static googleClassroomAdoption = 'Google Classroom adoption';
     static popularMaterialSources = 'Popular Material Sources';
     static assignmentsPerTeacher = 'Assignments Per Teacher';

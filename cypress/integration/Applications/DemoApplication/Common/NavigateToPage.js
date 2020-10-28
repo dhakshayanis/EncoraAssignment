@@ -1,4 +1,4 @@
-import PageTitleCheck from '../DemoApplication/PageTitleCheck'
+import PageTitleCheck from '../Common/PageTitleCheck'
 class NavigateToPage{
   goToTrackingAtAGlancePage(){
         cy.visit('https://demo.remotelearning.innive.io')//("https://bps.remotelearning.innive.io/")

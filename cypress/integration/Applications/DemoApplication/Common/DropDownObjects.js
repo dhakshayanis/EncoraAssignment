@@ -1,7 +1,7 @@
-import TrackingAtAGlanceObjects from './TrackingAtAGlance/TrackingAtAGlanceObjects'
-import TimeSeries from './UsageAnalysis/TimeSeries'
-import EOPopUpObjects from './EdTechOverview/PopUpObjects';
-import PeopleAndDeviceObjects from './PeopleAndDevice/PeopleAndDeviceObjects';
+import TrackingAtAGlanceObjects from '../TrackingAtAGlance/TrackingAtAGlanceObjects'
+import TimeSeries from '../UsageAnalysis/TimeSeries'
+import EOPopUpObjects from '../EdTechOverview/PopUpObjects';
+import PeopleAndDeviceObjects from '../PeopleAndDevice/PeopleAndDeviceObjects';
 
 class DropDownObjects{
     getDropDownOptions(dropDownName){

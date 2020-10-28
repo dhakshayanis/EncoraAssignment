@@ -1,4 +1,4 @@
-import dups from '../Cypress Learning/dups'
+import dups from './dups'
 
 describe('one',function()
 {

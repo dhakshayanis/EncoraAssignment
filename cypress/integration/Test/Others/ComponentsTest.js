@@ -1,4 +1,4 @@
-import ComponentsList from './examples/Cypress Learning/ComponentsList'
+import ComponentsList from '../../examples/Cypress Learning/ComponentsList'
 
 describe('Find components in a page',function()
 {

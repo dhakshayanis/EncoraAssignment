@@ -1,21 +1,16 @@
-import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import PageHeader from './examples/DemoApplication/PageHeader'
-import studentLearningSanity from './examples/DemoApplication/StudentLearning/StudentLearningSanity'
-import StudentLearningObjects from './examples/DemoApplication/StudentLearning/StudentLearningObjects'
+import NavigateToPage from '../../Applications/DemoApplication/Common/NavigateToPage'
+import PageHeader from '../../Applications/DemoApplication/Common/PageHeader'
+import studentLearningSanity from '../../Applications/DemoApplication/StudentLearning/StudentLearningSanity'
+import StudentLearningObjects from '../../Applications/DemoApplication/StudentLearning/StudentLearningObjects'
 
 describe('Student Learning Sanity Test',function()
 {
-    beforeEach(function(){
-        cy.fixture('PageTitles').then(function(data){
-            this.data = data
-        })
-    })
 
    it('navigate to Student Learning',function()
    {
         const np = new NavigateToPage
         np.goToTrackingAtAGlancePage()
-        np.goToPage(this.data.StudentLearning)
+        np.goToPage(StudentLearningObjects.pageTitle)
    })
 
    it('verify page header and footer ',function()

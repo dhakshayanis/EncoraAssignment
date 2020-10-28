@@ -1,5 +1,5 @@
 import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import drilldownSanity from './examples/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceDrilldown/TrackingAtAGlanceDrilldownSanity'
+import drilldownSanity from '../../Applications/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceDrilldown/TrackingAtAGlanceDrilldownSanity'
 import PageTitleCheck from './examples/DemoApplication/PageTitleCheck'
 
 describe('At a Glance Sanity Test',function()
