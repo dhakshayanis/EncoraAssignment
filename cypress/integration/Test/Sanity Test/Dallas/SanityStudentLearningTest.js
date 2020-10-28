@@ -1,7 +1,7 @@
-import NavigateToPage from '../../../Applications/DemoApplication/Common/NavigateToPage'
-import PageHeader from '../../../Applications/DemoApplication/Common/PageHeader'
-import studentLearningSanity from '../../../Applications/DemoApplication/StudentLearning/StudentLearningSanity'
-import StudentLearningObjects from '../../../Applications/DemoApplication/StudentLearning/StudentLearningObjects'
+import NavigateToPage from '../../../Applications/Dallas/'
+import PageHeader from '../../Applications/DemoApplication/Common/PageHeader'
+import studentLearningSanity from '../../Applications/DemoApplication/StudentLearning/StudentLearningSanity'
+import StudentLearningObjects from '../../Applications/DemoApplication/StudentLearning/StudentLearningObjects'
 
 describe('Student Learning Sanity Test',function()
 {
