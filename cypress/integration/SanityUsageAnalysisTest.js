@@ -21,20 +21,20 @@ describe('Usage Analysis Sanity Test',function()
         const np = new NavigateToPage
         np.goToTrackingAtAGlancePage()
         np.goToPage(this.data.UsageAnalysisTitle)
-   })/*
+   })
    it('verify header and footer',function()
    {
         const header = new PageHeader
         header.pageHeaderCheck()
         header.pageFooterCheck()
-   })*/
+   })
    it('schoolView sanity',function()
    {
        const schoolView = new goToTab
        schoolView.goToTab(this.data.UsageAnalysisSchoolView)
        const sanity = new Table
         sanity.isTableVisible()
-   })/*
+   })
 
    it('mapView sanity',function()
    {
@@ -56,7 +56,7 @@ describe('Usage Analysis Sanity Test',function()
        heatMapAnalysis.goToTab(this.data.UsageAnalysisHeatMapAnalysisView)
        const sanity = new HeatMapAnalysis
        sanity.sanity()
-   })*/
+   })
    it('Time Series sanity',function()
    {
        const timeSeries = new goToTab

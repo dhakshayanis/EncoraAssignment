@@ -11,4 +11,13 @@ class writeJSON{
         cy.writeFile('./cypress/fixtures/'+pageName+'.json', '\n"End" : "dummy" \n } ',{ flag: 'a+' })
         return this
     }
+    startArray(pageName,key){
+        cy.writeFile('./cypress/fixtures/'+pageName+'.json','\n'+'"'+key+'": [', { flag: 'a+' })
+    }
+    writeValuesInArray(pageName,value){
+        cy.writeFile('./cypress/fixtures/'+pageName+'.json',value , { flag: 'a+' })
+    }
+    endArray(pageName){
+        cy.writeFile('./cypress/fixtures/'+pageName+'.json','] ,' , { flag: 'a+' })
+    }
 }export default writeJSON

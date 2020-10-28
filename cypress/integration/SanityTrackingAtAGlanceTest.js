@@ -20,7 +20,7 @@ it('navigate to Tracking At a Glance',function()
     np.goToTrackingAtAGlancePage()
     const titleCheck = new PageTitleCheck
     titleCheck.PageTitleTest(this.data.TrackingAtAGlanceTitle)
-})/*
+})
    it('verify username in page header ',function()
    {
     const header = new PageHeader
@@ -46,7 +46,7 @@ it('navigate to Tracking At a Glance',function()
        const date = new DateFilter
        date.startDateDefault()
        date.endDateDefault()
-   })*/
+   })
    it('dropdown sanity',function()
    {
     const dd = new Dropdown

@@ -2,6 +2,5 @@
   "validEmail":"admin@yourstore.com",
   "validPassword":"admin",
   "invalidEmail":"admined@yourstore.com",
-  "invalidPassword":"admin12"
-
+  "invalidPassword":"admin12",
 }
