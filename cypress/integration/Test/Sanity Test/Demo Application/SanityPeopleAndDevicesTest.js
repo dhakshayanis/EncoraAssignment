@@ -1,24 +1,19 @@
-import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import PageHeader from './examples/DemoApplication/PageHeader'
-import MapView from './examples/DemoApplication/UsageAnalysis/MapView'
-import PeopleAndDeviceSanity from './examples/DemoApplication/PeopleAndDevice/PeopleAndDeviceSanity'
-import PeopleAndDeviceObjects from './examples/DemoApplication/PeopleAndDevice/PeopleAndDeviceObjects'
-import Table from './examples/DemoApplication/Table'
-import dropdown from './examples/DemoApplication/DropDown'
+import NavigateToPage from '../../../Applications/DemoApplication/Common/NavigateToPage'
+import PageHeader from '../../../Applications/DemoApplication/Common/PageHeader'
+import MapView from '../../../Applications/DemoApplication/UsageAnalysis/MapView'
+import PeopleAndDeviceSanity from '../../../Applications/DemoApplication/PeopleAndDevice/PeopleAndDeviceSanity'
+import PeopleAndDeviceObjects from '../../../Applications/DemoApplication/PeopleAndDevice/PeopleAndDeviceObjects'
+import Table from '../../../Applications/DemoApplication/Common/Table'
+import dropdown from '../../../Applications/DemoApplication/Common/DropDown'
 
 describe('People and Device Sanity Test',function()
 {
-    beforeEach(function(){
-        cy.fixture('PageTitles').then(function(data){
-            this.data = data
-        })
-    })
    it('navigate to People and Device',function()
    {
         const np = new NavigateToPage
         np.goToTrackingAtAGlancePage()
-        np.goToPage(this.data.PeopleAndDeviceTitle)
-   })/*
+        np.goToPage(PeopleAndDeviceObjects.pageTitle)
+   })
    it('verify page header and footer ',function()
    {
         const header = new PageHeader
@@ -46,7 +41,7 @@ describe('People and Device Sanity Test',function()
    {
        const sanity = new PeopleAndDeviceSanity
        sanity.sanity(PeopleAndDeviceObjects.deviceDistribution)
-   })*/
+   })
    it('Dropdown sanity',function()
    {
        const dd = new dropdown
@@ -58,13 +53,13 @@ describe('People and Device Sanity Test',function()
        const sanity = new PeopleAndDeviceSanity
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.districtEnrollment)
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.deviceDistribution)
-   })/*
+   })
    it('Schools Tab Chart and table sanity',function()
    {
        const sanity = new PeopleAndDeviceSanity
        sanity.sanity(PeopleAndDeviceObjects.schoolsDistrictChartcomponent)
        const tableSanity = new Table
        tableSanity.isTableVisible()
-   })*/
+   })
 
 })

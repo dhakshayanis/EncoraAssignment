@@ -1,21 +1,17 @@
-import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import PageHeader from './examples/DemoApplication/PageHeader'
-import PopUp from './examples/DemoApplication/EdTechOverview/PopUp'
-import Dropdown from './examples/DemoApplication/DropDown'
-import EOPopUpObjects from './examples/DemoApplication/EdTechOverview/PopUpObjects'
+import NavigateToPage from '../../../Applications/DemoApplication/Common/NavigateToPage'
+import PageHeader from '../../../Applications/DemoApplication/Common/PageHeader'
+import PopUp from '../../../Applications/DemoApplication/EdTechOverview/PopUp'
+import Dropdown from '../../../Applications/DemoApplication/Common/DropDown'
+import EOPopUpObjects from '../../../Applications/DemoApplication/EdTechOverview/PopUpObjects'
+import EdTechOverviewObjects from '../../../Applications/DemoApplication/EdTechOverview/EdTechOverviewObjects'
+
 describe('one',function()
 {
-    beforeEach(function(){
-        cy.fixture('PageTitles').then(function(data){
-            this.data = data
-        })
-    })
-
    it('navigate to EdTechOverview',function()
    {
-    const np = new NavigateToPage
-    np.goToTrackingAtAGlancePage()
-    np.goToPage(this.data.EdTechOverviewTitle)
+        const np = new NavigateToPage
+        np.goToTrackingAtAGlancePage()
+        np.goToPage(EdTechOverviewObjects.pageTitle)
    })
 
    it('verify page header and footer ',function()
@@ -46,7 +42,6 @@ describe('one',function()
        const gm = new PopUp
        gm.verifyComponentSanityOnChangingDropdown(EOPopUpObjects.studentDimensionDropDownID)
    })
-   /*
    it('verify Meeting Information',function()
    {
        const gm = new PopUp
@@ -57,6 +52,6 @@ describe('one',function()
    {
        const gm = new PopUp
        gm.sanity(this.data.EdTechOverviewMeetingDuration)
-   })*/
+   })
 
 })

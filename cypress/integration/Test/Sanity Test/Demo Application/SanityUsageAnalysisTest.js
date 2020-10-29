@@ -1,12 +1,12 @@
-import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import PageHeader from './examples/DemoApplication/PageHeader'
-import goToTab from './examples/DemoApplication/UsageAnalysis/GoToTab'
-import DimensionView from './examples/DemoApplication/UsageAnalysis/DimensionView'
+import NavigateToPage from '../../../Applications/DemoApplication/Common/NavigateToPage'
+import PageHeader from '../../../Applications/DemoApplication/Common/PageHeader'
+import goToTab from '../../../Applications/DemoApplication/UsageAnalysis/GoToTab'
+import DimensionView from '../../../Applications/DemoApplication/UsageAnalysis/DimensionView'
 import TimeSeries from './examples/DemoApplication/UsageAnalysis/TimeSeries'
-import HeatMapAnalysis from './examples/DemoApplication/UsageAnalysis/HeatMapAnalysis'
-import MapView from './examples/DemoApplication/UsageAnalysis/MapView'
-import Table from './examples/DemoApplication/Table'
-import Dropdown from './examples/DemoApplication/DropDown'
+import HeatMapAnalysis from '../../../Applications/DemoApplication/UsageAnalysis/HeatMapAnalysis'
+import MapView from '../../../Applications/DemoApplication/UsageAnalysis/MapView'
+import Table from '../../../Applications/DemoApplication/Common/Table'
+import Dropdown from '../../../Applications/DemoApplication/Common/DropDown'
 
 
 describe('Usage Analysis Sanity Test',function()
