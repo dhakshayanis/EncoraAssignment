@@ -4,6 +4,7 @@ import PopUp from '../../../Applications/DemoApplication/EdTechOverview/PopUp'
 import Dropdown from '../../../Applications/DemoApplication/Common/DropDown'
 import EOPopUpObjects from '../../../Applications/DemoApplication/EdTechOverview/PopUpObjects'
 import EdTechOverviewObjects from '../../../Applications/DemoApplication/EdTechOverview/EdTechOverviewObjects'
+import DateFilter from '../../../Applications/DemoApplication/Common/DateFilter'
 
 describe('one',function()
 {
@@ -13,14 +14,18 @@ describe('one',function()
         np.goToTrackingAtAGlancePage()
         np.goToPage(EdTechOverviewObjects.pageTitle)
    })
-
    it('verify page header and footer ',function()
    {
-    const header = new PageHeader
-    header.pageHeaderCheck()
-    header.pageFooterCheck()
+        const header = new PageHeader
+        header.pageHeaderCheck()
+        header.pageFooterCheck()
    })
-
+   it('verify date filters ',function()
+   {
+        const date = new DateFilter
+        date.startDateDefault
+        date.endDateDefault
+   })
    it('open google meet',function()
    {
        const gm = new PopUp

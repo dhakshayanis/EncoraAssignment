@@ -4,6 +4,7 @@ import PopUp from '../../../Applications/CentralFalls/EdTechOverview/PopUp'
 import Dropdown from '../../../Applications/CentralFalls/Common/DropDown'
 import EOPopUpObjects from '../../../Applications/CentralFalls/EdTechOverview/PopUpObjects'
 import EdTechOverviewObjects from '../../../Applications/CentralFalls/EdTechOverview/EdTechOverviewObjects'
+import DateFilter from '../../../Applications/CentralFalls/Common/DateFilter'
 
 describe('one',function()
 {
@@ -20,7 +21,12 @@ describe('one',function()
     header.pageHeaderCheck()
     header.pageFooterCheck()
    })
-
+   it('verify date filters ',function()
+   {
+        const date = new DateFilter
+        date.startDateDefault
+        date.endDateDefault
+   })
    it('open google meet',function()
    {
        const gm = new PopUp
