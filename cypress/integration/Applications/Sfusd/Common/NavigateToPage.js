@@ -1,14 +1,15 @@
 import PageTitleCheck from '../Common/PageTitleCheck'
 class NavigateToPage{
   goToTrackingAtAGlancePage(){
-        cy.visit('https://demo.remotelearning.innive.io')//("https://bps.remotelearning.innive.io/")
+    cy.visit('https://sfusd.remotelearning.innive.io')
+       // cy.visit('https://demo.remotelearning.innive.io')//("https://bps.remotelearning.innive.io/")
         Cypress.on('uncaught:exception', (err, runnable) => {
             // returning false here prevents Cypress from failing the test
             return false
           })
-          cy.get('[name="Email"]').type('dhakshayanis@inniveinc.com')//('demouser@inniveinc.com')
+          cy.get('[name="Email"]').type('khushboo@inniveinc.com')//('demouser@inniveinc.com')
           cy.get('#next').click()
-          cy.get('[type="password"]').type('Eashwari')//('Innive@23')
+          cy.get('[type="password"]').type('mount123@@')//('Innive@23')
           cy.get('#submit').click()
           cy.wait(10000)
           cy.wait(20000)
