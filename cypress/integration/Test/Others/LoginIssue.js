@@ -16,9 +16,9 @@ it('navigate to Tracking At a Glance',function()
             // returning false here prevents Cypress from failing the test
             return false
     })
-    cy.get('[name="Email"]').type('demouser@inniveinc.com')
+    cy.get('[name="Email"]').type('tambalavan@inniveinc.com')
     cy.get('#next').click()
-    cy.get('[type="password"]').type('Innive@23')
+    cy.get('[type="password"]').type('9486304276')
     cy.get('#submit').click()
     //cy.visit("https://demo.remotelearning.innive.io/welcome.html")
     cy.wait(10000)
