@@ -1,8 +1,10 @@
-import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import PageHeader from './examples/DemoApplication/PageHeader'
-import PopUp from './examples/DemoApplication/EdTechOverview/PopUp'
-import Dropdown from './examples/DemoApplication/DropDown'
-import EOPopUpObjects from './examples/DemoApplication/EdTechOverview/PopUpObjects'
+import NavigateToPage from '../../../Applications/boston/Common/NavigateToPage'
+import PageHeader from '../../../Applications/boston/Common/PageHeader'
+import PopUp from '../../../Applications/boston/EdTechOverview/PopUp'
+import Dropdown from '../../../Applications/boston/Common/DropDown'
+import EOPopUpObjects from '../../../Applications/boston/EdTechOverview/PopUpObjects'
+
+
 describe('one',function()
 {
     beforeEach(function(){
