@@ -1,6 +1,6 @@
 class DateFilter{
     startDateDefault(){
-        cy.get('[placeholder="Start Date"]').should('have.value','21-sep-2020')
+        cy.get('[placeholder="Start Date"]').should('have.value','01-Mar-2020')
         return this
     }
     endDateDefault(){
