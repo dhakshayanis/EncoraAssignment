@@ -2,25 +2,23 @@ import NavigateToPage from '../../../Applications/DemoApplication/Common/Navigat
 import PageHeader from '../../../Applications/DemoApplication/Common/PageHeader'
 import goToTab from '../../../Applications/DemoApplication/UsageAnalysis/GoToTab'
 import DimensionView from '../../../Applications/DemoApplication/UsageAnalysis/DimensionView'
-import TimeSeries from './examples/DemoApplication/UsageAnalysis/TimeSeries'
+import TimeSeries from '../../../Applications/DemoApplication/UsageAnalysis/TimeSeries'
 import HeatMapAnalysis from '../../../Applications/DemoApplication/UsageAnalysis/HeatMapAnalysis'
 import MapView from '../../../Applications/DemoApplication/UsageAnalysis/MapView'
 import Table from '../../../Applications/DemoApplication/Common/Table'
 import Dropdown from '../../../Applications/DemoApplication/Common/DropDown'
+import KPI from '../../../Applications/DemoApplication/UsageAnalysis/bars'
+import DateFilter from '../../../Applications/DemoApplication/Common/DateFilter'
+import UsageAnalysisObjects from '../../../Applications/DemoApplication/UsageAnalysis/UsageAnalysisObjects'
 
 
 describe('Usage Analysis Sanity Test',function()
 {
-    beforeEach(function(){
-        cy.fixture('PageTitles').then(function(data){
-            this.data = data
-        })
-    })
    it('navigate to UsageAnalysis',function()
    {
         const np = new NavigateToPage
         np.goToTrackingAtAGlancePage()
-        np.goToPage(this.data.UsageAnalysisTitle)
+        np.goToPage(UsageAnalysisObjects.pageTitle)
    })
    it('verify header and footer',function()
    {
@@ -28,10 +26,16 @@ describe('Usage Analysis Sanity Test',function()
         header.pageHeaderCheck()
         header.pageFooterCheck()
    })
+   it('verify date filters ',function()
+   {
+        const date = new DateFilter
+        date.startDateDefault
+        date.endDateDefault
+   })
    it('schoolView sanity',function()
    {
        const schoolView = new goToTab
-       schoolView.goToTab(this.data.UsageAnalysisSchoolView)
+       schoolView.goToTab(UsageAnalysisObjects.UsageAnalysisSchoolView)
        const sanity = new Table
         sanity.isTableVisible()
    })
@@ -39,28 +43,28 @@ describe('Usage Analysis Sanity Test',function()
    it('mapView sanity',function()
    {
        const mapView = new goToTab
-       mapView.goToTab(this.data.UsageAnalysisMapView)
+       mapView.goToTab(UsageAnalysisObjects.UsageAnalysisMapView)
        const sanity = new MapView
        sanity.sanity()
    })
    it('Dimension View sanity ',function()
    {
        const dimensionView = new goToTab
-       dimensionView.goToTab(this.data.UsageAnalysisDimensionView)
+       dimensionView.goToTab(UsageAnalysisObjects.UsageAnalysisDimensionView)
        const sanity = new DimensionView
        sanity.sanity()
    })
    it('Heat Map Analysis sanity',function()
    {
        const heatMapAnalysis = new goToTab
-       heatMapAnalysis.goToTab(this.data.UsageAnalysisHeatMapAnalysisView)
+       heatMapAnalysis.goToTab(UsageAnalysisObjects.UsageAnalysisHeatMapAnalysisView)
        const sanity = new HeatMapAnalysis
        sanity.sanity()
    })
    it('Time Series sanity',function()
    {
        const timeSeries = new goToTab
-       timeSeries.goToTab(this.data.UsageAnalysisTimeSeries)
+       timeSeries.goToTab(UsageAnalysisObjects.UsageAnalysisTimeSeries)
        const sanity = new TimeSeries
        sanity.sanity()
    })

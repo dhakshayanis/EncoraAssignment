@@ -5,12 +5,11 @@ class NavigateToPage{
         Cypress.on('uncaught:exception', (err, runnable) => {
             // returning false here prevents Cypress from failing the test
             return false
-          })
-          // cy.get('[name="identifier"]').type('tambalavanan@inniveinc.com')//('demouser@inniveinc.com')
-          // cy.get('#identifierNext').click()
-          // // cy.wait(10000)
-          // cy.get('[type="password"]').type('9486304276')//('Innive@23')
-          // cy.get('#passwordNext').click()
+          })/*
+          cy.get('[name="Email"]').type('dhakshayanis@inniveinc.com')//('demouser@inniveinc.com')
+          cy.get('#next').click()
+          cy.get('[type="password"]').type('Eashwari')//('Innive@23')
+          cy.get('#submit').click()*/
           
           cy.wait(30000)
           cy.get('[class=external-generic-component-child2]').contains('Remote').click()
