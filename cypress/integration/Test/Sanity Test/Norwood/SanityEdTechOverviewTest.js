@@ -20,17 +20,22 @@ describe('one',function()
     header.pageHeaderCheck()
     header.pageFooterCheck()
    })
-
-   it('open Google Meet',function()
+   it('verify date filters ',function()
+   {
+        const date = new DateFilter
+        date.startDateDefault
+        date.endDateDefault
+   })
+   it('open google meet',function()
    {
        const gm = new PopUp
-       gm.openTile(this.data.EdTechOverviewGoogleMeetTile)
+       gm.openTile(EdTechOverviewObjects.googleMeet)
    })
 
    it('verify student Dimension View',function()
    {
        const gm = new PopUp
-       gm.sanity(this.data.EdTechOverviewStudentDimension)
+       gm.sanity(EOPopUpObjects.StudentDimension)
    })
    it('verify drop down sanity',function()
    {
@@ -45,13 +50,13 @@ describe('one',function()
    it('verify Meeting Information',function()
    {
        const gm = new PopUp
-       gm.sanity(this.data.EdTechOverviewMeetingInformation)
+       gm.sanity(EOPopUpObjects.MeetingInformation)
    })
 
    it('verify meeting duration',function()
    {
        const gm = new PopUp
-       gm.sanity(this.data.EdTechOverviewMeetingDuration)
+       gm.sanity(EOPopUpObjects.MeetingDuration)
    })
 
 })
