@@ -1,10 +1,10 @@
 import NavigateToPage from '../../../Applications/Norwood/Common/NavigateToPage'
 import PageHeader from '../../../Applications/Norwood/Common/PageHeader'
 import MapView from '../../../Applications/Norwood/UsageAnalysis/MapView'
-import PeopleAndDeviceSanity from '../../../Applications/Norwood/PeopleAndDevice/PeopleAndDeviceSanity'
-import PeopleAndDeviceObjects from '../../../Applications/Norwood/PeopleAndDevice/PeopleAndDeviceObjects'
-import Table from '../../../Applications/Norwood/Common/Table'
-import dropdown from '../../../Applications/Norwood/Common/DropDown'
+ import PeopleAndDeviceSanity from '../../../Applications/Norwood/PeopleAndDevice/PeopleAndDeviceSanity'
+ import PeopleAndDeviceObjects from '../../../Applications/Norwood/PeopleAndDevice/PeopleAndDeviceObjects'
+ import Table from '../../../Applications/Norwood/Common/Table'
+ import dropdown from '../../../Applications/Norwood/Common/DropDown'
 
 describe('People and Device Sanity Test',function()
 {

@@ -1,12 +1,12 @@
 import NavigateToPage from '../../../Applications/Norwood/Common/NavigateToPage'
 import PageHeader from '../../../Applications/Norwood/Common/PageHeader'
 import goToTab from '../../../Applications/Norwood/UsageAnalysis/GoToTab'
-import DimensionView from '../../../Applications/Norwood/UsageAnalysis/DimensionView'
-import TimeSeries from './examples/Norwood/UsageAnalysis/TimeSeries'
-import HeatMapAnalysis from '../../../Applications/Norwood/UsageAnalysis/HeatMapAnalysis'
-import MapView from '../../../Applications/Norwood/UsageAnalysis/MapView'
 import Table from '../../../Applications/Norwood/Common/Table'
-import Dropdown from '../../../Applications/Norwood/Common/DropDown'
+import TimeSeries from '../../../Applications/Norwood/UsageAnalysis/TimeSeries'
+ import DimensionView from '../../../Applications/Norwood/UsageAnalysis/DimensionView'
+ import HeatMapAnalysis from '../../../Applications/Norwood/UsageAnalysis/HeatMapAnalysis'
+import MapView from '../../../Applications/Norwood/UsageAnalysis/MapView'
+ import Dropdown from '../../../Applications/Norwood/Common/DropDown'
 
 
 describe('Usage Analysis Sanity Test',function()
