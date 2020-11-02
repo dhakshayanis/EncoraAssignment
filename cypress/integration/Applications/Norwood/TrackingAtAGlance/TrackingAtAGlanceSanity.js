@@ -1,5 +1,6 @@
-import Dropdown from '../DropDown'
-import DropDownObjects from '../DropDownObjects'
+import Dropdown from '../Common/DropDown'
+import DropDownObjects from '../common/DropDownObjects'
+import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 
 class TrackingAtAGlanceSanity{
     isTilesPresent(){

@@ -1,10 +1,10 @@
-import NavigateToPage from '../../../Applications/DemoApplication/Common/NavigateToPage'
-import PageTitleCheck from '../../../Applications/DemoApplication/Common/PageTitleCheck'
-import PageHeader from '../../../Applications/DemoApplication/Common/PageHeader'
-import TrackingAtAGlanceSanity from '../../../Applications/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceSanity'
-import DateFilter from '../../../Applications/DemoApplication/Common/DateFilter'
-import Dropdown from '../../../Applications/DemoApplication/Common/DropDown'
-import TrackingAtAGlanceObjects from '../../../Applications/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceObjects'
+import NavigateToPage from '../../../Applications/Norwood/Common/NavigateToPage'
+import PageTitleCheck from '../../../Applications/Norwood/Common/PageTitleCheck'
+import PageHeader from '../../../Applications/Norwood/Common/PageHeader'
+import TrackingAtAGlanceSanity from '../../../Applications/Norwood/TrackingAtAGlance/TrackingAtAGlanceSanity'
+import DateFilter from '../../../Applications/Norwood/Common/DateFilter'
+import Dropdown from '../../../Applications/Norwood/Common/DropDown'
+import TrackingAtAGlanceObjects from '../../../Applications/Norwood/TrackingAtAGlance/TrackingAtAGlanceObjects'
 //import trackingAtAGlanceDropdown from './examples/DemoApplication/TrackingAtAGlance/DropDown'
 
 describe('one',function()
