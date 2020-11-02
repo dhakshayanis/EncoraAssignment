@@ -9,17 +9,12 @@ import TrackingAtAGlanceObjects from './examples/DemoApplication/TrackingAtAGlan
 
 describe('one',function()
 {
-    beforeEach(function(){
-        cy.fixture('PageTitles').then(function(data){
-            this.data = data
-    })
-})
 it('navigate to Tracking At a Glance',function()
 {
     const np = new NavigateToPage
     np.goToTrackingAtAGlancePage()
     const titleCheck = new PageTitleCheck
-    titleCheck.PageTitleTest(this.data.TrackingAtAGlanceTitle)
+    titleCheck.PageTitleTest()
 })
    it('verify username in page header ',function()
    {

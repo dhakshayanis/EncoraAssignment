@@ -1,5 +1,5 @@
 class TrackingAtAGlanceObjects{
-
+    static page
     static SchoolDimensionDropDownID = "TG_SchoolDimension"
     static StudentDimensionDropDownID = "TG_StudentDimension"
     static SchoolDimensionDropDownName = "School Dimension"

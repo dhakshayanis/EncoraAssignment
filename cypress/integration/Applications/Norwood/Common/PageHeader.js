@@ -4,7 +4,7 @@ class PageHeader{
         cy.get('[class=logout]').should('have.text','Logout')
 
         //UsernameCheck
-        cy.get('[class=user_name]').should('have.text','tambalavanan')
+        cy.get('[class=user_name]').should('have.text','dhakshayanis')
 
         //logo check
         cy.get('[alt="WHOLE CHILD INTEGRATED DATA"]').should('have.attr','src','https://dev-dot-nps-i360-k12-dev.uc.r.appspot.com/images/client_logo_norwood.png')
