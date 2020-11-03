@@ -7,13 +7,13 @@ class TrackingAtAGlanceObjects{
     static schoolDimensionDropDownOptions = ['School Level', 'Grade Level']
     static StudentDimensionDropDownOptions = ['Ethnicity', 'Gender', 'Special Group', 'Student Device Assignment']
     
-    static dailyInactiveStudents = '[id="1"]'
-    static dailyActiveStudents = '[id="2"]'
+    static dailyInactiveStudentsID = '[id="1"]'
+    static dailyActiveStudentsID = '[id="2"]'
     static studentDevicesID = '[id="5"]'
     static applicationLoginsID = '[id="6"]'
     static teacherActiveID  = '[id="7"]'
-    static inactiveStudents = '[id="4"]'
-    static weeklyActiveStudents ='[id="3"]'
+    static inactiveStudentsID = '[id="4"]'
+    static weeklyActiveStudentsID ='[id="3"]'
 
 }
 export default TrackingAtAGlanceObjects

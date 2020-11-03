@@ -3,7 +3,7 @@ import DropDownObjects from '../common/DropDownObjects'
 import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 
 class TrackingAtAGlanceSanity{
-    isTilesPresent(){
+    isTilesPresent(){/*
         cy.get('[id="10"]').should('be.visible')//student not active
         cy.get('[id="5"]').scrollIntoView()
         cy.get('[id="5"]').should('be.visible')//student  active
@@ -13,8 +13,19 @@ class TrackingAtAGlanceSanity{
         cy.get('[id="7"]').should('be.visible')//application logins
         cy.get('[id="8"]').scrollIntoView()
         cy.get('[id="8"]').should('be.visible')//teacher active 
-        cy.get('[id="10"]').scrollIntoView() 
+        cy.get('[id="10"]').scrollIntoView() */
+        TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
+        TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.dailyActiveStudentsID)
+        TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.studentDevicesID)
+        TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.applicationLoginsID)
+        TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.teacherActiveID)
+        TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.inactiveStudentsID)
+        TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
         return this
+    }
+    static isTileVisible(tileID){
+        cy.get(tileID).scrollIntoView()
+        cy.get(tileID).should('be.visible')//student  active
     }
     tilesHeaderCHeck(){
         cy.contains('INACTIVESTUDENTS').should('have.text','INACTIVESTUDENTS')
