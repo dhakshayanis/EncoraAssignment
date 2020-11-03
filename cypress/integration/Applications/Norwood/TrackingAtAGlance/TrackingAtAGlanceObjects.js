@@ -9,11 +9,44 @@ class TrackingAtAGlanceObjects{
     
     static dailyInactiveStudentsID = '[id="1"]'
     static dailyActiveStudentsID = '[id="2"]'
-    static studentDevicesID = '[id="5"]'
+    static devicesDistributionID = '[id="5"]'
     static applicationLoginsID = '[id="6"]'
-    static teacherActiveID  = '[id="7"]'
-    static inactiveStudentsID = '[id="4"]'
+    static activeTeachersID  = '[id="7"]'
+    static inactiveStudentsYtdID = '[id="4"]'
     static weeklyActiveStudentsID ='[id="3"]'
 
+    static getTileTitle(tileID){
+        var title = new Map();
+        title.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'DAILYINACTIVESTUDENTS');
+        title.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, 'DAILYACTIVESTUDENTS');
+        title.set(TrackingAtAGlanceObjects.weeklyActiveStudentsID, 'WEEKLYACTIVESTUDENTS');
+        title.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, 'INACTIVESTUDENTS(YTD)');
+        title.set(TrackingAtAGlanceObjects.devicesDistributionID, 'DEVICESDISTRIBUTION');
+        title.set(TrackingAtAGlanceObjects.applicationLoginsID, 'APPLICATION LOGINS');
+        title.set(TrackingAtAGlanceObjects.activeTeachersID, 'ACTIVETEACHERS');
+        return title.get(tileID)
+    }
+    static getTitleText1(tileID){
+        var text1 = new Map();
+        text1.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'Avg. Daily Inactive Students');
+        text1.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, 'Avg. Daily Active Students');
+        text1.set(TrackingAtAGlanceObjects.weeklyActiveStudentsID, 'Avg. Weekly Active Students');
+        text1.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, 'Students with no login or < 10% login (YTD)');
+        text1.set(TrackingAtAGlanceObjects.devicesDistributionID, 'Studenst with Devices');
+        text1.set(TrackingAtAGlanceObjects.applicationLoginsID, 'Average Number of Apps Accessed per Student');
+        text1.set(TrackingAtAGlanceObjects.activeTeachersID, 'Average # of Teachers Active');
+        return text1.get(tileID)
+    }
+    static getTitleText2(tileID){
+        var text2 = new Map();
+        text2.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'No Login in Past 7 Days');
+        text2.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, 'Last 7 Days Avg');
+        text2.set(TrackingAtAGlanceObjects.weeklyActiveStudentsID, 'Avg. Weekly Active Students');
+        text2.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, '');
+        text2.set(TrackingAtAGlanceObjects.devicesDistributionID, 'Devices Distributed');
+        text2.set(TrackingAtAGlanceObjects.applicationLoginsID, '');
+        text2.set(TrackingAtAGlanceObjects.activeTeachersID, 'Last 7 Days Avg');
+        return text2.get(tileID)
+    }
 }
 export default TrackingAtAGlanceObjects
