@@ -4,11 +4,7 @@ import PopUp from '../../../Applications/Norwood/EdTechOverview/PopUp'
 import Dropdown from '../../../Applications/Norwood/Common/DropDown'
 import EOPopUpObjects from '../../../Applications/Norwood/EdTechOverview/PopUpObjects'
 import EdTechOverviewObjects from '../../../Applications/Norwood/EdTechOverview/EdTechOverviewObjects'
-<<<<<<< HEAD
 import DateFilter from '../../../Applications/Norwood/Common/DateFilter'
-=======
-import DateFilter from '../../../Applications/CentralFalls/Common/DateFilter'
->>>>>>> 984135b23b853639faf97c7f43d4f6d01fff3a20
 
 describe('one',function()
 {
