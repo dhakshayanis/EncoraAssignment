@@ -1,9 +1,9 @@
-import NavigateToPage from '../../../Applications/DemoApplication/Common/NavigateToPage'
-import PageHeader from '../../../Applications/DemoApplication/Common/PageHeader'
-import PopUp from '../../../Applications/DemoApplication/EdTechOverview/PopUp'
-import Dropdown from '../../../Applications/DemoApplication/Common/DropDown'
-import EOPopUpObjects from '../../../Applications/DemoApplication/EdTechOverview/PopUpObjects'
-import EdTechOverviewObjects from '../../../Applications/DemoApplication/EdTechOverview/EdTechOverviewObjects'
+import NavigateToPage from '../../../Applications/Dallas/Common/NavigateToPage'
+import PageHeader from '../../../Applications/Dallas/Common/PageHeader'
+import PopUp from '../../../Applications/Dallas/EdTechOverview/PopUp'
+import Dropdown from '../../../Applications/Dallas/Common/DropDown'
+import EOPopUpObjects from '../../../Applications/Dallas/EdTechOverview/PopUpObjects'
+import EdTechOverviewObjects from '../../../Applications/Dallas/EdTechOverview/EdTechOverviewObjects'
 
 describe('one',function()
 {

@@ -1,7 +1,7 @@
 class EOPopUpObjects{
     static studentDimensionDropDownID ='EO_StudentDimenionViewDropDown'
     static studentDimensionDropDownName = 'Ethinicity'
-    static studentDimensionDropDownOptions = ['Ethnicity', 'Grade','Gender','Special Group ','Student Device Assignment']
+    static studentDimensionDropDownOptions = ['Ethnicity', 'Grade','Gender','Special Group ','Student Device Assignment','Student Hotspot Assignment']
     static StudentDimension = 'Student Dimension View'
     static MeetingInformation = 'Meeting Information'
     static MeetingDuration = 'Meeting Duration'
