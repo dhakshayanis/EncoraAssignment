@@ -1,10 +1,10 @@
-import NavigateToPage from '../../../Applications/boston/Common/NavigateToPage'
-import PageHeader from '../../../Applications/boston/Common/PageHeader'
-import PopUp from '../../../Applications/boston/EdTechOverview/PopUp'
-import Dropdown from '../../../Applications/boston/Common/DropDown'
-import EOPopUpObjects from '../../../Applications/boston/EdTechOverview/PopUpObjects'
-import EdTechOverviewObjects from '../../../Applications/boston/EdTechOverview/EdTechOverviewObjects'
-import DateFilter from '../../../Applications/boston/Common/DateFilter'
+import NavigateToPage from '../../../Applications/sfps/Common/NavigateToPage'
+import PageHeader from '../../../Applications/sfps/Common/PageHeader'
+import PopUp from '../../../Applications/sfps/EdTechOverview/PopUp'
+import Dropdown from '../../../Applications/sfps/Common/DropDown'
+import EOPopUpObjects from '../../../Applications/sfps/EdTechOverview/PopUpObjects'
+import DateFilter from '../../../Applications/sfps/Common/DateFilter'
+import EdTechOverviewObjects from '../../../Applications/sfps/EdTechOverview/EdTechOverviewObjects'
 
 describe('one',function()
 {
@@ -14,11 +14,12 @@ describe('one',function()
         np.goToTrackingAtAGlancePage()
         np.goToPage(EdTechOverviewObjects.pageTitle)
    })
+
    it('verify page header and footer ',function()
    {
-        const header = new PageHeader
-        header.pageHeaderCheck()
-        header.pageFooterCheck()
+    const header = new PageHeader
+    header.pageHeaderCheck()
+    header.pageFooterCheck()
    })
    it('verify date filters ',function()
    {
@@ -60,4 +61,3 @@ describe('one',function()
    })
 
 })
-
