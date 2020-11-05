@@ -1,7 +1,7 @@
 //import TrackingAtAGlanceObjects from "./TrackingAtAGlance/TrackingAtAGlanceObjects"
 import DropDownObjects from './DropDownObjects'
-import PeopleAndDeviceObjects from './PeopleAndDevice/PeopleAndDeviceObjects'
-import PeopleAndDeviceSanity from './PeopleAndDevice/PeopleAndDeviceSanity'
+import PeopleAndDeviceObjects from '../PeopleAndDevice/PeopleAndDeviceObjects'
+import PeopleAndDeviceSanity from '../PeopleAndDevice/PeopleAndDeviceSanity'
 
 class Dropdown{
     static dropdownoptionsCount = '[role="menuitem"] >div>div>div'

@@ -1,5 +1,5 @@
-import Dropdown from '../DropDown'
-import DropDownObjects from '../DropDownObjects'
+import Dropdown from '../Common/DropDown'
+import DropDownObjects from '../Common/DropDownObjects'
 
 class TimeSeries{
     static timeSeriesChartDropDownID = 'UA_TimeSeriesDropDown'
