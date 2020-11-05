@@ -6,7 +6,7 @@ import PeopleAndDeviceSanity from '../PeopleAndDevice/PeopleAndDeviceSanity'
 class Dropdown{
     static dropdownoptionsCount = '[role="menuitem"] >div>div>div'
     openDropDown(dropdownID){
-        if(dropdownID==PeopleAndDeviceObjects.deviceDistribution|dropdownID==PeopleAndDeviceObjects.districtEnrollment){
+        if(dropdownID==PeopleAndDeviceObjects.deviceDistribution|dropdownID==PeopleAndDeviceObjects.districtEnrollment|dropdownID==PeopleAndDeviceObjects.hotspotDistribution){
             const open = new PeopleAndDeviceSanity
             open.openPeopleAndDeviceDropdown(dropdownID)
         }
