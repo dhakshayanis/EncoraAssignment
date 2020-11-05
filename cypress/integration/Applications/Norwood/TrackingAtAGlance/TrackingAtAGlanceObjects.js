@@ -5,7 +5,7 @@ class TrackingAtAGlanceObjects{
     static SchoolDimensionDropDownName = "School Dimension"
     static StudentDimensionDropDownName = "Student Dimension"
     static schoolDimensionDropDownOptions = ['School Level', 'Grade Level']
-    static StudentDimensionDropDownOptions = ['Ethnicity', 'Gender', 'Special Group', 'Student Device Assignment']
+    static StudentDimensionDropDownOptions = ['Ethnicity', 'Gender', 'Special Group', 'Student Device Assignment', 'Student Cohort']
     
     static dailyInactiveStudentsID = '[id="1"]'
     static dailyActiveStudentsID = '[id="2"]'
@@ -17,10 +17,10 @@ class TrackingAtAGlanceObjects{
 
     static getTileTitle(tileID){
         var title = new Map();
-        title.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'DAILYINACTIVESTUDENTS');
-        title.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, 'DAILYACTIVESTUDENTS');
-        title.set(TrackingAtAGlanceObjects.weeklyActiveStudentsID, 'WEEKLYACTIVESTUDENTS');
-        title.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, 'INACTIVESTUDENTS(YTD)');
+        title.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'DAILY INACTIVE STUDENTS');
+        title.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, 'DAILY ACTIVE STUDENTS');
+        title.set(TrackingAtAGlanceObjects.weeklyActiveStudentsID, 'WEEKLY ACTIVE STUDENTS');
+        title.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, 'INACTIVE STUDENTS(YTD)');
         title.set(TrackingAtAGlanceObjects.devicesDistributionID, 'DEVICESDISTRIBUTION');
         title.set(TrackingAtAGlanceObjects.applicationLoginsID, 'APPLICATION LOGINS');
         title.set(TrackingAtAGlanceObjects.activeTeachersID, 'ACTIVETEACHERS');
@@ -31,16 +31,16 @@ class TrackingAtAGlanceObjects{
         text1.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'Avg. Daily Inactive Students');
         text1.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, 'Avg. Daily Active Students');
         text1.set(TrackingAtAGlanceObjects.weeklyActiveStudentsID, 'Avg. Weekly Active Students');
-        text1.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, 'Students with no login or < 10% login (YTD)');
-        text1.set(TrackingAtAGlanceObjects.devicesDistributionID, 'Studenst with Devices');
+        text1.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, 'Students with no login or <10% login(YTD)');
+        text1.set(TrackingAtAGlanceObjects.devicesDistributionID, 'Students With Devices');
         text1.set(TrackingAtAGlanceObjects.applicationLoginsID, 'Average Number of Apps Accessed per Student');
-        text1.set(TrackingAtAGlanceObjects.activeTeachersID, 'Average # of Teachers Active');
+        text1.set(TrackingAtAGlanceObjects.activeTeachersID, 'Avg # of Teachers Active');
         return text1.get(tileID)
     }
     static getTitleText2(tileID){
         var text2 = new Map();
         text2.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'No Login in Past 7 Days');
-        text2.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, 'Last 7 Days Avg');
+        text2.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, ' Last 7 Days Avg');
         text2.set(TrackingAtAGlanceObjects.weeklyActiveStudentsID, 'Avg. Weekly Active Students');
         text2.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, '');
         text2.set(TrackingAtAGlanceObjects.devicesDistributionID, 'Devices Distributed');
