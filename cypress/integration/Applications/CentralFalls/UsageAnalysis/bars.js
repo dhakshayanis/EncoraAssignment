@@ -1,4 +1,5 @@
 import writeJson from '../Common/WriteJSON'
+import UsageAnalysisObjects from './UsageAnalysisObjects'
 
 class KPI{
     
@@ -13,8 +14,8 @@ class KPI{
         const writing = new writeJson
         cy.xpath(boxName+KPI.bars).then((barsCount)=>{
             let numberOfBars = barsCount.length;
-            writing.start('UsageAnalysisKpis')
-            writing.startArray('UsageAnalysisKpis',boxName)
+            //writing.start('UsageAnalysisKpis')
+            //writing.startArray('UsageAnalysisKpis',boxName)
             //cy.writeFile('./cypress/fixtures/UsageAnalysisKpis.json','\n'+'"'+boxName+'Page1": [', { flag: 'a+' })
             for(let i=1; i<=numberOfBars; i++){
                 let kpiXpath = '('+boxName+KPI.bars+')['+i+']'
@@ -28,7 +29,14 @@ class KPI{
             writing.endArray('UsageAnalysisKpis')
         })
     }
+    static getBoxNameXpath(boxName){
+        let boxNameXpath = ""
+        if(boxName==UsageAnalysisObjects.studentBoxName){boxNameXpath = KPI.students}
+        else{boxNameXpath = KPI.teachers}
+        return boxNameXpath
+    }
     navigateToPage(boxName){
+        //const boxNameXpath = KPI.getBoxNameXpath(boxName)
         cy.xpath(boxName+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let pageNumber = parseInt(splittedText[0])
@@ -42,13 +50,16 @@ class KPI{
         })
     }
     getTextInAllBars(boxName){
+        const writing = new writeJson
+        writing.startArray('UsageAnalysisKpis',boxName)
         const kpiName = new KPI
-        cy.xpath(boxName+KPI.page).invoke('text').then(pageText=>{
+        const boxNameXpath = KPI.getBoxNameXpath(boxName)
+        cy.xpath(boxNameXpath+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let lastPageNumber = parseInt(splittedText[1])
             for(let page = 1;page<=lastPageNumber; page++){
-                kpiName.getKPINamesInaPage(boxName)
-                kpiName.navigateToPage(boxName)
+                kpiName.getKPINamesInaPage(boxNameXpath)
+                kpiName.navigateToPage(boxNameXpath)
             }
         })
     }

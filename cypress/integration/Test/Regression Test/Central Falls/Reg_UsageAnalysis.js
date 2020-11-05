@@ -14,6 +14,8 @@ describe('Usage Analysisn Regression Test',function()
    it('bar names',function()
    {
         const kpi = new KPI
+        const write = new writeJson
+        write.start('UsageAnalysisKpis')
         kpi.getTextInAllBars(UsageAnalysisObjects.studentBoxName)
    })
    it('bar names',function()

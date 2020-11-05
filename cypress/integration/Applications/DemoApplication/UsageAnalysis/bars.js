@@ -1,4 +1,5 @@
 import writeJson from '../Common/WriteJSON'
+import UsageAnalysisObjects from './UsageAnalysisObjects'
 
 class KPI{
     
@@ -28,7 +29,14 @@ class KPI{
             writing.endArray('UsageAnalysisKpis')
         })
     }
+    static getBoxNameXpath(boxName){
+        let boxNameXpath = ""
+        if(boxName==UsageAnalysisObjects.studentBoxName){boxNameXpath = KPI.students}
+        else{boxNameXpath = KPI.teachers}
+        return boxNameXpath
+    }
     navigateToPage(boxName){
+        //const boxNameXpath = KPI.getBoxNameXpath(boxName)
         cy.xpath(boxName+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let pageNumber = parseInt(splittedText[0])
@@ -43,12 +51,13 @@ class KPI{
     }
     getTextInAllBars(boxName){
         const kpiName = new KPI
-        cy.xpath(boxName+KPI.page).invoke('text').then(pageText=>{
+        const boxNameXpath = KPI.getBoxNameXpath(boxName)
+        cy.xpath(boxNameXpath+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let lastPageNumber = parseInt(splittedText[1])
             for(let page = 1;page<=lastPageNumber; page++){
-                kpiName.getKPINamesInaPage(boxName)
-                kpiName.navigateToPage(boxName)
+                kpiName.getKPINamesInaPage(boxNameXpath)
+                kpiName.navigateToPage(boxNameXpath)
             }
         })
     }
