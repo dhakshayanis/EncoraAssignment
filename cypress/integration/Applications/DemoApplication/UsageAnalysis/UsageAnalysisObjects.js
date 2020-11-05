@@ -5,5 +5,8 @@ class UsageAnalysisObjects{
     static UsageAnalysisDimensionView = "Dimension View"
     static UsageAnalysisHeatMapAnalysisView = "Heat Map Analysis"
     static UsageAnalysisTimeSeries = "Time Series"
+    static studentBoxName = "Students"
+    static teacherBoxName = "Teachers"
+    
 }
 export default UsageAnalysisObjects
