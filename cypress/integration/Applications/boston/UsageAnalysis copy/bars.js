@@ -1,7 +1,7 @@
-import writeJson from '../WriteJSON'
+import writeJson from '../Common/WriteJSON'
 
 class KPI{
-    static title = "Usage Analysis"
+    
     static bars = '//*[@class="wrap-component printIgnore"]'//' .printIgnore>.wrap-component-container'
     static page = '//*[@class="multiple-instance-component-page-info"]'//' .multiple-instance-component-page-info'
     static students = '//*[@id="EXTERNAL_GENERIC_COMPONENT"][2]'//'#EXTERNAL_GENERIC_COMPONENT:nth-child(2)'
