@@ -1,30 +1,31 @@
-import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import PageTitleCheck from './examples/DemoApplication/PageTitleCheck'
-import PageHeader from './examples/DemoApplication/PageHeader'
-import TrackingAtAGlanceSanity from './examples/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceSanity'
-import DateFilter from './examples/DemoApplication/DateFilter'
-import Dropdown from './examples/DemoApplication/DropDown'
-import TrackingAtAGlanceObjects from './examples/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceObjects'
+import NavigateToPage from '../../../Applications/boston/Common/NavigateToPage'
+import PageTitleCheck from '../../../Applications/boston/Common/PageTitleCheck'
+import PageHeader from '../../../Applications/boston/Common/PageHeader'
+import TrackingAtAGlanceSanity from '../../../Applications/boston/TrackingAtAGlance/TrackingAtAGlanceSanity'
+import DateFilter from '../../../Applications/boston/Common/DateFilter'
+import Dropdown from '../../../Applications/boston/Common/DropDown'
+import TrackingAtAGlanceObjects from '../../../Applications/boston/TrackingAtAGlance/TrackingAtAGlanceObjects'
 //import trackingAtAGlanceDropdown from './examples/DemoApplication/TrackingAtAGlance/DropDown'
 
 describe('one',function()
 {
-    beforeEach(function(){
-        cy.fixture('PageTitles').then(function(data){
-            this.data = data
-    })
-})
 it('navigate to Tracking At a Glance',function()
 {
     const np = new NavigateToPage
     np.goToTrackingAtAGlancePage()
     const titleCheck = new PageTitleCheck
-    titleCheck.PageTitleTest(this.data.TrackingAtAGlanceTitle)
+    titleCheck.PageTitleTest(TrackingAtAGlanceObjects.pagetitle)
 })
    it('verify username in page header ',function()
    {
     const header = new PageHeader
     header.pageHeaderCheck()
+   })
+   it('verify date filters ',function()
+   {
+        const date = new DateFilter
+        date.startDateDefault
+        date.endDateDefault
    })
    it('verify all tiles are present',function()
    {
@@ -40,12 +41,6 @@ it('navigate to Tracking At a Glance',function()
    {
     const text = new TrackingAtAGlanceSanity
     text.tilesTextCheck()
-   })
-   it('date filter',function()
-   {
-       const date = new DateFilter
-       date.startDateDefault()
-       date.endDateDefault()
    })
    it('dropdown sanity',function()
    {

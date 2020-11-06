@@ -1,10 +1,10 @@
-import NavigateToPage from './examples/boston/NavigateToPage'
-import PageHeader from './examples/boston/PageHeader'
-import MapView from './examples/boston/UsageAnalysis/MapView'
-import PeopleAndDeviceSanity from './examples/boston/PeopleAndDevice/PeopleAndDeviceSanity'
-import PeopleAndDeviceObjects from './examples/boston/PeopleAndDevice/PeopleAndDeviceObjects'
-import Table from './examples/boston/Table'
-import dropdown from './examples/boston/DropDown'
+import NavigateToPage from './Applications/boston/NavigateToPage'
+import PageHeader from './Applications/boston/PageHeader'
+import MapView from './Applications/boston/UsageAnalysis/MapView'
+import PeopleAndDeviceSanity from './Applications/boston/PeopleAndDevice/PeopleAndDeviceSanity'
+import PeopleAndDeviceObjects from './Applications/boston/PeopleAndDevice/PeopleAndDeviceObjects'
+import Table from './Applications/boston/Table'
+import dropdown from './Applications/boston/DropDown'
 
 describe('People and Device Sanity Test',function()
 {
