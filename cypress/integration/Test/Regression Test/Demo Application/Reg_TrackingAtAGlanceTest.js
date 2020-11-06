@@ -1,11 +1,7 @@
-import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import PageTitleCheck from './examples/DemoApplication/PageTitleCheck'
-import PageHeader from './examples/DemoApplication/PageHeader'
-import TrackingAtAGlanceSanity from './examples/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceSanity'
-import DateFilter from './examples/DemoApplication/DateFilter'
-import Dropdown from './examples/DemoApplication/DropDown'
-import TrackingAtAGlanceObjects from './examples/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceObjects'
-import PercentageCalculation from './examples/DemoApplication/TrackingAtAGlance/PercentageCalculation'
+import NavigateToPage from '../../../Applications/DemoApplication/Common/NavigateToPage'
+import PageTitleCheck from '../../../Applications/DemoApplication/Common/PageTitleCheck'
+import TrackingAtAGlanceObjects from '../../../Applications/DemoApplication/TrackingAtAGlance/TrackingAtAGlanceObjects'
+import PercentageCalculation from '../../../Applications/DemoApplication/TrackingAtAGlance/PercentageCalculation'
 
 describe('one',function()
 {
@@ -19,7 +15,7 @@ it('navigate to Tracking At a Glance',function()
     const np = new NavigateToPage
     np.goToTrackingAtAGlancePage()
     const titleCheck = new PageTitleCheck
-    titleCheck.PageTitleTest(this.data.TrackingAtAGlanceTitle)
+    titleCheck.PageTitleTest(TrackingAtAGlanceObjects.pagetitle)
 })
 it('% check',function()
 {

@@ -1,7 +1,7 @@
-import NavigateToPage from '../../../Applications/DemoApplication/Common/NavigateToPage'
-import KPI from '../../../Applications/DemoApplication/UsageAnalysis/bars'
-import UsageAnalysisObjects from '../../../Applications/DemoApplication/UsageAnalysis/UsageAnalysisObjects'
-import writeJSON from '../../../Applications/DemoApplication/Common/WriteJSON'
+import NavigateToPage from '../../../Applications/CentralFalls/Common/NavigateToPage'
+import KPI from '../../../Applications/CentralFalls/UsageAnalysis/bars'
+import UsageAnalysisObjects from '../../../Applications/CentralFalls/UsageAnalysis/UsageAnalysisObjects'
+import writeJSON from '../../../Applications/CentralFalls/Common/WriteJSON'
 
 describe('Usage Analysisn Regression Test',function()
 {
@@ -14,7 +14,7 @@ describe('Usage Analysisn Regression Test',function()
    it('bar names',function()
    {
         const kpi = new KPI
-        const write = new writeJson
+        const write = new writeJSON
         write.start('UsageAnalysisKpis')
         kpi.getTextInAllBars(UsageAnalysisObjects.studentBoxName)
    })
