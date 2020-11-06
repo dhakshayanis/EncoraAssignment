@@ -1,11 +1,11 @@
 class DateFilter{
     startDateDefault(){
-        cy.get('[placeholder="Start Date"]').should('have.value','06-Apr-2020')
+        cy.get('[placeholder="Start Date"]').should('have.value','01-Aug-2020')
         return this
     }
     endDateDefault(){
         const todaysDate = Cypress.moment().format('DD-MMM-YYYY')
-        cy.get('[placeholder="End Date"]').should('have.value',todaysDate)
+        cy.get('[placeholder="End Date"]').should('have.value','05-Nov-2020')
         return this
     }
 }

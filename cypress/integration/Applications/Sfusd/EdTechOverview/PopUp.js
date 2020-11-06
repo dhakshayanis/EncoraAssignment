@@ -1,6 +1,6 @@
 import EOPopUpObjects from './PopUpObjects'
-import Dropdown from '../DropDown'
-import DropDownObjects from '../DropDownObjects'
+import Dropdown from '../Common/DropDown'
+import DropDownObjects from '../Common/DropDownObjects'
 
 class PopUp{
     openTile(tileName){
