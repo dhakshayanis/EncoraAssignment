@@ -1,13 +1,10 @@
 import NavigateToPage from '../../../Applications/sfps/Common/NavigateToPage'
 import PeopleAndDeviceObjects from '../../../Applications/sfps/PeopleAndDevice/PeopleAndDeviceObjects'
-
 import PageHeader from '../../../Applications/sfps/Common/PageHeader'
 import MapView from '../../../Applications/sfps/UsageAnalysis/MapView'
 import Table from '../../../Applications/sfps/Common/Table'
-//import PeopleAndDeviceSanity from '../../../Applications/sfps/PeopleAndDevice/PeopleAndDeviceSanity'
-
-
-//import dropdown from '../../../Applications/sfps/Common/DropDown'
+import PeopleAndDeviceSanity from '../../../Applications/sfps/PeopleAndDevice/PeopleAndDeviceSanity'
+import dropdown from '../../../Applications/sfps/Common/DropDown'
 
 describe('People and Device Sanity Test',function()
 {
@@ -45,17 +42,24 @@ describe('People and Device Sanity Test',function()
        const sanity = new PeopleAndDeviceSanity
        sanity.sanity(PeopleAndDeviceObjects.deviceDistribution)
    })
+   it('Hot Spot Distribution Distribution sanity',function()
+   {
+    const sanity = new PeopleAndDeviceSanity
+    sanity.sanity(PeopleAndDeviceObjects.hotDistribution)
+   })
    it('Dropdown sanity',function()
    {
        const dd = new dropdown
        dd.dropDownSanity(PeopleAndDeviceObjects.districtEnrollment)
        dd.dropDownSanity(PeopleAndDeviceObjects.deviceDistribution)
+       dd.dropDownSanity(PeopleAndDeviceObjects.hotDistribution)
    })
    it('Sanity checks after dropdown change',function()
    {
        const sanity = new PeopleAndDeviceSanity
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.districtEnrollment)
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.deviceDistribution)
+       sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.hotDistribution)
    })
    it('Schools Tab Chart and table sanity',function()
    {

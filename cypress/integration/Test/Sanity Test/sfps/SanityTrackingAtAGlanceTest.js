@@ -1,10 +1,10 @@
-import NavigateToPage from './examples/sfps/NavigateToPage'
-import PageTitleCheck from './examples/sfps/PageTitleCheck'
-import PageHeader from './examples/sfps/PageHeader'
-import TrackingAtAGlanceSanity from './examples/sfps/TrackingAtAGlance/TrackingAtAGlanceSanity'
-import DateFilter from './examples/sfps/DateFilter'
-import Dropdown from './examples/sfps/DropDown'
-import TrackingAtAGlanceObjects from './examples/sfps/TrackingAtAGlance/TrackingAtAGlanceObjects'
+import NavigateToPage from '../../../Applications/sfps/Common/NavigateToPage'
+import PageTitleCheck from '../../../Applications/sfps/Common/PageTitleCheck'
+import PageHeader from '../../../Applications/sfps/Common/PageHeader'
+import TrackingAtAGlanceSanity from '../../../Applications/sfps/TrackingAtAGlance/TrackingAtAGlanceSanity'
+import DateFilter from '../../../Applications/sfps/Common/DateFilter'
+import Dropdown from '../../../Applications/sfps/Common/DropDown'
+import TrackingAtAGlanceObjects from '../../../Applications/sfps/TrackingAtAGlance/TrackingAtAGlanceObjects'
 //import trackingAtAGlanceDropdown from './examples/DemoApplication/TrackingAtAGlance/DropDown'
 
 describe('one',function()

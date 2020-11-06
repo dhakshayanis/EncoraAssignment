@@ -5,14 +5,17 @@ class PeopleAndDeviceObjects{
     static chartComponent ='.open #BASIC_CONTAINER:nth-of-type'
     static districtEnrollment ='District Enrollment'
     static deviceDistribution = 'Device Distribution'
+    static hotDistribution = 'Hot Spot Distribution'
     static tableViewButton = 'Table View'
     static schoolsDistrictChartcomponent =  'Students With One Laptop'
     static studentsTab = 'Students'
     static schoolsTab ='Schools / District'
     static districtEnrollmentDropdownName ='View by'
     static deviceDistributionDropdownName ='View by'
+    static hotspotDistributionDropdownName ='View by'
     static districtEnrollmentDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
     static deviceDistributionDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
+    static hotspotDistributionDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
 
     static districtEnrollmentTotal = '(//*[@class="class-room-tile-component-body-col-1"])[4]'
 	static deviceDistributionTotal = '(//*[@class="class-room-tile-component-body-col-1"])[8]'
