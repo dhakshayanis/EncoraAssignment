@@ -5,7 +5,6 @@ import PeopleAndDeviceSanity from '../../../Applications/Dallas/PeopleAndDevice/
 import PeopleAndDeviceObjects from '../../../Applications/Dallas/PeopleAndDevice/PeopleAndDeviceObjects'
 import Table from '../../../Applications/Dallas/Common/Table'
 import dropdown from '../../../Applications/Dallas/Common/DropDown'
-import DateFilter from '../../../Applications/Dallas/Common/DateFilter'
 
 describe('People and Device Sanity Test',function()
 {
@@ -21,12 +20,7 @@ describe('People and Device Sanity Test',function()
         header.pageHeaderCheck()
         header.pageFooterCheck()
    })
-   it('date filter',function()
-   {
-       const date = new DateFilter
-       date.startDateDefault()
-       date.endDateDefault()
-   })
+  
    it('map sanity',function()
    {
        const sanity = new MapView

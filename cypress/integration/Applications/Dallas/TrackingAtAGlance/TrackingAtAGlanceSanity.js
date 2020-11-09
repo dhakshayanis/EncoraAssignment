@@ -4,7 +4,7 @@ import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 
 class TrackingAtAGlanceSanity{
     isTilesPresent(){
-        cy.wait(20000)
+        cy.wait(10000)
         TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.devicesDistributionID)
