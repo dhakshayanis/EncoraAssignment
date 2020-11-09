@@ -29,9 +29,17 @@ class PeopleAndDeviceSanity{
         const sanity = new PeopleAndDeviceSanity
         if(component==PeopleAndDeviceObjects.schoolsDistrictChartcomponent){
             sanity.goToTab(PeopleAndDeviceObjects.schoolsTab)
+            sanity.isComponentVisible(PeopleAndDeviceObjects.schoolsDeviceDistribution)
+            sanity.titleTest(PeopleAndDeviceObjects.schoolsDeviceDistribution)
+            sanity.titleTest(PeopleAndDeviceObjects.schoolsHotspotDistribution)
+            sanity.isComponentVisible(PeopleAndDeviceObjects.schoolsHotspotDistribution)
         }
-        sanity.isComponentVisible(component)
-        sanity.titleTest(component)
+        else{
+            sanity.isComponentVisible(component)
+            sanity.titleTest(component)
+
+        }
+        
         return this
     }
     openPeopleAndDeviceDropdown(chartComponent){

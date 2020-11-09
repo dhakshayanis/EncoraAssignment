@@ -42,17 +42,25 @@ describe('People and Device Sanity Test',function()
        const sanity = new PeopleAndDeviceSanity
        sanity.sanity(PeopleAndDeviceObjects.deviceDistribution)
    })
+   it('Hotspot Distribution sanity',function()
+   {
+       const sanity = new PeopleAndDeviceSanity
+       sanity.sanity(PeopleAndDeviceObjects.hotSpotDistribution)
+   })
+
    it('Dropdown sanity',function()
    {
        const dd = new dropdown
        dd.dropDownSanity(PeopleAndDeviceObjects.districtEnrollment)
        dd.dropDownSanity(PeopleAndDeviceObjects.deviceDistribution)
+       dd.dropDownSanity(PeopleAndDeviceObjects.hotSpotDistribution)
    })
    it('Sanity checks after dropdown change',function()
    {
        const sanity = new PeopleAndDeviceSanity
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.districtEnrollment)
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.deviceDistribution)
+       sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.hotSpotDistribution)
    })
    it('Schools Tab Chart and table sanity',function()
    {
