@@ -2,6 +2,7 @@ import NavigateToPage from '../../../Applications/Dallas/Common/NavigateToPage'
 import PageHeader from '../../../Applications/Dallas/Common/PageHeader'
 import studentLearningSanity from '../../../Applications/Dallas/StudentLearning/StudentLearningSanity'
 import StudentLearningObjects from '../../../Applications/Dallas/StudentLearning/StudentLearningObjects'
+import DateFilter from '../../../Applications/Dallas/Common/DateFilter'
 
 describe('Student Learning Sanity Test',function()
 {
@@ -18,6 +19,12 @@ describe('Student Learning Sanity Test',function()
         const header = new PageHeader
         header.pageHeaderCheck()
         header.pageFooterCheck()
+   })
+   it('date filter',function()
+   {
+       const date = new DateFilter
+       date.startDateDefault()
+       date.endDateDefault()
    })
 
    it('google Classroom sanity',function()

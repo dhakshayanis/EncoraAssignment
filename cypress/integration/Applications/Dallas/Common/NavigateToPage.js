@@ -1,8 +1,10 @@
 import PageTitleCheck from './PageTitleCheck'
 class NavigateToPage{
   goToTrackingAtAGlancePage(){
-        cy.visit('https://dev-dot-disd-i360-k12-dev.uc.r.appspot.com')//("https://demo.remotelearning.innive.io/")
+    cy.clearCookies()
+        cy.visit('https://dev-dot-disd-i360-k12-dev.uc.r.appspot.com')//("https://demo.remotelearning.innive.io/")  
         Cypress.on('uncaught:exception', (err, runnable) => {
+           
             // returning false here prevents Cypress from failing the test
             return false
           })
@@ -18,7 +20,7 @@ class NavigateToPage{
         }
     goToPage(page)
     {
-        cy.wait(30000)
+        cy.wait(35000)
         cy.get('[class=long_label]').contains(page,{matchCase: false}).click({force : true})
         const titleCheck = new PageTitleCheck
         titleCheck.PageTitleTest(page)

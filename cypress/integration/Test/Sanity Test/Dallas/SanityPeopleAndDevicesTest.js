@@ -5,6 +5,7 @@ import PeopleAndDeviceSanity from '../../../Applications/Dallas/PeopleAndDevice/
 import PeopleAndDeviceObjects from '../../../Applications/Dallas/PeopleAndDevice/PeopleAndDeviceObjects'
 import Table from '../../../Applications/Dallas/Common/Table'
 import dropdown from '../../../Applications/Dallas/Common/DropDown'
+import DateFilter from '../../../Applications/Dallas/Common/DateFilter'
 
 describe('People and Device Sanity Test',function()
 {
@@ -19,6 +20,12 @@ describe('People and Device Sanity Test',function()
         const header = new PageHeader
         header.pageHeaderCheck()
         header.pageFooterCheck()
+   })
+   it('date filter',function()
+   {
+       const date = new DateFilter
+       date.startDateDefault()
+       date.endDateDefault()
    })
    it('map sanity',function()
    {
@@ -44,14 +51,13 @@ describe('People and Device Sanity Test',function()
    })
    it('Hotspot Distribution sanity',function()
    {
-    cy.scrollTo(0, 500)                   
-    cy.get('#.switcher-container-content-child:nth-of-type(1)').scrollTo('bottom')
        const sanity = new PeopleAndDeviceSanity
        sanity.sanity(PeopleAndDeviceObjects.hotspotDistribution)
    })
 
    it('Dropdown sanity',function()
    {
+    cy.get('[class=user_name]').scrollIntoView()
        const dd = new dropdown
        dd.dropDownSanity(PeopleAndDeviceObjects.districtEnrollment)
        dd.dropDownSanity(PeopleAndDeviceObjects.deviceDistribution)
@@ -62,6 +68,7 @@ describe('People and Device Sanity Test',function()
        const sanity = new PeopleAndDeviceSanity
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.districtEnrollment)
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.deviceDistribution)
+       cy.get('.brintell-framework-footer-text').scrollIntoView()
        sanity.verifyComponentSanityOnChangingDropdown(PeopleAndDeviceObjects.hotspotDistribution)
    })
    it('Schools Tab Chart and table sanity',function()
@@ -72,4 +79,12 @@ describe('People and Device Sanity Test',function()
        tableSanity.isTableVisible()
    })
 
+   it('Unassigned devices sanity',function()
+   {
+    const sanity = new PeopleAndDeviceSanity
+    sanity.sanity(PeopleAndDeviceObjects.totalLaptops) 
+    sanity.sanity(PeopleAndDeviceObjects.totalTablets) 
+       const tableSanity = new Table
+       tableSanity.isTableVisible()
+   }) 
 })
