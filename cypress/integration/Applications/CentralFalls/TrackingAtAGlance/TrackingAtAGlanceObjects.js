@@ -19,7 +19,8 @@ class TrackingAtAGlanceObjects{
     static drInKpi = ' [style="color: rgb(98, 113, 129); font-size: 16px; font-weight: 500;"]'
     static percentageInKpi = ' [style="font-size: 12px; width: 20px; text-align: right; margin-right: 5px; color: rgb(4, 90, 181); font-weight: 500; margin-left: 2px;"]'
     static nrInMiniKpi = ' [style="color: rgb(4, 90, 181); font-size: 18px; font-weight: 500; text-align: center;"]'
-
+    static progressBarBlue = ' .class-room-tile-kpi-bar-chart-progress'
+    
     static getTileTitle(tileID){
         var title = new Map();
         title.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'DAILY INACTIVE STUDENTS');

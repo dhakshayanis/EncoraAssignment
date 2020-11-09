@@ -7,11 +7,11 @@ class NavigateToPage{
         Cypress.on('uncaught:exception', (err, runnable) => {
             // returning false here prevents Cypress from failing the test
             return false
-          })/*
+          })
           cy.get('[name="Email"]').type('dhakshayanis@inniveinc.com')//('demouser@inniveinc.com')
           cy.get('#next').click()
           cy.get('[type="password"]').type('Eashwari')//('Innive@23')
-          cy.get('#submit').click()*/
+          cy.get('#submit').click()
           cy.wait(10000)
           cy.wait(20000)
           cy.get('[class=external-generic-component-child2]').contains('Remote').click()

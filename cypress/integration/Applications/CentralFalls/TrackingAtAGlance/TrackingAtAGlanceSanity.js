@@ -15,7 +15,7 @@ class TrackingAtAGlanceSanity{
     }
     static isTileVisible(tileID){
         cy.get(tileID).scrollIntoView()
-        cy.get(tileID).should('be.visible')//student  active
+        cy.get(tileID).should('be.visible')
     }
     static checkTileHeader(tileID){
         cy.get(tileID).scrollIntoView()
@@ -72,6 +72,5 @@ class TrackingAtAGlanceSanity{
         }
         return this
     }
-
 }
 export default TrackingAtAGlanceSanity
