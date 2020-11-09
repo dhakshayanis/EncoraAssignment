@@ -7,9 +7,9 @@ import HeatMapAnalysis from '../../../Applications/Sfusd/UsageAnalysis/HeatMapAn
 import MapView from '../../../Applications/Sfusd/UsageAnalysis/MapView'
 import Table from '../../../Applications/Sfusd/Common/Table'
 import Dropdown from '../../../Applications/Sfusd/Common/DropDown'
-import KPI from '../../../Applications/Sfusd/UsageAnalysis/bars'
 import DateFilter from '../../../Applications/Sfusd/Common/DateFilter'
 import UsageAnalysisObjects from '../../../Applications/Sfusd/UsageAnalysis/UsageAnalysisObjects'
+
 
 
 describe('Usage Analysis Sanity Test',function()
@@ -17,6 +17,7 @@ describe('Usage Analysis Sanity Test',function()
    it('navigate to UsageAnalysis',function()
    {
         const np = new NavigateToPage
+        
         np.goToTrackingAtAGlancePage()
         np.goToPage(UsageAnalysisObjects.pageTitle)
    })
