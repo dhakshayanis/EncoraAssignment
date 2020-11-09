@@ -12,6 +12,7 @@ class PeopleAndDeviceObjects{
     static schoolsTab ='Schools / District'
     static districtEnrollmentDropdownName ='View by'
     static deviceDistributionDropdownName ='View by'
+    static hotspotDistributionDropdownName ='View by'
     static districtEnrollmentDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
     static deviceDistributionDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
 
@@ -36,7 +37,7 @@ class PeopleAndDeviceObjects{
         totalXpath.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentTotal);
         totalXpath.set(PeopleAndDeviceObjects.deviceDistribution, PeopleAndDeviceObjects.deviceDistributionTotal);
         return totalXpath.get(chartComponent)
-    }
+    } 
     static getValueXpath(chartComponent){
         var valueXpath = new Map();
         valueXpath.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentChartNumbers);
