@@ -1,5 +1,7 @@
+
+
 class EdTechOverviewObjects{
     static pageTitle = "ED Tech Overview"
-    static pageTitle = "Google Meet"
+    static googleMeet = "Google Meet"
 }
 export default EdTechOverviewObjects

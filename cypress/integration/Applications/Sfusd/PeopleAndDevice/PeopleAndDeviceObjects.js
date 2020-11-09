@@ -5,12 +5,14 @@ class PeopleAndDeviceObjects{
     static chartComponent ='.open #BASIC_CONTAINER:nth-of-type'
     static districtEnrollment ='District Enrollment'
     static deviceDistribution = 'Device Distribution'
+    static hotSpotDistribution = 'Hotspot Distribution'
     static tableViewButton = 'Table View'
-    static schoolsDistrictChartcomponent =  'Students With One Laptop'
+    static schoolsDistrictChartcomponent ='Students With One Laptop'
     static studentsTab = 'Students'
     static schoolsTab ='Schools / District'
     static districtEnrollmentDropdownName ='View by'
     static deviceDistributionDropdownName ='View by'
+    static hotspotDistributionDropdownName ='View by'
     static districtEnrollmentDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
     static deviceDistributionDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
 
@@ -35,7 +37,7 @@ class PeopleAndDeviceObjects{
         totalXpath.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentTotal);
         totalXpath.set(PeopleAndDeviceObjects.deviceDistribution, PeopleAndDeviceObjects.deviceDistributionTotal);
         return totalXpath.get(chartComponent)
-    }
+    } 
     static getValueXpath(chartComponent){
         var valueXpath = new Map();
         valueXpath.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentChartNumbers);
