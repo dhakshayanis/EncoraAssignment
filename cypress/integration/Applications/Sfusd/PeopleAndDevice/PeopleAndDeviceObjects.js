@@ -30,9 +30,9 @@ class PeopleAndDeviceObjects{
 	
     static getID(chartComponent){
         var id = new Map();
-        id.set(PeopleAndDeviceObjects.districtEnrollment, 1);
-        id.set(PeopleAndDeviceObjects.deviceDistribution, 2);
-        id.set(PeopleAndDeviceObjects.schoolsDistrictChartcomponent, 1);
+        id.set(PeopleAndDeviceObjects.districtEnrollment,1);
+        id.set(PeopleAndDeviceObjects.deviceDistribution,2);
+        id.set(PeopleAndDeviceObjects.schoolsDistrictChartcomponent,1);
         id.set(PeopleAndDeviceObjects.hotSpotDistribution,3);
         id.set(PeopleAndDeviceObjects.schoolsDeviceDistribution,1);
         id.set(PeopleAndDeviceObjects.schoolsHotspotDistribution,2);
@@ -50,7 +50,7 @@ class PeopleAndDeviceObjects{
         valueXpath.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentChartNumbers);
         valueXpath.set(PeopleAndDeviceObjects.deviceDistribution, PeopleAndDeviceObjects.deviceDistributionChartNumbers);
         valueXpath.set(PeopleAndDeviceObjects.hotSpotDistribution, PeopleAndDeviceObjects.hotspotDistributionChartNumbers);
-        valueXpath.set(PeopleAndDeviceObjects.schoolsDistrictChartcomponent, 1);
+        valueXpath.set(PeopleAndDeviceObjects.schoolsDistrictChartcomponent,1);
         return valueXpath.get(chartComponent)
     }
 }

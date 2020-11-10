@@ -12,6 +12,7 @@ class DropDownObjects{
         //People and device
         options.set(PeopleAndDeviceObjects.deviceDistribution, PeopleAndDeviceObjects.deviceDistributionDropdownOptions);
         options.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentDropdownOptions);
+        options.set(PeopleAndDeviceObjects.hotSpotDistribution,PeopleAndDeviceObjects.hotspotDistributionDropdownOptions);
         //Usage Analysis 
         options.set(TimeSeries.timeSeriesChartDropDownID, TimeSeries.timeSeriesDropDownOptions);
         //Edtech Overview
@@ -25,6 +26,7 @@ class DropDownObjects{
         //People and device
         name.set(PeopleAndDeviceObjects.deviceDistribution, PeopleAndDeviceObjects.deviceDistributionDropdownName);
         name.set(PeopleAndDeviceObjects.districtEnrollment, PeopleAndDeviceObjects.districtEnrollmentDropdownName);
+        name.set(PeopleAndDeviceObjects.hotSpotDistribution,PeopleAndDeviceObjects.hotspotDistributionDropdownName);
         //Usage Analysis
         name.set(TimeSeries.timeSeriesChartDropDownID, TimeSeries.timeSeriesDropDownName);
         //Edtech Overview
