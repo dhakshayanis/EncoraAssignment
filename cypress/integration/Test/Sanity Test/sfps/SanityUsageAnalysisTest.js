@@ -7,6 +7,7 @@ import DimensionView from '../../../Applications/sfps/UsageAnalysis/DimensionVie
 import HeatMapAnalysis from '../../../Applications/sfps/UsageAnalysis/HeatMapAnalysis'
 import MapView from '../../../Applications/sfps/UsageAnalysis/MapView'
 import Dropdown from '../../../Applications/sfps/Common/DropDown'
+import DateFilter from '../../../Applications/sfps/Common/DateFilter'
 
 
 describe('Usage Analysis Sanity Test',function()
@@ -27,6 +28,12 @@ describe('Usage Analysis Sanity Test',function()
         const header = new PageHeader
         header.pageHeaderCheck()
         header.pageFooterCheck()
+   })
+   it('verify date filters ',function()
+   {
+        const date = new DateFilter
+        date.startDateDefault
+        date.endDateDefault
    })
    it('schoolView sanity',function()
    {

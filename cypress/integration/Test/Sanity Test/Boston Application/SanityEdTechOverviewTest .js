@@ -14,11 +14,12 @@ describe('one',function()
         np.goToTrackingAtAGlancePage()
         np.goToPage(EdTechOverviewObjects.pageTitle)
    })
+
    it('verify page header and footer ',function()
    {
-        const header = new PageHeader
-        header.pageHeaderCheck()
-        header.pageFooterCheck()
+    const header = new PageHeader
+    header.pageHeaderCheck()
+    header.pageFooterCheck()
    })
    it('verify date filters ',function()
    {
@@ -60,4 +61,3 @@ describe('one',function()
    })
 
 })
-

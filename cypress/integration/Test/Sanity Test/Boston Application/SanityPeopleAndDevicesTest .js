@@ -1,6 +1,6 @@
 import NavigateToPage from '../../../Applications/boston/Common/NavigateToPage'
 import PageHeader from '../../../Applications/boston/Common/PageHeader'
-import MapView from '../../../Applications/boston/UsageAnalysis/MapView'
+import MapView from '../../../Applications/boston//UsageAnalysis/MapView'
 import PeopleAndDeviceSanity from '../../../Applications/boston/PeopleAndDevice/PeopleAndDeviceSanity'
 import PeopleAndDeviceObjects from '../../../Applications/boston/PeopleAndDevice/PeopleAndDeviceObjects'
 import Table from '../../../Applications/boston/Common/Table'

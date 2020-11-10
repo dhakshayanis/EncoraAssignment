@@ -5,10 +5,11 @@ import TrackingAtAGlanceSanity from '../../../Applications/Dallas/TrackingAtAGla
 import DateFilter from '../../../Applications/Dallas/Common/DateFilter'
 import Dropdown from '../../../Applications/Dallas/Common/DropDown'
 import TrackingAtAGlanceObjects from '../../../Applications/Dallas/TrackingAtAGlance/TrackingAtAGlanceObjects'
-
+//import trackingAtAGlanceDropdown from './examples/DemoApplication/TrackingAtAGlance/DropDown'
 
 describe('one',function()
 {
+   
 it('navigate to Tracking At a Glance',function()
 {
     const np = new NavigateToPage
@@ -20,12 +21,6 @@ it('navigate to Tracking At a Glance',function()
    {
     const header = new PageHeader
     header.pageHeaderCheck()
-   })
-   it('verify date filters ',function()
-   {
-        const date = new DateFilter
-        date.startDateDefault
-        date.endDateDefault
    })
    it('verify all tiles are present',function()
    {
@@ -41,6 +36,12 @@ it('navigate to Tracking At a Glance',function()
    {
     const text = new TrackingAtAGlanceSanity
     text.tilesTextCheck()
+   })
+   it('date filter',function()
+   {
+       const date = new DateFilter
+       date.startDateDefault()
+       date.endDateDefault()
    })
    it('dropdown sanity',function()
    {

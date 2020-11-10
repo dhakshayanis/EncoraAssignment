@@ -30,6 +30,10 @@ class PeopleAndDeviceSanity{
         if(component==PeopleAndDeviceObjects.schoolsDistrictChartcomponent){
             sanity.goToTab(PeopleAndDeviceObjects.schoolsTab)
         }
+        
+        if(component==(PeopleAndDeviceObjects.totalLaptops)){
+            sanity.goToTab(PeopleAndDeviceObjects.unassignedDevices)
+        }
         sanity.isComponentVisible(component)
         sanity.titleTest(component)
         return this
