@@ -24,7 +24,7 @@ class PercentageCalculation{
     percentageCheckInAllTiles(){
         const percent = new PercentageCalculation
         percent.percentageCheck(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
-        percent.percentageCheck(TrackingAtAGlanceObjects.dailyActiveStudentsID)
+        //percent.percentageCheck(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         percent.percentageCheck(TrackingAtAGlanceObjects.devicesDistributionID)
         percent.percentageCheck(TrackingAtAGlanceObjects.applicationLoginsID)
         percent.percentageCheck(TrackingAtAGlanceObjects.activeTeachersID)

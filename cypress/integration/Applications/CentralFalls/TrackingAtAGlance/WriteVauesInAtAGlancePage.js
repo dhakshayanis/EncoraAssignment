@@ -7,7 +7,7 @@ class WriteValuesInKPIs{
         const write = new writeJSON
         write.start('TrackingAtAGlance')
         val.writeValuesInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
+        //val.writeValuesInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.devicesDistributionID)
