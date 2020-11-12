@@ -1,6 +1,6 @@
 class PageTitleCheck{
     PageTitleTest(expectedTitle){
-        cy.wait(40000)
+        cy.wait(45000)
         cy.get('[class=brintell-framework-page-title]').should('have.text',expectedTitle)
         return this
     }

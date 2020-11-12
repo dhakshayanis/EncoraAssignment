@@ -1,12 +1,12 @@
-//import TrackingAtAGlanceObjects from "./TrackingAtAGlance/TrackingAtAGlanceObjects"
-import DropDownObjects from '../Common/DropDownObjects'
+
+import DropDownObjects from './DropDownObjects'
 import PeopleAndDeviceObjects from '../PeopleAndDevice/PeopleAndDeviceObjects'
 import PeopleAndDeviceSanity from '../PeopleAndDevice/PeopleAndDeviceSanity'
 
 class Dropdown{
     static dropdownoptionsCount = '[role="menuitem"] >div>div>div'
     openDropDown(dropdownID){
-        if(dropdownID==PeopleAndDeviceObjects.deviceDistribution|dropdownID==PeopleAndDeviceObjects.districtEnrollment){
+        if(dropdownID==PeopleAndDeviceObjects.deviceDistribution|dropdownID==PeopleAndDeviceObjects.districtEnrollment|dropdownID==PeopleAndDeviceObjects.hotSpotDistribution){
             const open = new PeopleAndDeviceSanity
             open.openPeopleAndDeviceDropdown(dropdownID)
         }

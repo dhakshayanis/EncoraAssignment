@@ -1,15 +1,16 @@
-import NavigateToPage from '../../../Applications/Dallas/Common/NavigateToPage'
-import PageTitleCheck from '../../../Applications/Dallas/Common/PageTitleCheck'
-import PageHeader from '../../../Applications/Dallas/Common/PageHeader'
-import TrackingAtAGlanceSanity from '../../../Applications/Dallas/TrackingAtAGlance/TrackingAtAGlanceSanity'
-import DateFilter from '../../../Applications/Dallas/Common/DateFilter'
-import Dropdown from '../../../Applications/Dallas/Common/DropDown'
-import TrackingAtAGlanceObjects from '../../../Applications/Dallas/TrackingAtAGlance/TrackingAtAGlanceObjects'
+
+
+import NavigateToPage from '../../../Applications/Sfusd/Common/NavigateToPage'
+import PageTitleCheck from '../../../Applications/Sfusd/Common/PageTitleCheck'
+import PageHeader from '../../../Applications/Sfusd/Common/PageHeader'
+import TrackingAtAGlanceSanity from '../../../Applications/Sfusd/TrackingAtAGlance/TrackingAtAGlanceSanity'
+import DateFilter from '../../../Applications/Sfusd/Common/DateFilter'
+import Dropdown from '../../../Applications/Sfusd/Common/DropDown'
+import TrackingAtAGlanceObjects from '../../../Applications/Sfusd/TrackingAtAGlance/TrackingAtAGlanceObjects'
 //import trackingAtAGlanceDropdown from './examples/DemoApplication/TrackingAtAGlance/DropDown'
 
 describe('one',function()
 {
-   
 it('navigate to Tracking At a Glance',function()
 {
     const np = new NavigateToPage
@@ -21,6 +22,12 @@ it('navigate to Tracking At a Glance',function()
    {
     const header = new PageHeader
     header.pageHeaderCheck()
+   })
+   it('verify date filters ',function()
+   {
+        const date = new DateFilter
+        date.startDateDefault
+        date.endDateDefault
    })
    it('verify all tiles are present',function()
    {
@@ -36,12 +43,6 @@ it('navigate to Tracking At a Glance',function()
    {
     const text = new TrackingAtAGlanceSanity
     text.tilesTextCheck()
-   })
-   it('date filter',function()
-   {
-       const date = new DateFilter
-       date.startDateDefault()
-       date.endDateDefault()
    })
    it('dropdown sanity',function()
    {

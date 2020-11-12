@@ -5,7 +5,7 @@ class DateFilter{
     }
     endDateDefault(){
         const todaysDate = Cypress.moment().format('DD-MMM-YYYY')
-        cy.get('[placeholder="End Date"]').should('have.value','05-Nov-2020')
+        cy.get('[placeholder="End Date"]').should('have.value',todaysDate)
         return this
     }
 }

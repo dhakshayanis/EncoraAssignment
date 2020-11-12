@@ -12,6 +12,8 @@ class PeopleAndDeviceObjects{
     static studentsTab = 'Students'
     static schoolsTab ='Schools / District'
     static unassignedDevices ='Unassigned Devices'
+    static totalLaptops = 'Total Laptops'
+    static totalTablets = 'Total Tablets'
     static districtEnrollmentDropdownName ='View by'
     static deviceDistributionDropdownName ='View by'
     static hotspotDistributionDropdownName ='View by'
@@ -33,6 +35,8 @@ class PeopleAndDeviceObjects{
         id.set(PeopleAndDeviceObjects.deviceDistribution, 2);
         id.set(PeopleAndDeviceObjects.hotspotDistribution, 3);
         id.set(PeopleAndDeviceObjects.schoolsDistrictChartcomponent, 1);
+        id.set(PeopleAndDeviceObjects.totalLaptops, 1);
+        id.set(PeopleAndDeviceObjects.totalTablets, 2);
         return id.get(chartComponent)
     }
     static getTotalXpath(chartComponent){

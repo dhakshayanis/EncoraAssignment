@@ -1,14 +1,15 @@
-import NavigateToPage from '../../../Applications/boston/Common/NavigateToPage'
-import PageHeader from '../../../Applications/boston/Common/PageHeader'
-import goToTab from '../../../Applications/boston/UsageAnalysis/GoToTab'
-import DimensionView from '../../../Applications/boston/UsageAnalysis/DimensionView'
-import TimeSeries from '../../../Applications/boston/UsageAnalysis/TimeSeries'
-import HeatMapAnalysis from '../../../Applications/boston/UsageAnalysis/HeatMapAnalysis'
-import MapView from '../../../Applications/boston/UsageAnalysis/MapView'
-import Table from '../../../Applications/boston/Common/Table'
-import Dropdown from '../../../Applications/boston/Common/DropDown'
-import DateFilter from '../../../Applications/boston/Common/DateFilter'
-import UsageAnalysisObjects from '../../../Applications/boston/UsageAnalysis/UsageAnalysisObjects'
+import NavigateToPage from '../../../Applications/Sfusd/Common/NavigateToPage'
+import PageHeader from '../../../Applications/Sfusd/Common/PageHeader'
+import goToTab from '../../../Applications/Sfusd/UsageAnalysis/GoToTab'
+import DimensionView from '../../../Applications/Sfusd/UsageAnalysis/DimensionView'
+import TimeSeries from '../../../Applications/Sfusd/UsageAnalysis/TimeSeries'
+import HeatMapAnalysis from '../../../Applications/Sfusd/UsageAnalysis/HeatMapAnalysis'
+import MapView from '../../../Applications/Sfusd/UsageAnalysis/MapView'
+import Table from '../../../Applications/Sfusd/Common/Table'
+import Dropdown from '../../../Applications/Sfusd/Common/DropDown'
+import DateFilter from '../../../Applications/Sfusd/Common/DateFilter'
+import UsageAnalysisObjects from '../../../Applications/Sfusd/UsageAnalysis/UsageAnalysisObjects'
+
 
 
 describe('Usage Analysis Sanity Test',function()
@@ -16,6 +17,7 @@ describe('Usage Analysis Sanity Test',function()
    it('navigate to UsageAnalysis',function()
    {
         const np = new NavigateToPage
+        
         np.goToTrackingAtAGlancePage()
         np.goToPage(UsageAnalysisObjects.pageTitle)
    })

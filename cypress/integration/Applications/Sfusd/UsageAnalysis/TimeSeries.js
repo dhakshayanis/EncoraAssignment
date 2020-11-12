@@ -4,7 +4,7 @@ import DropDownObjects from '../Common/DropDownObjects'
 class TimeSeries{
     static timeSeriesChartDropDownID = 'UA_TimeSeriesDropDown'
     static timeSeriesDropDownName = 'District Aggregate'
-    static timeSeriesDropDownOptions = ['District Aggregate','Ethnicity','Gender','Grade','School Level','Special Group','Student Device Assignment','Student Hotspot Assignment','Cohort']
+    static timeSeriesDropDownOptions = ['District Aggregate','Cohort','Ethnicity','Gender','Grade','School Level','Special Group','Student Device Assignment','Student Hotspot Assignment']
 
     sanity(){
         cy.get('#chartdiv').should('be.visible')
