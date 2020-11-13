@@ -8,11 +8,14 @@ class PercentageCalculation{
                 nr = nr.replace(',','')
                 dr = dr.replace(',','').replace('of ','')
                 let percentExpected = (nr*100/dr).toFixed(2).toString()+"%";
-                if(tileID == TrackingAtAGlanceObjects.studentDevicesID){
+                if(tileID == TrackingAtAGlanceObjects.devicesDistributionID){
                     percentExpected = (nr*100/dr).toFixed(0).toString()+"%";
                 }
                 cy.log(percentExpected)
                 cy.get(tileID+TrackingAtAGlanceObjects.percentageInKpi).invoke('text').then(percent=>{
+                    if(percent ==''){
+                        percent = 'Infinity%'
+                    }
                     let percentActual = percent;
                     cy.log(percentActual)
                     expect(percentExpected).to.equal(percentActual)
@@ -24,7 +27,7 @@ class PercentageCalculation{
     percentageCheckInAllTiles(){
         const percent = new PercentageCalculation
         percent.percentageCheck(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
-        //percent.percentageCheck(TrackingAtAGlanceObjects.dailyActiveStudentsID)
+        percent.percentageCheck(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         percent.percentageCheck(TrackingAtAGlanceObjects.devicesDistributionID)
         percent.percentageCheck(TrackingAtAGlanceObjects.applicationLoginsID)
         percent.percentageCheck(TrackingAtAGlanceObjects.activeTeachersID)

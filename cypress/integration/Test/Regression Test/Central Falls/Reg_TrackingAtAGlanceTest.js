@@ -3,6 +3,7 @@ import PageTitleCheck from '../../../Applications/CentralFalls/Common/PageTitleC
 import TrackingAtAGlanceObjects from '../../../Applications/CentralFalls/TrackingAtAGlance/TrackingAtAGlanceObjects'
 import PercentageCalculation from '../../../Applications/CentralFalls/TrackingAtAGlance/PercentageCalculation'
 import WriteValuesInKPIs from '../../../Applications/CentralFalls/TrackingAtAGlance/WriteVauesInAtAGlancePage'
+import PercentValueInBars from '../../../Applications/CentralFalls/TrackingAtAGlance/PercentValueInBars'
 
 describe('one',function()
 {
@@ -22,6 +23,10 @@ describe('one',function()
     {
         const values = new WriteValuesInKPIs
         values.writeAllValues()
+    })
+    it('colored value in bars', function(){
+        const color = new PercentValueInBars
+        color.coloredValueInBars()
     })
 
 })
