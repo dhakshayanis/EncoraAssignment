@@ -1,13 +1,13 @@
 { 
 "District EnrollmentTotal": "3,318",
-"ChartDistrict Enrollmentdropdown1": [404 ,282 ,2,481 ,105 ,16 ,30 ],
-"ChartDistrict Enrollmentdropdown2": [1,662 ,1,656 ],
-"ChartDistrict Enrollmentdropdown3": [269 ,5 ,274 ,269 ,270 ,279 ,265 ,258 ,215 ,247 ,223 ,261 ,252 ,231 ],
-"ChartDistrict Enrollmentdropdown4": [3,318 ,421 ,906 ,558 ,664 ],
+"ChartDistrict Enrollmentdropdown1": [404,282,2481,105,16,30],
+"ChartDistrict Enrollmentdropdown2": [1662,1656],
+"ChartDistrict Enrollmentdropdown3": [269,5,274,269,270,279,265,258,215,247,223,261,252,231],
+"ChartDistrict Enrollmentdropdown4": [3318,421,906,558,664],
 "Device DistributionTotal": "2,841",
-"ChartDevice Distributiondropdown1": [346 ,222 ,2,147 ,90 ,13 ,23 ],
-"ChartDevice Distributiondropdown2": [1,431 ,1,410 ],
-"ChartDevice Distributiondropdown3": [5 ,3 ,175 ,194 ,263 ,273 ,263 ,257 ,214 ,242 ,222 ,255 ,249 ,226 ],
-"ChartDevice Distributiondropdown4": [2,841 ,315 ,810 ,479 ,589 ],
+"ChartDevice Distributiondropdown1": [346,222,2147,90,13,23],
+"ChartDevice Distributiondropdown2": [1431,1410],
+"ChartDevice Distributiondropdown3": [5,3,175,194,263,273,263,257,214,242,222,255,249,226],
+"ChartDevice Distributiondropdown4": [2841,315,810,479,589],
 "End" : "dummy" 
  } 

@@ -4,22 +4,6 @@ import Dropdown from '../Common/DropDown'
 import DropDownObjects from '../Common/DropDownObjects'
 
 class CheckChartsValue{
-    /*writeValues(){
-        const write = new writeJSON
-        const writeChartValues = new CheckChartsValue
-        write.start('PeopleAndDeviceChart')
-        cy.xpath(PeopleAndDeviceObjects.getTotalXpath(PeopleAndDeviceObjects.districtEnrollment)).invoke('text').then(value=>{
-            write.writeValuesInJSON('PeopleAndDeviceChart',PeopleAndDeviceObjects.districtEnrollment+'Total',value)
-        })
-        cy.xpath(PeopleAndDeviceObjects.getTotalXpath(PeopleAndDeviceObjects.deviceDistribution)).invoke('text').then(value=>{
-            write.writeValuesInJSON('PeopleAndDeviceChart',PeopleAndDeviceObjects.deviceDistribution+'Total',value)
-        })
-
-        writeChartValues.writeValuesInchart(PeopleAndDeviceObjects.districtEnrollment)
-        writeChartValues.writeValuesInchart(PeopleAndDeviceObjects.deviceDistribution)
-        write.end('PeopleAndDeviceChart')
-        return this
-    }*/
     writeValuesInchart(dropdownID){
         const write = new writeJSON
         const dd = new Dropdown
@@ -27,7 +11,7 @@ class CheckChartsValue{
         cy.xpath(PeopleAndDeviceObjects.getTotalXpath(dropdownID)).invoke('text').then(value=>{
             write.writeValuesInJSON('PeopleAndDeviceChart',dropdownID+'Total',value)
         })
-        let noOfOptions = ddo.getDropDownOptions(dropdownID).length;//dd.getNumberOfDropdownOptions(dropdownName)
+        let noOfOptions = ddo.getDropDownOptions(dropdownID).length;
         cy.log(noOfOptions)
         for(let option=1; option<= noOfOptions; option++){
             cy.log('In loop dd:'+option)
@@ -40,7 +24,7 @@ class CheckChartsValue{
             for(let val=1; val<= valuesCount; val++){
                 cy.xpath(PeopleAndDeviceObjects.getValueXpath(dropdownID)+'['+val+']').invoke('text').then(value=>{
                     cy.log(value)
-                    let valueApp = value+' '
+                    let valueApp = value.replace(',','')
                     cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json',valueApp, { flag: 'a+' })
                     if(val < valuesCount){
                         cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json',',', { flag: 'a+' })
