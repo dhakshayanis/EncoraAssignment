@@ -40,7 +40,9 @@ class goToTab{
         return this
     }
     clickKpi(boxName, operation){
-        cy.xpath(KPI.getBoxNameXpath(boxName)+KPI.bars).then((barsCount)=>{
+        const boxNameXpath = KPI.getBoxNameXpath(boxName)
+        cy.log('bars : '+KPI.getBoxNameXpath(boxName)+KPI.bars)
+        cy.xpath(boxNameXpath+KPI.bars).then((barsCount)=>{
             let numberOfBars = barsCount.length;
             cy.log('bars ='+numberOfBars)
             for(let i=1; i<= numberOfBars; i++){
