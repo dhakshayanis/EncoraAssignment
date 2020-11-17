@@ -1,6 +1,6 @@
-import PeopleAndDeviceSanity from './PeopleAndDeviceSanity'
+//import PeopleAndDeviceSanity from './PeopleAndDeviceSanity'
 import TableObjects from './TableObjects'
-import writeJSON from '../WriteJSON'
+import writeJSON from '../Common/WriteJSON'
 
 class TableValues{
 

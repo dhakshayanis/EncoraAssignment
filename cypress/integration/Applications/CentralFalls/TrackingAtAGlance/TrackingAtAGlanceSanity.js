@@ -15,7 +15,7 @@ class TrackingAtAGlanceSanity{
     }
     static isTileVisible(tileID){
         cy.get(tileID).scrollIntoView()
-        cy.get(tileID).should('be.visible')//student  active
+        cy.get(tileID).should('be.visible')
     }
     static checkTileHeader(tileID){
         cy.get(tileID).scrollIntoView()
@@ -35,14 +35,14 @@ class TrackingAtAGlanceSanity{
         return this
     }
     static textCheck(tileID){
-        cy.contains(TrackingAtAGlanceObjects.getTitleText1(tileID))
-            .should('have.text',TrackingAtAGlanceObjects.getTitleText1(tileID))
-        if(TrackingAtAGlanceObjects.getTitleText2(tileID)==''){
+        cy.contains(TrackingAtAGlanceObjects.getTileText1(tileID))
+            .should('have.text',TrackingAtAGlanceObjects.getTileText1(tileID))
+        if(TrackingAtAGlanceObjects.getTileText2(tileID)==''){
             cy.log('Text 2 is null for this tile')
         }
         else{
-            cy.get(tileID).contains(TrackingAtAGlanceObjects.getTitleText2(tileID))
-            .should('have.text',TrackingAtAGlanceObjects.getTitleText2(tileID))
+            cy.get(tileID).contains(TrackingAtAGlanceObjects.getTileText2(tileID))
+            .should('have.text',TrackingAtAGlanceObjects.getTileText2(tileID))
         }       
     }    
     tilesTextCheck(){
@@ -72,6 +72,5 @@ class TrackingAtAGlanceSanity{
         }
         return this
     }
-
 }
 export default TrackingAtAGlanceSanity

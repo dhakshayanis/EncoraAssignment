@@ -1,7 +1,7 @@
 import PageTitleCheck from '../Common/PageTitleCheck'
 
 class NavigateToPage{
-  static url = 'https://cfs-i360-k12-dev.uc.r.appspot.com/'
+  static url = 'https://cfs-i360-k12-dev.uc.r.appspot.com'//'https://cfs-i360-k12-dev.uc.r.appspot.com/'
   goToTrackingAtAGlancePage(){
         cy.visit(NavigateToPage.url)//("https://bps.remotelearning.innive.io/")
         Cypress.on('uncaught:exception', (err, runnable) => {
