@@ -3,7 +3,7 @@ import PeopleAndDeviceObjects from '../../../Applications/Sfusd/PeopleAndDevice/
 import CheckChartsValue from '../../../Applications/Sfusd/PeopleAndDevice/ChartsValue'
 import PeopleAndDeviceSanity from '../../../Applications/Sfusd/PeopleAndDevice/PeopleAndDeviceSanity'
 import TableValues from '../../../Applications/Sfusd/PeopleAndDevice/TableValues'
-import writeJSON from '../../../Applications/Sfusd/common/WriteJSON'
+import writeJSON from './Applications/Sfusd/common/WriteJSON'
 
 describe('People and Device Regression Test',function()
 {
