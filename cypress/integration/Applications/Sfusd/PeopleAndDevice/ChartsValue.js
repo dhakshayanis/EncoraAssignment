@@ -37,10 +37,12 @@ class CheckChartsValue{
             cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json','\n'+'"Chart'+dropdownID+'dropdown'+option+'": [', { flag: 'a+' })
             cy.xpath(PeopleAndDeviceObjects.getValueXpath(dropdownID)).its('length').then(valuesCount=>{
                 cy.log(valuesCount)
+
             for(let val=1; val<= valuesCount; val++){
                 cy.xpath(PeopleAndDeviceObjects.getValueXpath(dropdownID)+'['+val+']').invoke('text').then(value=>{
                     cy.log(value)
-                    let valueApp = value+' '
+                    let valueApp = value.replace(',','')
+                    // let valueApp = value+' '
                     cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json',valueApp, { flag: 'a+' })
                     if(val < valuesCount){
                         cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json',',', { flag: 'a+' })
