@@ -27,7 +27,7 @@ class UsageAnalysisObjects{
     static TeachersBarName6 = 'Daily Avg Meeting Minutes per Teacher'
     static TeachersBarName7 = 'Inactive Teacher ( Teacher with less than 10% or No Login)'
 
-    static textInTab = '.wrap-component tree_graph'
+    static textInTab = 'section.tree_graph'
 
 
 }

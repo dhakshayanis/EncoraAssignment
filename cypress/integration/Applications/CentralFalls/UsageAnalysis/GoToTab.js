@@ -14,23 +14,23 @@ class goToTab{
 
     static getTabsInBar(barName){
         var tabs = new Map();
-        tabs.set(UsageAnalysisObjects.studentsBarName1, goToTab.fiveTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName2, this.fiveTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName3, this.twoTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName4, this.twoTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName5, this.twoTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName6, this.twoTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName7, this.fourTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName8, this.fourTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName9, this.fourTabsInStudent);
-        tabs.set(UsageAnalysisObjects.studentsBarName10, this.oneTabInStudent);
-        tabs.set(UsageAnalysisObjects.teachersBarName1, this.threeTabsInTeacher);
-        tabs.set(UsageAnalysisObjects.teachersBarName2, this.threeTabsInTeacher);
-        tabs.set(UsageAnalysisObjects.teachersBarName3, this.oneTabInTeacher);
-        tabs.set(UsageAnalysisObjects.teachersBarName4, this.oneTabInTeacher);
-        tabs.set(UsageAnalysisObjects.teachersBarName5, this.oneTabInTeacher);
-        tabs.set(UsageAnalysisObjects.teachersBarName6, this.oneTabInTeacher);
-        tabs.set(UsageAnalysisObjects.teachersBarName7, this.twoTabsInTeacher);
+        tabs.set(UsageAnalysisObjects.StudentsBarName1, goToTab.fiveTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName2, goToTab.fiveTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName3, goToTab.twoTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName4, goToTab.twoTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName5, goToTab.twoTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName6, goToTab.twoTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName7, goToTab.twoTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName8, goToTab.fourTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName9, goToTab.fourTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName10, goToTab.oneTabInStudent);
+        tabs.set(UsageAnalysisObjects.TeachersBarName1, goToTab.threeTabsInTeacher);
+        tabs.set(UsageAnalysisObjects.TeachersBarName2, goToTab.threeTabsInTeacher);
+        tabs.set(UsageAnalysisObjects.TeachersBarName3, goToTab.oneTabInTeacher);
+        tabs.set(UsageAnalysisObjects.TeachersBarName4, goToTab.oneTabInTeacher);
+        tabs.set(UsageAnalysisObjects.TeachersBarName5, goToTab.oneTabInTeacher);
+        tabs.set(UsageAnalysisObjects.TeachersBarName6, goToTab.oneTabInTeacher);
+        tabs.set(UsageAnalysisObjects.TeachersBarName7, goToTab.twoTabsInTeacher);
         return tabs.get(barName)
     }
 
@@ -39,26 +39,29 @@ class goToTab{
         cy.wait(3000)
         return this
     }
-    clickKpi(boxName, operation){
+    clickKpi(boxName, page, operation){
         const boxNameXpath = KPI.getBoxNameXpath(boxName)
         cy.log('bars : '+KPI.getBoxNameXpath(boxName)+KPI.bars)
         cy.xpath(boxNameXpath+KPI.bars).then((barsCount)=>{
             let numberOfBars = barsCount.length;
             cy.log('bars ='+numberOfBars)
             for(let i=1; i<= numberOfBars; i++){
-                let barId = boxName + 'BarName' +i
+                cy.get(PageTitleCheck.pageTitle).scrollIntoView()
+                let barId = boxName + 'BarName' +(i+((page-1)*5))
                 let barName = UsageAnalysisObjects[barId]
                 cy.contains(barName).click()
                 cy.log('barname ='+barName)
                 let tabs = goToTab.getTabsInBar(barName)
-                for(let j=1; j<= tabs.length; j++){
+                cy.log(tabs.length)
+                for(let j=0; j< tabs.length; j++){
                     if(operation=='Tab name'){
                         cy.contains(tabs[j]).should('be.visible')
                     }
                     if(operation=='Tab text'){
-                        cy.get(UsageAnalysisObjects.textInTab).cntains(barName).should('be.visible')
+                        cy.get(UsageAnalysisObjects.textInTab).scrollIntoView()
+                        cy.get(UsageAnalysisObjects.textInTab).contains(barName).should('be.visible')
                         cy.readFile('./cypress/fixtures/UsageAnalysis'+boxName+'kpis.json').then((name)=>{
-                            expectedValue = name.barName
+                            let expectedValue = name[barName]
                             cy.get(UsageAnalysisObjects.textInTab).contains(expectedValue).should('be.visible')
                         })
                     }                   
@@ -67,16 +70,16 @@ class goToTab{
         })
     }
     clickBarsInAllPages(boxName, operation){
-        cy.get(PageTitleCheck.pageTitle).scrollIntoView()
         const tab = new goToTab
         const kpiName = new KPI
         const boxNameXpath = KPI.getBoxNameXpath(boxName)
+        cy.get(PageTitleCheck.pageTitle).scrollIntoView()
         cy.xpath(boxNameXpath+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let lastPageNumber = parseInt(splittedText[1])
             cy.log('number of pages : '+lastPageNumber)
             for(let page = 1;page<=lastPageNumber; page++){
-                tab.clickKpi(boxName, operation)
+                tab.clickKpi(boxName, page, operation)
                 kpiName.navigateToPage(boxNameXpath)
             }
         })
@@ -87,7 +90,7 @@ class goToTab{
     }
     verifyTextInTabForAllKpis(boxName){
         const tab = new goToTab
-        tab.clickBarsInAllPages(boxName, 'Tab taxt')        
+        tab.clickBarsInAllPages(boxName, 'Tab text')        
     }
 }
 export default goToTab

@@ -49,7 +49,7 @@ describe('Usage Analysisn Regression Test',function()
    it('verify tabs text in students', function()
    {
        const tab = new goToTab
-       tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.teacherBoxName)
+       tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.studentBoxName)
    })
    it('verify tabs text in teachers', function()
    {
