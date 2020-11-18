@@ -7,7 +7,7 @@ import PercentValueInBars from '../../../Applications/CentralFalls/TrackingAtAGl
 import EnrollemntCheck from '../../../Applications/CentralFalls/TrackingAtAGlance/EnrollmentCountCheck'
 
 describe('one',function()
-{/*
+{
     it('navigate to Tracking At a Glance',function()
     {
         const np = new NavigateToPage
@@ -38,7 +38,7 @@ describe('one',function()
     {
         const values = new PercentValueInBars
         values.verifyColoredBarValueInAllTiles()
-    })*/
+    })
     it('Verify enrollement counts',function()
     {
         const values = new EnrollemntCheck

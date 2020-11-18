@@ -7,7 +7,7 @@ import UsageVsAtAGlance from '../../../Applications/CentralFalls/UsageAnalysis/U
 import CheckPercentageSum from '../../../Applications/CentralFalls/UsageAnalysis/CheckPercentageSum'
 
 describe('Usage Analysisn Regression Test',function()
-{/*
+{
    it('navigate to Usage',function()
    {
        const np = new NavigateToPage
@@ -57,7 +57,7 @@ describe('Usage Analysisn Regression Test',function()
    {
        const tab = new goToTab
        tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.teacherBoxName)
-   })*/
+   })
    it('compare usage and at a glance', function()
    {
        const compare = new UsageVsAtAGlance
