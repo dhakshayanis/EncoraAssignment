@@ -25,7 +25,7 @@ class CheckChartsValue{
         const dd = new Dropdown
         const ddo = new DropDownObjects
         cy.xpath(PeopleAndDeviceObjects.getTotalXpath(dropdownID)).invoke('text').then(value=>{
-            write.writeValuesInJSON('PeopleAndDeviceChart',dropdownID+'Total',value)
+            write.writeValuesInJSON('SfusdPeopleAndDeviceChart',dropdownID+'Total',value)
         })
         let noOfOptions = ddo.getDropDownOptions(dropdownID).length;//dd.getNumberOfDropdownOptions(dropdownName)
         cy.log(noOfOptions)
@@ -34,7 +34,7 @@ class CheckChartsValue{
             dd.openDropDown(dropdownID)
             dd.clickOption(option)
             cy.wait(2000)
-            cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json','\n'+'"Chart'+dropdownID+'dropdown'+option+'": [', { flag: 'a+' })
+            cy.writeFile('./cypress/fixtures/SfusdPeopleAndDeviceChart.json','\n'+'"Chart'+dropdownID+'dropdown'+option+'": [', { flag: 'a+' })
             cy.xpath(PeopleAndDeviceObjects.getValueXpath(dropdownID)).its('length').then(valuesCount=>{
                 cy.log(valuesCount)
 
@@ -43,20 +43,20 @@ class CheckChartsValue{
                     cy.log(value)
                     let valueApp = value.replace(',','')
                     // let valueApp = value+' '
-                    cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json',valueApp, { flag: 'a+' })
+                    cy.writeFile('./cypress/fixtures/SfusdPeopleAndDeviceChart.json',valueApp, { flag: 'a+' })
                     if(val < valuesCount){
-                        cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json',',', { flag: 'a+' })
+                        cy.writeFile('./cypress/fixtures/SfusdPeopleAndDeviceChart.json',',', { flag: 'a+' })
                     }
                 })
             }
             })
-            cy.writeFile('./cypress/fixtures/PeopleAndDeviceChart.json','],', { flag: 'a+' })
+            cy.writeFile('./cypress/fixtures/SfusdPeopleAndDeviceChart.json','],', { flag: 'a+' })
         }
         return this
     }
     checkChartTotal(dropdownID){
         const ddo = new DropDownObjects
-        cy.readFile('./cypress/fixtures/PeopleAndDeviceChart.json').then((value) => {
+        cy.readFile('./cypress/fixtures/SfusdPeopleAndDeviceChart.json').then((value) => {
             //expect(user.name).to.equal('Eliza') // true
             let indexName = dropdownID+'Total'
             let totalActual = parseInt((value[indexName]).replace(',',''));

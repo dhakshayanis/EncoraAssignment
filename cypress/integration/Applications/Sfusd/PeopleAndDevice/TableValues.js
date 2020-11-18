@@ -1,6 +1,6 @@
 import PeopleAndDeviceSanity from './PeopleAndDeviceSanity'
 import TableObjects from './TableObjects'
-import writeJSON from '../WriteJSON'
+import writeJSON from '../Common/WriteJSON'
 
 class TableValues{
 
@@ -28,14 +28,14 @@ class TableValues{
         return this
     }
     compareChartTotalWithTableTotal(dropdownID){
-        cy.readFile('./cypress/fixtures/PeopleAndDeviceChart.json').then((total) => {
+        cy.readFile('./cypress/fixtures/SfusdPeopleAndDeviceChart.json').then((total) => {
             let indexName = dropdownID+'Total'
             let totalActual = parseInt((total[indexName]).replace(',',''));
             cy.log(totalActual)
             let sum = 0;
             let colNum = TableObjects.getColumnNumber(dropdownID)
             let dataKey = 'Column'+colNum+'Page1'
-            cy.readFile('./cypress/fixtures/PeopleAndDeviceStudentsTable.json').then((value) => {
+            cy.readFile('./cypress/fixtures/SfusdPeopleAndDeviceStudentsTable.json').then((value) => {
                 for(let i=0; i<(value[dataKey].length); i++){
                     sum = value[dataKey][i]+sum
                 }
@@ -45,7 +45,7 @@ class TableValues{
         return this
     }
     compareTableValuesWithStudentsTable(jsonName){
-        cy.readFile('./cypress/fixtures/PeopleAndDeviceStudentsTable.json').then((valueA) => {
+        cy.readFile('./cypress/fixtures/SfusdPeopleAndDeviceStudentsTable.json').then((valueA) => {
             cy.readFile('./cypress/fixtures/'+jsonName+'.json').then((valueB) => {
                 let jsonAsStringArrayA = Object.entries(valueA).toString().split(',')
                 let jsonAsStringArrayB = Object.entries(valueB).toString().split(',')
