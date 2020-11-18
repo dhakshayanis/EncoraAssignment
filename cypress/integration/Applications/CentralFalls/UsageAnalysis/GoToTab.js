@@ -49,6 +49,7 @@ class goToTab{
                 cy.get(PageTitleCheck.pageTitle).scrollIntoView()
                 let barId = boxName + 'BarName' +(i+((page-1)*5))
                 let barName = UsageAnalysisObjects[barId]
+                cy.wait(2000)
                 cy.contains(barName).click()
                 cy.log('barname ='+barName)
                 let tabs = goToTab.getTabsInBar(barName)
@@ -59,8 +60,9 @@ class goToTab{
                     }
                     if(operation=='Tab text'){
                         cy.get(UsageAnalysisObjects.textInTab).scrollIntoView()
+                        cy.contains(tabs[j]).click()
                         cy.get(UsageAnalysisObjects.textInTab).contains(barName).should('be.visible')
-                        cy.readFile('./cypress/fixtures/UsageAnalysis'+boxName+'kpis.json').then((name)=>{
+                        cy.readFile('./cypress/fixtures/CfsUsageAnalysis'+boxName+'kpis.json').then((name)=>{
                             let expectedValue = name[barName]
                             cy.get(UsageAnalysisObjects.textInTab).contains(expectedValue).should('be.visible')
                         })

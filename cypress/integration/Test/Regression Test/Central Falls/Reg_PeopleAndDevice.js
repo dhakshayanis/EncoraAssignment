@@ -1,9 +1,9 @@
-import NavigateToPage from './examples/DemoApplication/NavigateToPage'
-import PeopleAndDeviceObjects from './examples/DemoApplication/PeopleAndDevice/PeopleAndDeviceObjects'
-import CheckChartsValue from './examples/DemoApplication/PeopleAndDevice/ChartsValue'
-import PeopleAndDeviceSanity from './examples/DemoApplication/PeopleAndDevice/PeopleAndDeviceSanity'
-import TableValues from './examples/DemoApplication/PeopleAndDevice/TableValues'
-import writeJSON from './examples/DemoApplication/WriteJSON'
+import NavigateToPage from '../../../Applications/CentralFalls/Common/NavigateToPage'
+import PeopleAndDeviceObjects from '../../../Applications/CentralFalls/PeopleAndDevice/PeopleAndDeviceObjects'
+import CheckChartsValue from '../../../Applications/CentralFalls/PeopleAndDevice/ChartsValue'
+import PeopleAndDeviceSanity from '../../../Applications/CentralFalls/PeopleAndDevice/PeopleAndDeviceSanity'
+import TableValues from '../../../Applications/CentralFalls/PeopleAndDevice/TableValues'
+import writeJSON from '../../../Applications/CentralFalls/Common/WriteJSON'
 
 describe('People and Device Regression Test',function()
 {
@@ -15,11 +15,11 @@ describe('People and Device Regression Test',function()
    })
    it('write chart values',function(){
        const write = new writeJSON
-       write.start('PeopleAndDeviceChart')
+       write.start('CfsPeopleAndDeviceChart')
        const chartsValues = new CheckChartsValue
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.districtEnrollment)
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.deviceDistribution)
-       write.end('PeopleAndDeviceChart')
+       write.end('CfsPeopleAndDeviceChart')
    })
    it('read chart values and compare with total',function(){
         const prepareJSON = new CheckChartsValue
@@ -32,11 +32,11 @@ describe('People and Device Regression Test',function()
     })
     it('write table values', function(){
         const write = new writeJSON
-        write.start('PeopleAndDeviceStudentsTable')
+        write.start('CfsPeopleAndDeviceStudentsTable')
         const table = new TableValues
-        table.writeTableValues('PeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.districtEnrollment)
-        table.writeTableValues('PeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.deviceDistribution)
-        write.end('PeopleAndDeviceStudentsTable')
+        table.writeTableValues('CfsPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.districtEnrollment)
+        table.writeTableValues('CfsPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.deviceDistribution)
+        write.end('CfsPeopleAndDeviceStudentsTable')
     })
     it('read table values and compare with total', function(){
         const table = new TableValues
@@ -47,14 +47,14 @@ describe('People and Device Regression Test',function()
         const sanity = new PeopleAndDeviceSanity
         sanity.goToTab(PeopleAndDeviceObjects.schoolsTab)
         const write = new writeJSON
-        write.start('PeopleAndDeviceSchoolsTable')
+        write.start('CfsPeopleAndDeviceSchoolsTable')
         const table = new TableValues
-        table.writeTableValues('PeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.districtEnrollment)
-        table.writeTableValues('PeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.deviceDistribution)
-        write.end('PeopleAndDeviceSchoolsTable')
+        table.writeTableValues('CfsPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.districtEnrollment)
+        table.writeTableValues('CfsPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.deviceDistribution)
+        write.end('CfsPeopleAndDeviceSchoolsTable')
     })
     it('compare table values in schools tab',function(){
         const table = new TableValues
-        table.compareTableValuesWithStudentsTable('PeopleAndDeviceSchoolsTable')
+        table.compareTableValuesWithStudentsTable('CfsPeopleAndDeviceSchoolsTable')
     })
 })
