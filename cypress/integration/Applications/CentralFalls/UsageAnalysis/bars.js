@@ -16,7 +16,7 @@ class KPI{
     getKPINamesInaPage(jsonName,page,boxName){
         const writing = new writeJson
         if(page>1){
-            cy.writeFile('./cypress/fixtures/UsageAnalysisKpis.json',' ,', { flag: 'a+' })
+            cy.writeFile('./cypress/fixtures/CfsUsageAnalysisKpis.json',' ,', { flag: 'a+' })
         }
         cy.xpath(boxName+KPI.bars).then((barsCount)=>{
             let numberOfBars = barsCount.length;
@@ -29,10 +29,10 @@ class KPI{
                     })
                 })
                 cy.xpath(kpiNamesXpath).invoke('text').then(kpiNames=>{
-                    writing.writeValuesInArray('UsageAnalysisKpis','"'+kpiNames+'"')
+                    writing.writeValuesInArray('CfsUsageAnalysisKpis','"'+kpiNames+'"')
                 })
                 if(i<numberOfBars){
-                    cy.writeFile('./cypress/fixtures/UsageAnalysisKpis.json',' ,', { flag: 'a+' })
+                    cy.writeFile('./cypress/fixtures/CfsUsageAnalysisKpis.json',' ,', { flag: 'a+' })
                 }
             }
         })
@@ -59,9 +59,9 @@ class KPI{
     }
     getTextInAllBars(boxName){
         const writing = new writeJson
-        const jsonName = 'UsageAnalysis'+boxName+'kpis'
+        const jsonName = 'CfsUsageAnalysis'+boxName+'kpis'
         writing.start(jsonName)
-        writing.startArray('UsageAnalysisKpis',boxName)
+        writing.startArray('CfsUsageAnalysisKpis',boxName)
         const kpiName = new KPI
         const boxNameXpath = KPI.getBoxNameXpath(boxName)
         cy.xpath(boxNameXpath+KPI.page).invoke('text').then(pageText=>{
@@ -72,11 +72,11 @@ class KPI{
                 kpiName.navigateToPage(boxNameXpath)
             }
         })
-        writing.endArray('UsageAnalysisKpis')
+        writing.endArray('CfsUsageAnalysisKpis')
         writing.end(jsonName)
     }
     checkBarNames(boxName){
-        cy.readFile('./cypress/fixtures/UsageAnalysisKpis.json').then((name)=>{
+        cy.readFile('./cypress/fixtures/CfsUsageAnalysisKpis.json').then((name)=>{
             for(let i=1; i<= name[boxName].length; i++){
                 let actualName = name[boxName][i-1]
                 let expectedName = UsageAnalysisObjects[boxName+'BarName'+i]

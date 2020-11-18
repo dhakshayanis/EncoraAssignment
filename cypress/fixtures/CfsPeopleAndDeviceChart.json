@@ -1,0 +1,13 @@
+{ 
+"District EnrollmentTotal": "2,994",
+"ChartDistrict Enrollmentdropdown1": [1065,16,593,178,49,1093],
+"ChartDistrict Enrollmentdropdown2": [1360,1634],
+"ChartDistrict Enrollmentdropdown3": [105,15,19,133,218,215,218,219,194,208,221,216,176,249,209,190,189],
+"ChartDistrict Enrollmentdropdown4": [2994,1335,1578,672],
+"Device DistributionTotal": "2,097",
+"ChartDevice Distributiondropdown1": [715,12,451,107,34,778],
+"ChartDevice Distributiondropdown2": [938,1159],
+"ChartDevice Distributiondropdown3": [6,0,0,19,106,138,159,177,138,169,157,169,141,196,183,171,168],
+"ChartDevice Distributiondropdown4": [2097],
+"End" : "dummy" 
+ } 

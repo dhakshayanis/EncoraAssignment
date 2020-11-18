@@ -16,7 +16,7 @@ describe('Usage Analysisn Regression Test',function()
    {
        const kpi = new KPI
        const write = new writeJSON
-       write.start('UsageAnalysisKpis')
+       write.start('CfsUsageAnalysisKpis')
        kpi.getTextInAllBars(UsageAnalysisObjects.studentBoxName)
    })
    it('bar names',function()
@@ -24,7 +24,7 @@ describe('Usage Analysisn Regression Test',function()
        const kpi = new KPI
        const write = new writeJSON
        kpi.getTextInAllBars(UsageAnalysisObjects.teacherBoxName)
-       write.end('UsageAnalysisKpis')
+       write.end('CfsUsageAnalysisKpis')
    })
    it('verify bar names', function()
    {
@@ -49,7 +49,7 @@ describe('Usage Analysisn Regression Test',function()
    it('verify tabs text in students', function()
    {
        const tab = new goToTab
-       tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.teacherBoxName)
+       tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.studentBoxName)
    })
    it('verify tabs text in teachers', function()
    {
