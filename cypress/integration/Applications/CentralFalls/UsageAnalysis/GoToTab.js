@@ -54,12 +54,12 @@ class goToTab{
                 cy.log('barname ='+barName)
                 let tabs = goToTab.getTabsInBar(barName)
                 cy.log(tabs.length)
+                cy.get(UsageAnalysisObjects.textInTab).scrollIntoView()
                 for(let j=0; j< tabs.length; j++){
                     if(operation=='Tab name'){
                         cy.contains(tabs[j]).should('be.visible')
                     }
                     if(operation=='Tab text'){
-                        cy.get(UsageAnalysisObjects.textInTab).scrollIntoView()
                         cy.contains(tabs[j]).click()
                         cy.get(UsageAnalysisObjects.textInTab).contains(barName).should('be.visible')
                         cy.readFile('./cypress/fixtures/CfsUsageAnalysis'+boxName+'kpis.json').then((name)=>{
