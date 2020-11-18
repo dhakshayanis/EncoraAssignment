@@ -35,12 +35,12 @@ describe('People and Device Regression Test',function()
     })
     it('write table values', function(){
         const write = new writeJSON
-        write.start('PeopleAndDeviceStudentsTable')
+        write.start('SfusdPeopleAndDeviceStudentsTable')
         const table = new TableValues
-        table.writeTableValues('PeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.districtEnrollment)
-        table.writeTableValues('PeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.deviceDistribution)
-        table.writeTableValues('PeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.hotSpotDistribution)
-        write.end('PeopleAndDeviceStudentsTable')
+        table.writeTableValues('SfusdPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.districtEnrollment)
+        table.writeTableValues('SfusdPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.deviceDistribution)
+        table.writeTableValues('SfusdPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.hotSpotDistribution)
+        write.end('SfusdPeopleAndDeviceStudentsTable')
     })
     it('read table values and compare with total', function(){
         const table = new TableValues
@@ -52,15 +52,15 @@ describe('People and Device Regression Test',function()
         const sanity = new PeopleAndDeviceSanity
         sanity.goToTab(PeopleAndDeviceObjects.schoolsTab)
         const write = new writeJSON
-        write.start('PeopleAndDeviceSchoolsTable')
+        write.start('SfusdPeopleAndDeviceSchoolsTable')
         const table = new TableValues
-        table.writeTableValues('PeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.districtEnrollment)
-        table.writeTableValues('PeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.deviceDistribution)
-        table.writeTableValues('PeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.hotSpotDistribution)
-        write.end('PeopleAndDeviceSchoolsTable')
+        table.writeTableValues('SfusdPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.districtEnrollment)
+        table.writeTableValues('SfusdPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.deviceDistribution)
+        table.writeTableValues('SfusdPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.hotSpotDistribution)
+        write.end('SfusdPeopleAndDeviceSchoolsTable')
     })
     it('compare table values in schools tab',function(){
         const table = new TableValues
-        table.compareTableValuesWithStudentsTable('PeopleAndDeviceSchoolsTable')
+        table.compareTableValuesWithStudentsTable('SfusdPeopleAndDeviceSchoolsTable')
     })
 })
