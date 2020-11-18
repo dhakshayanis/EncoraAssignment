@@ -4,9 +4,10 @@ import CheckChartsValue from '../../../Applications/CentralFalls/PeopleAndDevice
 import PeopleAndDeviceSanity from '../../../Applications/CentralFalls/PeopleAndDevice/PeopleAndDeviceSanity'
 import TableValues from '../../../Applications/CentralFalls/PeopleAndDevice/TableValues'
 import writeJSON from '../../../Applications/CentralFalls/Common/WriteJSON'
+import CompareValuesWithTrackingAtAGlance from '../../../Applications/CentralFalls/PeopleAndDevice/CompareValuesWithTrackingAtAGlance'
 
 describe('People and Device Regression Test',function()
-{
+{/*
    it('navigate to People and Device',function()
    {
         const np = new NavigateToPage
@@ -56,5 +57,13 @@ describe('People and Device Regression Test',function()
     it('compare table values in schools tab',function(){
         const table = new TableValues
         table.compareTableValuesWithStudentsTable('CfsPeopleAndDeviceSchoolsTable')
+    })*/
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareEnroll()
+    })
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareDevice()
     })
 })

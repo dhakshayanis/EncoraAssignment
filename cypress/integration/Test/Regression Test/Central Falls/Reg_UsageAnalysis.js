@@ -3,9 +3,11 @@ import KPI from '../../../Applications/CentralFalls/UsageAnalysis/bars'
 import UsageAnalysisObjects from '../../../Applications/CentralFalls/UsageAnalysis/UsageAnalysisObjects'
 import writeJSON from '../../../Applications/CentralFalls/Common/WriteJSON'
 import goToTab from '../../../Applications/CentralFalls/UsageAnalysis/GoToTab'
+import UsageVsAtAGlance from '../../../Applications/CentralFalls/UsageAnalysis/UsageVsAtAGlance'
+import CheckPercentageSum from '../../../Applications/CentralFalls/UsageAnalysis/CheckPercentageSum'
 
 describe('Usage Analysisn Regression Test',function()
-{
+{/*
    it('navigate to Usage',function()
    {
        const np = new NavigateToPage
@@ -55,5 +57,22 @@ describe('Usage Analysisn Regression Test',function()
    {
        const tab = new goToTab
        tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.teacherBoxName)
+   })*/
+   it('compare usage and at a glance', function()
+   {
+       const compare = new UsageVsAtAGlance
+       compare.verifyStudentsActive()
+       compare.verifyStudentsInactive()
+       compare.verifyStudentsInactiveYTD()
+       compare.verifyStudentsAverageNumberOfAppsAccessed()
+       compare.verifyStudentsNoLogonFor7Days()
+       compare.verifyStudentsWeeklyActive()
+       compare.verifyTeachersActive()
+   })
+   it('check percentage sum', function()
+   {
+       const sum = new CheckPercentageSum
+        sum.percentageCheckIn(UsageAnalysisObjects.studentBoxName)
+        sum.percentageCheckIn(UsageAnalysisObjects.teacherBoxName)
    })
 })
