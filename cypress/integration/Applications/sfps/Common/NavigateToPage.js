@@ -6,15 +6,19 @@ class NavigateToPage{
             // returning false here prevents Cypress from failing the test
             return false
           })
-         // cy.get('[name="identifier"]').type('sselvaraj@inniveinc.com')//('demouser@inniveinc.com')
-         // cy.get('#identifierNext').click()
+         //cy.get('[name="identifier"]').type('sselvaraj@inniveinc.com')//('demouser@inniveinc.com')
+         //cy.get('#identifierNext').click()
          //cy.wait(10000)
          //cy.get('[type="password"]').type('Sadhasivam@2020')//('Innive@23')
-          //cy.get('#passwordNext').click()
+         //cy.get('#passwordNext').click()
+        // cy.get('[name="Email"]').type('sselvaraj@inniveinc.com')//('demouser@inniveinc.com')
+          //cy.get('#next').click()
+           //cy.get('[type="password"]').type('Sadhasivam@2020')//('Innive@23')
+          //cy.get('#submit').click()
           cy.wait(10000)
           cy.wait(20000)
           cy.get('[class=external-generic-component-child2]').contains('Remote').click()
-          //cy.wait(30000)
+          cy.wait(30000)
           return this
         }
     goToPage(page)
