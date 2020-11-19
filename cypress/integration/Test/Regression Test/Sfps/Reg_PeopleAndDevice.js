@@ -55,9 +55,9 @@ describe('People and Device Regression Test',function()
         const write = new writeJSON
         write.start('SfpsPeopleAndDeviceSchoolsTable')
         const table = new TableValues
-        table.writeTableValues('SfpsPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.districtEnrollment)
-        table.writeTableValues('SfpsPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.deviceDistribution)
-        table.writeTableValues('SfpsPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.hotspotDistribution)
+        table.writeTableValues('SfpsPeopleAndDeviceSchoolsTable',1,PeopleAndDeviceObjects.districtEnrollment)
+        table.writeTableValues('SfpsPeopleAndDeviceSchoolsTable',1,PeopleAndDeviceObjects.deviceDistribution)
+        table.writeTableValues('SfpsPeopleAndDeviceSchoolsTable',1,PeopleAndDeviceObjects.hotspotDistribution)
         write.end('SfpsPeopleAndDeviceSchoolsTable')
     })
     it('compare table values in schools tab',function(){

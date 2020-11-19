@@ -4,36 +4,25 @@ import writeJSON from '../../sfps/Common/WriteJSON'
 
 class TableValues{
     goToNextPage(jsonName,pageNo,columnName){
-        cy.log('trying to go to next page')
-        cy.get(TableObjects.nextButton).invoke('attr','aria-disabled')then(next => {
-            cy.log('Success')
-            if (next.is(':visible')){
-                cy.log('buttonvisible')
-                //if (next.is(':enabled')) {
-                    cy.log('enabled')
-                    cy.get(TableObjects.nextButton).click({force : true})
-                    cy.log('Clicked')
-                    let state =true
-                    cy.once('fail', (err) => { 
-                    cy.log('Disabled')
-                    state= false  
-                        // Capturing the fail event swallows it and lets the test succeed 
-                        // Now look for the expected messages expect(err.message).to.include('cy.click() failed because this element'); expect(err.message).to.include('is being covered by another element'); done(); });
-                    })
-                    if (state=false)
-                    {
-                        return state;
-                    }
-                        const val= new TableValues  
-                    pageNo=pageNo+1
-                    cy.log('Newpage')
-                    val.writeTableValues(jsonName,pageNo,columnName)
-               // }
+        const val= new TableValues
+        cy.get(TableObjects.nextPage).invoke('attr','aria-disabled').then((disabled)=>{
+            cy.log('disabled state ='+disabled)
+            if(disabled=="false"){
+                cy.get(TableObjects.nextButton).click({force : true})  
+                pageNo=pageNo+1
+                cy.log('Newpage')
+                val.writeTableValues(jsonName,pageNo,columnName)
+            }
+            else{
+                val.goToFirstPage()
             }
         })
     }
+    goToFirstPage(){
+        cy.get('[title="1"] a').click()
+        cy.wait(2000)
+    }
     writeTableValues(jsonName,pageNo,columnName){
-        
         const write = new writeJSON
         //write.start('PeopleAndDeviceStudentsTable')
         let colNum = TableObjects.getColumnNumber(columnName)
