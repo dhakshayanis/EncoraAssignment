@@ -35,5 +35,21 @@ class PercentageCalculation{
         percent.percentageCheck(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
         return this 
     }
+    percentageCheckInMiniKpi(tileID){
+        cy.readFile('./cypress/fixtures/CfsTrackingAtAGlance.json').then((value) => {
+            let key = TrackingAtAGlanceObjects.getTileTitle(tileID)+TrackingAtAGlanceObjects.getTileText2(tileID)
+            let nr = parseInt(value[key][0])
+            let dr = parseInt(value[key][1])
+            let res = (nr*100/dr).toFixed(2).toString()+'%';
+            expect(res).to.equal(value[key][2])
+        })
+    }
+    verifyPercentageInMiniKpiInAllTiles(){
+        const percent = new PercentageCalculation
+        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
+        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.dailyActiveStudentsID)
+        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.devicesDistributionID)
+        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.activeTeachersID)
+    }
 }
 export default PercentageCalculation
