@@ -18,10 +18,10 @@ class TrackingAtAGlanceObjects{
     static nrInKpi = ' [style="color: rgb(4, 90, 181); font-size: 34px; font-weight: 500; line-height: 1;"]'
     static drInKpi = ' [style="color: rgb(98, 113, 129); font-size: 16px; font-weight: 500;"]'
     static percentageInKpi = ' [style*="text-align: right;"]'
-    static nrInMiniKpi = ' [style="color: rgb(4, 90, 181); font-size: 18px; font-weight: 500; text-align: center;"]'
+    static nrInMiniKpi = ' [style*="color: rgb(4, 90, 181); font-size: 18px;"][style*="font-weight: 500; text-align: center;"]'
     static percentXpathInMiniKpi = ' [style*="color: rgb(4, 90, 181); font-weight: 500;"][style*="text-align: center;"]'
-    //' [style*="text-align: center;"][style*=" color: rgb(4, 90, 181);"]'
-    static progressBarBlue = ' .class-room-tile-kpi-bar-chart-progress'
+    static progressBarBlueInMainKpi = '[style="color: rgb(255, 255, 255); width: 100%;"] .class-room-tile-kpi-bar-chart-progress'
+    static progressBarBlueInMiniKpi = ' [style*="border-radius: 5px;"] .class-room-tile-kpi-bar-chart-progress'
     
     static getTileTitle(tileID){
         var title = new Map();

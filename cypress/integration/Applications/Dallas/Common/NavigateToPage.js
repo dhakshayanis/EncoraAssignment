@@ -8,18 +8,18 @@ class NavigateToPage{
             // returning false here prevents Cypress from failing the test
             return false
           })
-          //Login for Edge browser
-          // cy.get('[name="Email"]').type('tambalavanan@inniveince.com')//('demouser@inniveinc.com')
+          //Login for Electron browser
+          // cy.get('[name="Email"]').type('tambalavanan@inniveinc.com')//('demouser@inniveinc.com')
           // cy.get('#next').click()
           // cy.get('[type="password"]').type('9486304276')//('Innive@23')
           // cy.get('#submit').click()
 
-          //Login for Electron browser
-          // cy.get('[name="identifier"]').type('sselvaraj@inniveinc.com')//('demouser@inniveinc.com')
-         // cy.get('#identifierNext').click()
-         //cy.wait(10000)
-         //cy.get('[type="password"]').type('Sadhasivam@2020')//('Innive@23')
-          //cy.get('#passwordNext').click()
+          //Login for Edge browser
+        //    cy.get('[name="identifier"]').type('tambalavanan@inniveinc.com')//('demouser@inniveinc.com')
+        //   cy.get('#identifierNext').click()
+        //  cy.wait(1000)
+        //  cy.get('[type="password"]').type('9486304276')//('Innive@23')
+        //   cy.get('#passwordNext').click()
 
           cy.wait(30000)
           cy.get('[class=external-generic-component-child2]').contains('Remote').click()

@@ -5,7 +5,7 @@ class WriteValuesInKPIs{
     writeAllValues(){
         const val = new WriteValuesInKPIs
         const write = new writeJSON
-        write.start('TrackingAtAGlance')
+        write.start('CfsTrackingAtAGlance')
         val.writeValuesInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
@@ -32,23 +32,22 @@ class WriteValuesInKPIs{
                     nr = WriteValuesInKPIs.checkIfBlank(nr.replace(',',''))
                     dr = WriteValuesInKPIs.checkIfBlank(dr.replace(',','').replace('of ',''))
                     percent = WriteValuesInKPIs.checkIfBlank(percent)
-                    write.startArray('TrackingAtAGlance',tileName+mainKpiTitle)
-                    write.writeValuesInArray('TrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
-                    write.endArray('TrackingAtAGlance')
+                    write.startArray('CfsTrackingAtAGlance',tileName+mainKpiTitle)
+                    write.writeValuesInArray('CfsTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
+                    write.endArray('CfsTrackingAtAGlance')
                 })
             })
         })
         if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
-            (tileID==TrackingAtAGlanceObjects.devicesDistributionID)){
+            (tileID==TrackingAtAGlanceObjects.devicesDistributionID|| (tileID==TrackingAtAGlanceObjects.activeTeachersID))){
             cy.get(tileID+TrackingAtAGlanceObjects.nrInMiniKpi).invoke('text').then((nr)=>{
                 cy.get(tileID+TrackingAtAGlanceObjects.drInKpi).invoke('text').then((dr)=>{
                     cy.get(tileID+TrackingAtAGlanceObjects.percentXpathInMiniKpi).invoke('text').then((percent)=>{
                         nr = nr.replace(',','')
                         dr = dr.replace(',','').replace('of ','')
-                        //write.writeValuesInJSON('TrackingAtAGlance',tileName+miniKpiTitle,'[ '+nr+', '+dr+', '+ percent+']')
-                        write.startArray('TrackingAtAGlance',tileName+miniKpiTitle)
-                        write.writeValuesInArray('TrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
-                        write.endArray('TrackingAtAGlance')
+                        write.startArray('CfsTrackingAtAGlance',tileName+miniKpiTitle)
+                        write.writeValuesInArray('CfsTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
+                        write.endArray('CfsTrackingAtAGlance')
                     })
                 })
             })
