@@ -1,7 +1,7 @@
-import writeJSON from '../WriteJSON'
+import writeJSON from '../Common/WriteJSON'
 import PeopleAndDeviceObjects from './PeopleAndDeviceObjects'
-import Dropdown from '../DropDown'
-import DropDownObjects from '../DropDownObjects'
+import Dropdown from '../Common/DropDown'
+import DropDownObjects from '../Common/DropDownObjects'
 
 class CheckChartsValue{
     /*writeValues(){
