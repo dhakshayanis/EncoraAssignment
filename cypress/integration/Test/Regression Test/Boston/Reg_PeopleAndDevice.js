@@ -13,7 +13,7 @@ describe('People and Device Regression Test',function()
         np.goToTrackingAtAGlancePage()
         np.goToPage(PeopleAndDeviceObjects.pageTitle)
    })
-   it('write chart values',function(){
+   /*it('write chart values',function(){
        const write = new writeJSON
        write.start('BpsPeopleAndDeviceChart')
        const chartsValues = new CheckChartsValue
@@ -25,7 +25,7 @@ describe('People and Device Regression Test',function()
         const prepareJSON = new CheckChartsValue
         prepareJSON.checkChartTotal(PeopleAndDeviceObjects.districtEnrollment)
         prepareJSON.checkChartTotal(PeopleAndDeviceObjects.deviceDistribution)
-    })
+    })*/
     it('switch to table', function(){
         const sanity = new PeopleAndDeviceSanity
         sanity.switchTo(PeopleAndDeviceObjects.tableViewButton)
@@ -34,14 +34,15 @@ describe('People and Device Regression Test',function()
         const write = new writeJSON
         write.start('BpsPeopleAndDeviceStudentsTable')
         const table = new TableValues
-        table.writeTableValues('BpsPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.districtEnrollment)
-        table.writeTableValues('BpsPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.deviceDistribution)
+        table.writeTableValues('BpsPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.districtEnrollment)
+        table.writeTableValues('BpsPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.deviceDistribution)
         write.end('BpsPeopleAndDeviceStudentsTable')
     })
     it('read table values and compare with total', function(){
         const table = new TableValues
-        table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.districtEnrollment)
-        table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.deviceDistribution)
+        table.compareTableValuesWithStudentsTable('BpsPeopleAndDeviceStudentsTable')
+        //table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.districtEnrollment)
+        //table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.deviceDistribution)
     })
     it('write table values in schools tab',function(){
         const sanity = new PeopleAndDeviceSanity
@@ -49,8 +50,8 @@ describe('People and Device Regression Test',function()
         const write = new writeJSON
         write.start('BpsPeopleAndDeviceSchoolsTable')
         const table = new TableValues
-        table.writeTableValues('BpsPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.districtEnrollment)
-        table.writeTableValues('BpsPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.deviceDistribution)
+        table.writeTableValues('BpsPeopleAndDeviceSchoolsTable',1,PeopleAndDeviceObjects.districtEnrollment)
+        table.writeTableValues('BpsPeopleAndDeviceSchoolsTable',1,PeopleAndDeviceObjects.deviceDistribution)
         write.end('BpsPeopleAndDeviceSchoolsTable')
     })
     it('compare table values in schools tab',function(){
