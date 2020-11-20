@@ -1,4 +1,4 @@
-import TrackingAtAGlanceObjects from "./TrackingAtAGlanceObjects"
+import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 
 class PercentageCalculation{
     percentageCheck(tileID){
@@ -25,11 +25,16 @@ class PercentageCalculation{
     }
     percentageCheckInAllTiles(){
         const percent = new PercentageCalculation
-        //percent.percentageCheck(TrackingAtAGlanceObjects.studentNotActiveID)
-        percent.percentageCheck(TrackingAtAGlanceObjects.studentActiveID)
-        percent.percentageCheck(TrackingAtAGlanceObjects.studentDevicesID)
+        
+        percent.percentageCheck(TrackingAtAGlanceObjects.dailyActiveStudentsID)
+        percent.percentageCheck(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         percent.percentageCheck(TrackingAtAGlanceObjects.teacherActiveID)
-        percent.percentageCheck(TrackingAtAGlanceObjects.applicationLoginsID)
+        percent.percentageCheck(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
+        percent.percentageCheck(TrackingAtAGlanceObjects.activeTeachersID)
+        percent.percentageCheck(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
+        percent.percentageCheck(TrackingAtAGlanceObjects.weeklyInActiveStudentID)
+        percent.percentageCheck(TrackingAtAGlanceObjects.studentHotspotDistributionID)
+
         return this 
     }
 }

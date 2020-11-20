@@ -1,4 +1,4 @@
-import PeopleAndDeviceSanity from "./PeopleAndDeviceSanity"
+import PeopleAndDeviceSanity from '../../Sfusd/PeopleAndDevice/PeopleAndDeviceSanity'
 
 class PeopleAndDeviceObjects{
     static pageTitle ='People and Device'
