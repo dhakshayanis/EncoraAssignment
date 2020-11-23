@@ -40,9 +40,8 @@ describe('People and Device Regression Test',function()
     })
     it('read table values and compare with total', function(){
         const table = new TableValues
-        table.compareTableValuesWithStudentsTable('BpsPeopleAndDeviceStudentsTable')
-        //table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.districtEnrollment)
-        //table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.deviceDistribution)
+        table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.districtEnrollment)
+        table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.deviceDistribution)
     })
     it('write table values in schools tab',function(){
         const sanity = new PeopleAndDeviceSanity
