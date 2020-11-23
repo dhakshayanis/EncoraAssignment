@@ -16,12 +16,15 @@ describe('People and Device Regression Test',function()
    })
    it('write chart values',function(){
        const write = new writeJSON
-       write.start('PeopleAndDeviceChart')
+       write.start('SfusdPeopleAndDeviceChart')
        const chartsValues = new CheckChartsValue
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.districtEnrollment)
+       
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.deviceDistribution)
+       cy.contains(PeopleAndDeviceObjects.hotSpotDistribution).scrollIntoView()
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.hotSpotDistribution)
-       write.end('PeopleAndDeviceChart')
+       cy.contains(PeopleAndDeviceObjects.districtEnrollment).scrollIntoView()
+       write.end('SfusdPeopleAndDeviceChart')
    })
    it('read chart values and compare with total',function(){
         const prepareJSON = new CheckChartsValue
