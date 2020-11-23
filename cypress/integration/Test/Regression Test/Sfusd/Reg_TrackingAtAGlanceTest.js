@@ -4,6 +4,7 @@ import TrackingAtAGlanceObjects from '../../../Applications/Sfusd/TrackingAtAGla
 import PercentageCalculation from '../../../Applications/Sfusd/TrackingAtAGlance/PercentageCalculation'
 import WriteValuesInKPIs from '../../../Applications/Sfusd/TrackingAtAGlance/WriteVauesInAtAGlancePage'
 import PercentValueInBars from '../../../Applications/Sfusd/TrackingAtAGlance/PercentValueInBars'
+import EnrollemntCheck from '../../../Applications/Sfusd/TrackingAtAGlance/EnrollmentCountCheck'
 
 describe('one',function()
 {
@@ -28,5 +29,19 @@ describe('one',function()
         const color = new PercentValueInBars
         color.coloredValueInBars()
     })
-
+    it('Verify mini Kpi percentage values',function()
+    {
+        const values = new PercentageCalculation
+        values.verifyPercentageInMiniKpiInAllTiles()
+    })
+    it('Verify percentage colored in bar',function()
+    {
+        const values = new PercentValueInBars
+        values.verifyColoredBarValueInAllTiles()
+    })
+    it('Verify enrollement counts',function()
+    {
+        const values = new EnrollemntCheck
+        values.verifyEnrollmentCountInAllTiles()
+    })
 })
