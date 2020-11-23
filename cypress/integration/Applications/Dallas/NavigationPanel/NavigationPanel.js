@@ -4,8 +4,7 @@ class NavigationPanel{
 
     static filterSection = '.ant-collapse-header'
     static filterSectionPrefix ='.ant-collapse:nth-child'
-    static ddOptionsPrefix = '(//*[contains(@class,"ant-select-dropdown ")])'//'.ant-select-dropdown'
-    static filtersField ='(//*[@class="ant-select-selection__rendered"])'
+    static filters = '(//*[contains(@class,"ant-select-dropdown ")])'//'.ant-select-dropdown'
     static filterHeaders ='(//*[@class="select-floating-text"])'
     static ddOptions ='//*[@role="option"]'
 
@@ -13,16 +12,16 @@ class NavigationPanel{
         cy.xpath("(//i[@class='material-icons'])[3]").trigger('mouseover')
         cy.wait(3000);
     }
+    dropdownOptions(){
 
+    }
     checkNumberOfDropdowns(pageName){
         let page = pageName.replace(/ /g,'')
         let filtersExpected = Filters['filtersIn'+page]
-        cy.log(filtersExpected)
         let filtersCountExpected = filtersExpected.length;
-        cy.log(filtersCountExpected)
         const np = new NavigationPanel
         np.hovernavfilter();
-        cy.xpath(NavigationPanel.filterHeaders).then((count)=>{
+        cy.xpath(NavigationPanel.filters).then((count)=>{
             let actualFiltersCount = count.length;
             expect(actualFiltersCount).to.equal(filtersCountExpected)
         })
@@ -48,26 +47,21 @@ class NavigationPanel{
         cy.log('options : '+options)
         return options
     }
-    checkDropdownOption(pageName){
+    checkDropdownOption(){
         let page = pageName.replace(/ /g,'')
-        cy.xpath(NavigationPanel.filterHeaders).then((filters)=>{
-            for(let i=1; i<=filters.length; i++){
-                cy.xpath(NavigationPanel.filtersField+'['+i+']').click()
-                cy.wait(2000)
-                let optionsExpected = NavigationPanel.getExpectedDropdownOptions(pageName,i)
-                cy.xpath(NavigationPanel.ddOptionsPrefix+'['+i+']'+NavigationPanel.ddOptions).then((dds)=>{
+        cy.xpath(NavigationPanel.filters).then((dd)=>{
+            for(let i=1; i<=dd.length; i++){
+                cy.xpath(NavigationPanel.filters+'['+i+']'+NavigationPanel.ddOptions).then((dds)=>{
+                    let optionsExpected = NavigationPanel.getExpectedDropdownOptions()
                     expect(optionsExpected.length).to.equal(dds.length)
-                    for(let option=1; option<=dds.length; option++){
-                        let xpathOfOption = NavigationPanel.ddOptionsPrefix+'['+i+']'+NavigationPanel.ddOptions+'['+option+']'
-                        cy.xpath(xpathOfOption).invoke('text').then((optionsActual)=>{
-                            expect(optionsActual).to.equal(optionsExpected[option-1])
-                        })
+                    for(let item=1; item<=optionsActual.length; item++){
+                        cy.xpath
+                        expect(optionsActual[item]).to.equal(optionsExpected[item])
                     }
                 })
             }
+
         })
     }
-    
-
 }
 export default NavigationPanel
