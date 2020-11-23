@@ -1,20 +1,20 @@
 import writeJSON from '../Common/WriteJSON'
 import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 
-class WriteValuesInKPIs{
-    writeAllValues(){
-        const val = new WriteValuesInKPIs
-        const write = new writeJSON
-        write.start('SfusdTrackingAtAGlance')
-        val.writeValuesInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyInActiveStudentID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.devicesDistributionID)
-       //  val.writeValuesInTile(TrackingAtAGlanceObjects.applicationLoginsID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.activeTeachersID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.studentHotspotDistributionID)
+
+        class WriteValuesInKPIs{
+            writeAllValues(){
+                const val = new WriteValuesInKPIs
+                const write = new writeJSON
+                write.start('SfusdTrackingAtAGlance')
+                val.writeValuesInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
+                val.writeValuesInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
+                val.writeValuesInTile(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
+                val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
+                val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyInActiveStudentID)
+                val.writeValuesInTile(TrackingAtAGlanceObjects.devicesDistributionID)
+                val.writeValuesInTile(TrackingAtAGlanceObjects.studentHotspotDistributionID)
+                val.writeValuesInTile(TrackingAtAGlanceObjects.activeTeachersID)
     }
     static checkIfBlank(text){
         if(text==''){
@@ -26,8 +26,8 @@ class WriteValuesInKPIs{
         const write = new writeJSON
         cy.get(tileID).scrollIntoView()
         let tileName = TrackingAtAGlanceObjects.getTileTitle(tileID)
-        let mainKpiTitle = TrackingAtAGlanceObjects.getTileText1(tileID)
-        let miniKpiTitle = TrackingAtAGlanceObjects.getTileText2(tileID)
+        let mainKpiTitle = TrackingAtAGlanceObjects.getTitleText1(tileID)
+        let miniKpiTitle = TrackingAtAGlanceObjects.getTitleText2(tileID)
         cy.get(tileID+TrackingAtAGlanceObjects.nrInKpi).invoke('text').then((nr)=>{
             cy.get(tileID+TrackingAtAGlanceObjects.drInKpi).invoke('text').then((dr)=>{
                 cy.get(tileID+TrackingAtAGlanceObjects.percentageInKpi).invoke('text').then(percent=>{
