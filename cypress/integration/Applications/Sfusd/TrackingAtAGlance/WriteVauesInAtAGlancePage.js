@@ -5,15 +5,16 @@ class WriteValuesInKPIs{
     writeAllValues(){
         const val = new WriteValuesInKPIs
         const write = new writeJSON
-        write.start('TrackingAtAGlance')
+        write.start('SfusdTrackingAtAGlance')
         val.writeValuesInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyInActiveStudentID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.devicesDistributionID)
-        val.writeValuesInTile(TrackingAtAGlanceObjects.applicationLoginsID)
+       //  val.writeValuesInTile(TrackingAtAGlanceObjects.applicationLoginsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.activeTeachersID)
+        val.writeValuesInTile(TrackingAtAGlanceObjects.studentHotspotDistributionID)
     }
     static checkIfBlank(text){
         if(text==''){
@@ -33,9 +34,9 @@ class WriteValuesInKPIs{
                     nr = WriteValuesInKPIs.checkIfBlank(nr.replace(',',''))
                     dr = WriteValuesInKPIs.checkIfBlank(dr.replace(',','').replace('of ',''))
                     percent = WriteValuesInKPIs.checkIfBlank(percent)
-                    write.startArray('TrackingAtAGlance',tileName+mainKpiTitle)
-                    write.writeValuesInArray('TrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
-                    write.endArray('TrackingAtAGlance')
+                    write.startArray('SfusdTrackingAtAGlance',tileName+mainKpiTitle)
+                    write.writeValuesInArray('SfusdTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
+                    write.endArray('SfusdTrackingAtAGlance')
                 })
             })
         })
@@ -47,9 +48,9 @@ class WriteValuesInKPIs{
                         nr = nr.replace(',','')
                         dr = dr.replace(',','').replace('of ','')
                         //write.writeValuesInJSON('TrackingAtAGlance',tileName+miniKpiTitle,'[ '+nr+', '+dr+', '+ percent+']')
-                        write.startArray('TrackingAtAGlance',tileName+miniKpiTitle)
-                        write.writeValuesInArray('TrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
-                        write.endArray('TrackingAtAGlance')
+                        write.startArray('SfusdTrackingAtAGlance',tileName+miniKpiTitle)
+                        write.writeValuesInArray('SfusdTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
+                        write.endArray('SfusdTrackingAtAGlance')
                     })
                 })
             })
