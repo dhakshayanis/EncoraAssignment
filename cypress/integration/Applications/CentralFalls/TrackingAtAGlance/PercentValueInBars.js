@@ -31,7 +31,6 @@ class PercentValueInBars{
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.devicesDistributionID)
-        //bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.applicationLoginsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.activeTeachersID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
@@ -45,11 +44,16 @@ class PercentValueInBars{
             let key2 = tileName+TrackingAtAGlanceObjects.getTileText2(tileID)
             let percent1 = (value[key1][2])
             cy.log("1"+percent1) 
-            expect(percent1).to.equal(value[tileName+'progressbarColoredValue'][0].replace(' ',''))
+            let expected1 = parseFloat(value[tileName+'progressbarColoredValue'][0].replace('%','')).toFixed(2)+'%'
+            if(tileID==TrackingAtAGlanceObjects.devicesDistributionID){
+                expected1 = parseFloat(value[tileName+'progressbarColoredValue'][0].replace('%','')).toFixed(0)+'%'
+            }
+            expect(percent1).to.equal(expected1)
             if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
                 (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
                 let percent2 = (value[key2][2])
-                expect(percent2).to.equal(value[tileName+'progressbarColoredValue'][1].replace(' ',''))
+                let expected2 = +parseFloat(value[tileName+'progressbarColoredValue'][1].replace('%','')).toFixed(2)+'%'
+                expect(percent2).to.equal(expected2)
             
             } 
         })
