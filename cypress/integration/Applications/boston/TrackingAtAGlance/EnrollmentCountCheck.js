@@ -3,12 +3,12 @@ import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 class EnrollemntCheck{
     verifyEnrollmentCountInTile(tileID){
         cy.readFile('./cypress/fixtures/BpsTrackingAtAGlance.json').then((enroll)=>{
-            let main = TrackingAtAGlanceObjects.getTileTitle(tileID) + TrackingAtAGlanceObjects.getTileText1(tileID)
+            let main = TrackingAtAGlanceObjects.getTileTitle(tileID) + TrackingAtAGlanceObjects.getTitleText1(tileID)
             let expected = enroll["DAILY INACTIVE STUDENTSAvg. Daily Inactive Students"][1]
             expect(enroll[main][1].replace(' ','')).to.equal(expected)
             if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
                 (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
-                let mini = TrackingAtAGlanceObjects.getTileTitle(tileID) + TrackingAtAGlanceObjects.getTileText2(tileID)
+                let mini = TrackingAtAGlanceObjects.getTileTitle(tileID) + TrackingAtAGlanceObjects.getTitleText2(tileID)
                 expect(enroll[mini][1].replace(' ','')).to.equal(expected)
             }
         })
