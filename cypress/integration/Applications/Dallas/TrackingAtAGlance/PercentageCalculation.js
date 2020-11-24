@@ -2,7 +2,6 @@ import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 
 class PercentageCalculation{
     percentageCheck(tileID){
-        cy.wait(10000)
         cy.get(tileID).scrollIntoView()
         cy.get(tileID+TrackingAtAGlanceObjects.nrInKpi).invoke('text').then((nr)=>{
             cy.get(tileID+TrackingAtAGlanceObjects.drInKpi).invoke('text').then((dr)=>{
@@ -51,8 +50,8 @@ class PercentageCalculation{
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.devicesDistributionID)
-        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.studenthotspotdistributionID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.activeTeachersID)
+        
     }
 }
 export default PercentageCalculation

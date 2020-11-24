@@ -1,4 +1,5 @@
 { 
+<<<<<<< HEAD
 "DAILY INACTIVE STUDENTSAvg. Daily Inactive Students": ["39676" ,"145408" ,"27.29%"] ,
 "DAILY INACTIVE STUDENTSNo Login in Past 7 Days": ["10947" ,"145408" ,"7.53%"] ,
 "DAILY ACTIVE STUDENTSAvg. Daily Active Students": ["105732" ," 145408" ,"72.71%"] ,
@@ -20,3 +21,6 @@
 "STUDENTHOTSPOT DISTRIBUTIONprogressbarColoredValue": ["27.58%"] ,
 "End" : "dummy" 
  } 
+=======
+"DAILY INACTIVE STUDENTSprogressbarColoredValue": [
+>>>>>>> 0eb65df512a3a4ce7ae364d8d95d876f7ed8d56c
