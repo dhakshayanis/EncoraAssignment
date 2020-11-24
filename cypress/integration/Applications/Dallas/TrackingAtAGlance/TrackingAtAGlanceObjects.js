@@ -59,7 +59,7 @@ class TrackingAtAGlanceObjects{
         text2.set(TrackingAtAGlanceObjects.activeTeachersID, 'Last 7 Days Avg');
         text2.set(TrackingAtAGlanceObjects.studenthotspotdistributionID,'Hotspot Distributed');
         return text2.get(tileID)
-    }
+    }/*
     static getPercentXpathInMiniKpi(tileID){
         var xpath = new Map();
         xpath.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, '[style="font-size: 12px; width: 100%; text-align: center; color: rgb(4, 90, 181); font-weight: 500;"]');
@@ -70,6 +70,6 @@ class TrackingAtAGlanceObjects{
         xpath.set(TrackingAtAGlanceObjects.applicationLoginsID, '');
         xpath.set(TrackingAtAGlanceObjects.activeTeachersID, '');
         return title.get(tileID)
-    }
+    }*/
 }
 export default TrackingAtAGlanceObjects
