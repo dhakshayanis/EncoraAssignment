@@ -10,6 +10,7 @@ class EnrollemntCheck{
                 (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
                 let mini = TrackingAtAGlanceObjects.getTileTitle(tileID) + TrackingAtAGlanceObjects.getTileText2(tileID)
                 expect(enroll[mini][1].replace(' ','')).to.equal(expected)
+               // expect(enroll[mini][1].replace(' ','')).to.equal(expected)
             }
         })
     }
