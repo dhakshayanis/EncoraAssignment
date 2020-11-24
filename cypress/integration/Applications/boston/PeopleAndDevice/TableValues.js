@@ -55,12 +55,19 @@ class TableValues{
             cy.log(totalActual)
             let sum = 0;
             let colNum = TableObjects.getColumnNumber(dropdownID)
-            let dataKey = 'Column'+colNum+'Page1'
-            cy.readFile('./cypress/fixtures/BpsPeopleAndDeviceStudentsTable.json').then((value) => {
-                for(let i=0; i<(value[dataKey].length); i++){
-                    sum = value[dataKey][i]+sum
+            let dataKey = 'Column'+colNum
+            cy.readFile('./cypress/fixtures/BpsPeopleAndDeviceStudentsTable.json').then((val)=>{
+                let res = Object.keys(val).filter(name => name.startsWith(prefix));
+                cy.log(res.length);
+                let sum = 0
+                for(let i=0; i< res.length; i++){
+                    let keyName = res[i]
+                    let rows = val[keyName].length
+                    for(let j=0; j< rows; j++){
+                        sum = sum + val[keyName][j]
+                    }
+                    cy.log(sum)
                 }
-                expect(totalActual).to.equal(sum)
             })
         })
         return this

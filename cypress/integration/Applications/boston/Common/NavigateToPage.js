@@ -6,7 +6,11 @@ class NavigateToPage{
             // returning false here prevents Cypress from failing the test
             return false
           })
+<<<<<<< HEAD
           /*cy.get('[name="Email"]').type('hemalathat@inniveinc.com')//('demouser@inniveinc.com')
+=======
+         /* cy.get('[name="Email"]').type('hemalathat@inniveinc.com')//('demouser@inniveinc.com')
+>>>>>>> a47614bdad2975cc02daa84b2470204e51be5c53
           cy.get('#next').click()
           cy.get('[type="password"]').type('8790303836')//('Innive@23')
           cy.get('#submit').click()*/

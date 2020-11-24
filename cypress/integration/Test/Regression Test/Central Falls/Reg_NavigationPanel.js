@@ -19,4 +19,10 @@ describe('one',function()
         np.checkNumberOfDropdowns(TrackingAtAGlanceObjects.pagetitle)
         np.checkDropdowns(TrackingAtAGlanceObjects.pagetitle)
     })
+
+    it('check navigation filters dropdown options', function()
+    {   
+        const np = new NavigationPanel
+        np.checkDropdownOption(TrackingAtAGlanceObjects.pagetitle)
+    })
 })

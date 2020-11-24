@@ -81,4 +81,16 @@ describe('People and Device Regression Test',function()
         table.compareTableValuesWithStudentsTable('DisdPeopleAndDeviceUnassignedTable')
         
     })
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareEnroll()
+    })
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareDevice()
+    })
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareHotspot()
+    })
 })

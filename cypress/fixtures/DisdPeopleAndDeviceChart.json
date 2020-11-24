@@ -7,8 +7,13 @@
 "Device DistributionTotal": "126,519",
 "ChartDevice Distributiondropdown1": [217,1275,24872,88167,2434,134,5957,3463],
 "ChartDevice Distributiondropdown2": [62360,64159],
+<<<<<<< HEAD
 "ChartDevice Distributiondropdown3": [297,1529,6116,9621,10180,10229,9674,9791,9956,8842,8956,8671,9087,9108,7713,6749],
 "ChartDevice Distributiondropdown4": [126519,12142],
+=======
+"ChartDevice Distributiondropdown3": [62360,64159],
+"ChartDevice Distributiondropdown4": [62360,12142],
+>>>>>>> a47614bdad2975cc02daa84b2470204e51be5c53
 "Hotspot DistributionTotal": "39,921",
 "ChartHotspot Distributiondropdown1": [74,228,9016,27820,701,21,1318,743],
 "ChartHotspot Distributiondropdown2": [19854,20067],
