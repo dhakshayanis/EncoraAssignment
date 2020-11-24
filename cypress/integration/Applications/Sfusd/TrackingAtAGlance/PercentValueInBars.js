@@ -40,8 +40,8 @@ class PercentValueInBars{
     verifyColoredBarValue(tileID){
         cy.readFile('./cypress/fixtures/SfusdTrackingAtAGlance.json').then((value) => {
             let tileName = TrackingAtAGlanceObjects.getTileTitle(tileID)
-            let key1 = tileName+TrackingAtAGlanceObjects.getTileText1(tileID)
-            let key2 = tileName+TrackingAtAGlanceObjects.getTileText2(tileID)
+            let key1 = tileName+TrackingAtAGlanceObjects.getTitleText1(tileID)
+            let key2 = tileName+TrackingAtAGlanceObjects.getTitleText2(tileID)
             let percent1 = (value[key1][2])
             cy.log("1"+percent1) 
             let expected1 = parseFloat(value[tileName+'progressbarColoredValue'][0].replace('%','')).toFixed(2)+'%'
@@ -53,6 +53,9 @@ class PercentValueInBars{
                 (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
                 let percent2 = (value[key2][2])
                 let expected2 = +parseFloat(value[tileName+'progressbarColoredValue'][1].replace('%','')).toFixed(2)+'%'
+                if(tileID==TrackingAtAGlanceObjects.devicesDistributionID){
+                     expected2 = parseFloat(value[tileName+'progressbarColoredValue'][1].replace('%','')).toFixed(2)+'%'  
+                }
                 expect(percent2).to.equal(expected2)
             
             } 

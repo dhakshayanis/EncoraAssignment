@@ -42,10 +42,11 @@ class PercentageCalculation{
             let nr = parseInt(value[key][0])
             let dr = parseInt(value[key][1])
             
-            let res = (nr*100/dr).toFixed(2).toString()+'%';
-            if((tileID == TrackingAtAGlanceObjects.devicesDistributionID) ||(tileID == TrackingAtAGlanceObjects.studentHotspotDistributionID)){
-                let  percentExpected = (nr*100/dr).toFixed(0).toString()+"%";
-              }
+            let res = +(nr*100/dr).toFixed(2).toString()+'%';
+           
+            /*if((tileID == TrackingAtAGlanceObjects.devicesDistributionID) ||(tileID == TrackingAtAGlanceObjects.studentHotspotDistributionID)){
+                let  percentExpected = (nr*100/dr).toFixed(2).toString()+"%";
+              }*/
             expect(res).to.equal(value[key][2])
         })
     }
