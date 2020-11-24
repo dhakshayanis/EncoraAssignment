@@ -41,7 +41,7 @@ class PercentageCalculation{
             let key = TrackingAtAGlanceObjects.getTileTitle(tileID)+TrackingAtAGlanceObjects.getTitleText2(tileID)
             let nr = parseInt(value[key][0])
             let dr = parseInt(value[key][1])
-            let res = (nr*100/dr).toFixed(2).toString()+'%';
+            let res = +(nr*100/dr).toFixed(2).toString()+'%';
             expect(res).to.equal(value[key][2])
         })
     }
@@ -51,6 +51,7 @@ class PercentageCalculation{
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.devicesDistributionID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.activeTeachersID)
+        
     }
 }
 export default PercentageCalculation

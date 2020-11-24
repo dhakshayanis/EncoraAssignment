@@ -1,7 +1,7 @@
 import PageTitleCheck from '../Common/PageTitleCheck'
 class NavigateToPage{
   goToTrackingAtAGlancePage(){
-        cy.visit("https://sfps.remotelearning.innive.io/")
+        cy.visit("https://dev-dot-sfps-i360-k12-dev.uc.r.appspot.com")
         Cypress.on('uncaught:exception', (err, runnable) => {
             // returning false here prevents Cypress from failing the test
             return false
