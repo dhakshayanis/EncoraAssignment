@@ -38,7 +38,7 @@ class PercentageCalculation{
     }
     percentageCheckInMiniKpi(tileID){
         cy.readFile('./cypress/fixtures/SfusdTrackingAtAGlance.json').then((value) => {
-            let key = TrackingAtAGlanceObjects.getTileTitle(tileID)+TrackingAtAGlanceObjects.getTileText2(tileID)
+            let key = TrackingAtAGlanceObjects.getTileTitle(tileID)+TrackingAtAGlanceObjects.getTitleText2(tileID)
             let nr = parseInt(value[key][0])
             let dr = parseInt(value[key][1])
             
