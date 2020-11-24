@@ -7,7 +7,7 @@ class PageHeader{
         cy.get('[class=user_name]').should('have.text','sselvaraj')
 
         //logo check
-        cy.get('[alt="WHOLE CHILD INTEGRATED DATA"]').should('have.attr','src','https://dev-dot-sfps-i360-k12-dev.uc.r.appspot.com/images/client_logo_sfps.png')
+        cy.get('[alt="WHOLE CHILD INTEGRATED DATA"]').should('have.attr','src','https://sfps.remotelearning.innive.io/images/client_logo_sfps.png'/*'https://dev-dot-sfps-i360-k12-dev.uc.r.appspot.com/images/client_logo_sfps.png'*/)
         return this
     }
     pageFooterCheck(){

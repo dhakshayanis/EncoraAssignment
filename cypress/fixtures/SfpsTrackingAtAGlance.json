@@ -1,0 +1,22 @@
+{ 
+"DAILY INACTIVE STUDENTSAvg. Daily Inactive Students": ["2328" ,"12107" ,"19.23%"] ,
+"DAILY INACTIVE STUDENTSNo Login in Past 7 Days": ["1182" ,"12107" ,"9.76%"] ,
+"DAILY ACTIVE STUDENTSAvg. Daily Active Students": ["9779" ," 12107" ,"80.77%"] ,
+"DAILY ACTIVE STUDENTS Last 7 Days Avg": ["8367" ," 12107" ,"69.11%"] ,
+"WEEKLY ACTIVE STUDENTSAvg. Weekly Active Students": ["10419" ,"12107" ,"86.06%"] ,
+"INACTIVE STUDENTS(YTD)Students with no login or <10% login(YTD)": ["885" ,"12107" ,"7.31%"] ,
+"DEVICESDISTRIBUTIONStudents With Devices": ["10287" ,"12107" ,"85%"] ,
+"DEVICESDISTRIBUTIONDevices Distributed": ["10287" ,"12107" ,"84.97%"] ,
+"APPLICATION LOGINSAverage Number of Apps Accessed per Student": ["6.72" ,"Blank" ,"Blank"] ,
+"ACTIVETEACHERSAvg # of Teachers Active": ["752" ," 870" ,"86.44%"] ,
+"ACTIVETEACHERSLast 7 Days Avg": ["631" ," 870" ,"72.53%"] ,
+"STUDENTHOTSPOT DISTRIBUTIONStudents Hotspot": ["442" ,"12107" ,"4%"] ,
+"DAILY INACTIVE STUDENTSprogressbarColoredValue": ["19.23%","9.76%"] ,
+"DAILY ACTIVE STUDENTSprogressbarColoredValue": ["80.77%","69.11%"] ,
+"DEVICESDISTRIBUTIONprogressbarColoredValue": ["84.97%","84.97%"] ,
+"ACTIVETEACHERSprogressbarColoredValue": ["86.44%","72.53%"] ,
+"INACTIVE STUDENTS(YTD)progressbarColoredValue": ["7.31%"] ,
+"WEEKLY ACTIVE STUDENTSprogressbarColoredValue": ["86.06%"] ,
+"STUDENTHOTSPOT DISTRIBUTIONprogressbarColoredValue": ["3.65%"] ,
+"End" : "dummy" 
+ } 

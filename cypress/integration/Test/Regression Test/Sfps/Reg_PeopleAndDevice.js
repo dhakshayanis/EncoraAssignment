@@ -32,7 +32,7 @@ describe('People and Device Regression Test',function()
     it('switch to table', function(){
         const sanity = new PeopleAndDeviceSanity
         sanity.switchTo(PeopleAndDeviceObjects.tableViewButton)
-    })/*
+    })
     it('write table values', function(){
         const write = new writeJSON
         write.start('SfpsPeopleAndDeviceStudentsTable')
@@ -41,7 +41,7 @@ describe('People and Device Regression Test',function()
         table.writeTableValues('SfpsPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.deviceDistribution)
         table.writeTableValues('SfpsPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.hotspotDistribution)
         write.end('SfpsPeopleAndDeviceStudentsTable')
-    })*/
+    })
     it('read table values and compare with total', function(){
         const table = new TableValues
         table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.districtEnrollment)
@@ -64,4 +64,13 @@ describe('People and Device Regression Test',function()
         table.compareTableValuesWithStudentsTable('SfpsPeopleAndDeviceSchoolsTable')
         
     })
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareEnroll()
+    })
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareDevice()
+    })
+    
 })
