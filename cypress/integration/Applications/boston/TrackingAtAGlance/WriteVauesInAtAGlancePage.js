@@ -24,8 +24,8 @@ class WriteValuesInKPIs{
         const write = new writeJSON
         cy.get(tileID).scrollIntoView()
         let tileName = TrackingAtAGlanceObjects.getTileTitle(tileID)
-        let mainKpiTitle = TrackingAtAGlanceObjects.getTitleText1(tileID)
-        let miniKpiTitle = TrackingAtAGlanceObjects.getTitleText2(tileID)
+        let mainKpiTitle = TrackingAtAGlanceObjects.getTileText1(tileID)
+        let miniKpiTitle = TrackingAtAGlanceObjects.getTileText2(tileID)
         cy.get(tileID+TrackingAtAGlanceObjects.nrInKpi).invoke('text').then((nr)=>{
             cy.get(tileID+TrackingAtAGlanceObjects.drInKpi).invoke('text').then((dr)=>{
                 cy.get(tileID+TrackingAtAGlanceObjects.percentageInKpi).invoke('text').then(percent=>{
@@ -39,13 +39,12 @@ class WriteValuesInKPIs{
             })
         })
         if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
-            (tileID==TrackingAtAGlanceObjects.devicesDistributionID) ||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
+            (tileID==TrackingAtAGlanceObjects.devicesDistributionID|| (tileID==TrackingAtAGlanceObjects.activeTeachersID))){
             cy.get(tileID+TrackingAtAGlanceObjects.nrInMiniKpi).invoke('text').then((nr)=>{
                 cy.get(tileID+TrackingAtAGlanceObjects.drInKpi).invoke('text').then((dr)=>{
                     cy.get(tileID+TrackingAtAGlanceObjects.percentXpathInMiniKpi).invoke('text').then((percent)=>{
                         nr = nr.replace(',','')
                         dr = dr.replace(',','').replace('of ','')
-                        write.writeValuesInJSON('BpsTrackingAtAGlance',tileName+miniKpiTitle,'[ '+nr+', '+dr+', '+ percent+']')
                         write.startArray('BpsTrackingAtAGlance',tileName+miniKpiTitle)
                         write.writeValuesInArray('BpsTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
                         write.endArray('BpsTrackingAtAGlance')

@@ -2,7 +2,7 @@ import Dropdown from '../Common/DropDown'
 import DropDownObjects from '../common/DropDownObjects'
 import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 
-class TrackingAtAGlanceSanity{ 
+class TrackingAtAGlanceSanity{
     isTilesPresent(){
         cy.wait(10000)
         TrackingAtAGlanceSanity.isTileVisible(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
