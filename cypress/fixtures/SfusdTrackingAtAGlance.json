@@ -18,3 +18,24 @@
 "WEEKLY ACTIVE STUDENTSprogressbarColoredValue": ["93.93%"] ,
 "End" : "dummy" 
  } 
+"DAILY INACTIVE STUDENTSprogressbarColoredValue": ["height: 9px","5.35%"] ,
+"DAILY ACTIVE STUDENTSprogressbarColoredValue": ["height: 9px","76.01%"] ,
+"DEVICESDISTRIBUTIONprogressbarColoredValue": ["52.68%","90.2%"] ,
+"ACTIVETEACHERSprogressbarColoredValue": ["height: 9px","99.16%"] ,
+"INACTIVE STUDENTS(YTD)progressbarColoredValue": ["3.71%"] ,
+"WEEKLY ACTIVE STUDENTSprogressbarColoredValue": ["height: 9px"] ,
+"End" : "dummy" 
+ } 
+"DAILY INACTIVE STUDENTSprogressbarColoredValue": ["height: 9px","5.35%"] ,
+"DAILY ACTIVE STUDENTSprogressbarColoredValue": ["height: 9px","76.01%"] ,
+"DEVICESDISTRIBUTIONprogressbarColoredValue": ["52.68%","90.2%"] ,
+"ACTIVETEACHERSprogressbarColoredValue": ["height: 9px","99.16%"] ,
+"INACTIVE STUDENTS(YTD)progressbarColoredValue": ["3.71%"] ,
+"WEEKLY ACTIVE STUDENTSprogressbarColoredValue": ["height: 9px"] ,
+"Weekly Inactive < 60%progressbarColoredValue": [
+"DAILY INACTIVE STUDENTSprogressbarColoredValue": ["height: 9px","5.35%"] ,
+"DAILY ACTIVE STUDENTSprogressbarColoredValue": ["height: 9px","76.01%"] ,
+"DEVICESDISTRIBUTIONprogressbarColoredValue": ["52.68%"
+"DAILY INACTIVE STUDENTSprogressbarColoredValue": ["16.85%","5.35%"] ,
+"DAILY ACTIVE STUDENTSprogressbarColoredValue": ["83.15%","76.01%"] ,
+"DEVICESDISTRIBUTIONprogressbarColoredValue": ["52.68%"

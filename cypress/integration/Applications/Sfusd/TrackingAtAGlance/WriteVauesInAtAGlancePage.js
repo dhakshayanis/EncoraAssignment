@@ -25,8 +25,8 @@ class WriteValuesInKPIs{
         const write = new writeJSON
         cy.get(tileID).scrollIntoView()
         let tileName = TrackingAtAGlanceObjects.getTileTitle(tileID)
-        let mainKpiTitle = TrackingAtAGlanceObjects.getTileText1(tileID)
-        let miniKpiTitle = TrackingAtAGlanceObjects.getTileText2(tileID)
+        let mainKpiTitle = TrackingAtAGlanceObjects.getTitleText1(tileID)
+        let miniKpiTitle = TrackingAtAGlanceObjects.getTitleText2(tileID)
         cy.get(tileID+TrackingAtAGlanceObjects.nrInKpi).invoke('text').then((nr)=>{
             cy.get(tileID+TrackingAtAGlanceObjects.drInKpi).invoke('text').then((dr)=>{
                 cy.get(tileID+TrackingAtAGlanceObjects.percentageInKpi).invoke('text').then(percent=>{
