@@ -1,10 +1,10 @@
-import NavigateToPage from  '../../../Applications/Sfusd/Common/NavigateToPage'
+import NavigateToPage from '../../../Applications/Sfusd/Common/NavigateToPage'
 import PeopleAndDeviceObjects from '../../../Applications/Sfusd/PeopleAndDevice/PeopleAndDeviceObjects'
 import CheckChartsValue from '../../../Applications/Sfusd/PeopleAndDevice/ChartsValue'
 import PeopleAndDeviceSanity from '../../../Applications/Sfusd/PeopleAndDevice/PeopleAndDeviceSanity'
 import TableValues from '../../../Applications/Sfusd/PeopleAndDevice/TableValues'
 import writeJSON from '../../../Applications/Sfusd/Common/WriteJSON'
-
+import CompareValuesWithTrackingAtAGlance from '../../../Applications/Sfusd/PeopleAndDevice/CompareValuesWithTrackingAtAGlance'
 
 describe('People and Device Regression Test',function()
 {
@@ -19,18 +19,13 @@ describe('People and Device Regression Test',function()
        write.start('SfusdPeopleAndDeviceChart')
        const chartsValues = new CheckChartsValue
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.districtEnrollment)
-       
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.deviceDistribution)
-       cy.contains(PeopleAndDeviceObjects.hotSpotDistribution).scrollIntoView()
-       chartsValues.writeValuesInchart(PeopleAndDeviceObjects.hotSpotDistribution)
-       cy.contains(PeopleAndDeviceObjects.districtEnrollment).scrollIntoView()
        write.end('SfusdPeopleAndDeviceChart')
    })
    it('read chart values and compare with total',function(){
         const prepareJSON = new CheckChartsValue
         prepareJSON.checkChartTotal(PeopleAndDeviceObjects.districtEnrollment)
         prepareJSON.checkChartTotal(PeopleAndDeviceObjects.deviceDistribution)
-        prepareJSON.checkChartTotal(PeopleAndDeviceObjects.hotSpotDistribution)
     })
     it('switch to table', function(){
         const sanity = new PeopleAndDeviceSanity
@@ -42,14 +37,12 @@ describe('People and Device Regression Test',function()
         const table = new TableValues
         table.writeTableValues('SfusdPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.districtEnrollment)
         table.writeTableValues('SfusdPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.deviceDistribution)
-        table.writeTableValues('SfusdPeopleAndDeviceStudentsTable',PeopleAndDeviceObjects.hotSpotDistribution)
         write.end('SfusdPeopleAndDeviceStudentsTable')
     })
     it('read table values and compare with total', function(){
         const table = new TableValues
         table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.districtEnrollment)
         table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.deviceDistribution)
-        table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.hotSpotDistribution)
     })
     it('write table values in schools tab',function(){
         const sanity = new PeopleAndDeviceSanity
@@ -59,11 +52,18 @@ describe('People and Device Regression Test',function()
         const table = new TableValues
         table.writeTableValues('SfusdPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.districtEnrollment)
         table.writeTableValues('SfusdPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.deviceDistribution)
-        table.writeTableValues('SfusdPeopleAndDeviceSchoolsTable',PeopleAndDeviceObjects.hotSpotDistribution)
         write.end('SfusdPeopleAndDeviceSchoolsTable')
     })
     it('compare table values in schools tab',function(){
         const table = new TableValues
         table.compareTableValuesWithStudentsTable('SfusdPeopleAndDeviceSchoolsTable')
+    })
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareEnroll()
+    })
+    it('compare at a galnce',function(){
+        const compare = new CompareValuesWithTrackingAtAGlance
+        compare.compareDevice()
     })
 })
