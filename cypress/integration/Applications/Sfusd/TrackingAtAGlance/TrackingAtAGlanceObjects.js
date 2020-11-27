@@ -5,7 +5,7 @@ class TrackingAtAGlanceObjects{
     static SchoolDimensionDropDownName = "School Dimension"
     static StudentDimensionDropDownName = "Student Dimension"
     static schoolDimensionDropDownOptions = ['School Level', 'Grade Level','Cohort']
-    static StudentDimensionDropDownOptions = ['Ethnicity', 'Gender', 'Program','Student Device Assignment','Student Hotspot Assignment']
+    static StudentDimensionDropDownOptions = ['Ethnicity', 'Gender', 'Special Group','Student Device Assignment','Student Hotspot Assignment']
     
     static dailyInactiveStudentsID = '[id="1"]'
     static dailyActiveStudentsID = '[id="2"]'
@@ -60,11 +60,11 @@ class TrackingAtAGlanceObjects{
         text2.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, ' Last 7 Days Avg');
         text2.set(TrackingAtAGlanceObjects.weeklyActiveStudentsID, '');
         text2.set(TrackingAtAGlanceObjects.inactiveStudentsYtdID, ''); 
-        text2.set(TrackingAtAGlanceObjects.devicesDistributionID, 'Unfulfilled Requests','Devices Distributed');
+        text2.set(TrackingAtAGlanceObjects.devicesDistributionID, 'Devices Requested','Devices Distributed');
         text2.set(TrackingAtAGlanceObjects.applicationLoginsID, '');
         text2.set(TrackingAtAGlanceObjects.activeTeachersID, 'Last 7 Days Avg');
         text2.set(TrackingAtAGlanceObjects.weeklyInActiveStudentID,'Last week Avg');
-        text2.set(TrackingAtAGlanceObjects.studentHotspotDistributionID,'Hotspot Distributed','Unfulfilled Requests');
+        text2.set(TrackingAtAGlanceObjects.studentHotspotDistributionID,'Hotspot Distributed');
         //'Hotspot Requested',
         return text2.get(tileID)
     }

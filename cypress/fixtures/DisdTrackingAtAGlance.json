@@ -13,7 +13,11 @@
 "STUDENTHOTSPOT DISTRIBUTIONStudents Hotspot": ["40101" ,"145408" ,"28%"] ,
 "DAILY INACTIVE STUDENTSprogressbarColoredValue": ["27.29%","7.53%"] ,
 "DAILY ACTIVE STUDENTSprogressbarColoredValue": ["72.71%","73.84%"] ,
+<<<<<<< HEAD
 "DEVICESDISTRIBUTIONprogressbarColoredValue": ["86.93%","86.93%"] ,
+=======
+"DEVICESDISTRIBUTIONprogressbarColoredValue": ["86.93%"] ,
+>>>>>>> 2e7a8d83c11d3bd726100c416b544ef943417c20
 "ACTIVETEACHERSprogressbarColoredValue": ["87.09%","86.76%"] ,
 "INACTIVE STUDENTS(YTD)progressbarColoredValue": ["4.41%"] ,
 "WEEKLY ACTIVE STUDENTSprogressbarColoredValue": ["90.86%"] ,

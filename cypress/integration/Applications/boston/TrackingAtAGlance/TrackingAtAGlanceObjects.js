@@ -34,7 +34,7 @@ class TrackingAtAGlanceObjects{
         title.set(TrackingAtAGlanceObjects.activeTeachersID, 'ACTIVETEACHERS');
         return title.get(tileID)
     }
-    static getTileText1(tileID){
+    static getTitleText1(tileID){
         var text1 = new Map();
         text1.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'Avg. Daily Inactive Students');
         text1.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, 'Avg. Daily Active Students');
@@ -46,7 +46,7 @@ class TrackingAtAGlanceObjects{
         text1.set(TrackingAtAGlanceObjects.activeTeachersID, 'Avg # of Teachers Active');
         return text1.get(tileID)
     }
-    static getTileText2(tileID){
+    static getTitleText2(tileID){
         var text2 = new Map();
         text2.set(TrackingAtAGlanceObjects.dailyInactiveStudentsID, 'No Login in Past 7 Days');
         text2.set(TrackingAtAGlanceObjects.dailyActiveStudentsID, ' Last 7 Days Avg');

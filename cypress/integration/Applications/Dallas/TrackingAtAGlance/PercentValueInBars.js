@@ -4,25 +4,25 @@ import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 class PercentValueInBars{
     coloredValueInBarInTile(tileID){
         const write = new writeJSON
-        write.startArray('BpsTrackingAtAGlance',TrackingAtAGlanceObjects.getTileTitle(tileID)+'progressbarColoredValue')
+        write.startArray('DisdTrackingAtAGlance',TrackingAtAGlanceObjects.getTileTitle(tileID)+'progressbarColoredValue')
         cy.get(tileID).within(()=>{
             cy.get(TrackingAtAGlanceObjects.progressBarBlueInMainKpi).invoke('attr','style').then((styleAttrInMainKpi)=>{
                 cy.log(styleAttrInMainKpi)
                 let splittedMainKpi = styleAttrInMainKpi.split(';')
                 let width1 = splittedMainKpi[1]
                 let coloredValue1 = width1.replace('width: ','').replace(' ','')
-                write.writeValuesInArray('BpsTrackingAtAGlance','"'+coloredValue1+'"')
+                write.writeValuesInArray('DisdTrackingAtAGlance','"'+coloredValue1+'"')
                 if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
-                (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
+                (tileID==TrackingAtAGlanceObjects.activeTeachersID)){
                 cy.get(TrackingAtAGlanceObjects.progressBarBlueInMiniKpi).invoke('attr','style').then((styleAttrInMiniKpi)=>{
                     cy.log(styleAttrInMiniKpi)
                     let splittedMiniKpi = styleAttrInMiniKpi.split(';')
                     let width2 = splittedMiniKpi[1]
                     let coloredValue2 = width2.replace('width: ','').replace(' ','')
-                    write.writeValuesInArray('BpsTrackingAtAGlance',',"'+coloredValue2+'"')
+                    write.writeValuesInArray('DisdTrackingAtAGlance',',"'+coloredValue2+'"')
                 }) 
                 }  
-                write.endArray('BpsTrackingAtAGlance')             
+                write.endArray('DisdTrackingAtAGlance')             
             })
         })
     } 
@@ -31,33 +31,26 @@ class PercentValueInBars{
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.devicesDistributionID)
+        //bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.applicationLoginsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.activeTeachersID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
+        bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.studenthotspotdistributionID)
         const write = new writeJSON
-        write.end('BpsTrackingAtAGlance')
+        write.end('DisdTrackingAtAGlance')
     }
     verifyColoredBarValue(tileID){
-        cy.readFile('./cypress/fixtures/BpsTrackingAtAGlance.json').then((value) => {
+        cy.readFile('./cypress/fixtures/DisdTrackingAtAGlance.json').then((value) => {
             let tileName = TrackingAtAGlanceObjects.getTileTitle(tileID)
             let key1 = tileName+TrackingAtAGlanceObjects.getTitleText1(tileID)
             let key2 = tileName+TrackingAtAGlanceObjects.getTitleText2(tileID)
             let percent1 = (value[key1][2])
             cy.log("1"+percent1) 
-           let expected1 = value[tileName+'progressbarColoredValue'][0].replace(' ','')
-           if (tileID==TrackingAtAGlanceObjects.devicesDistributionID){
-            expected1 =parseFloat(expected1).toFixed(0).toString()
-            cy.log('0 decimals-'+ expected1)
-        }
-            expect(percent1).to.equal()
+            expect(percent1).to.equal(value[tileName+'progressbarColoredValue'][0].replace(' ',''))
             if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
                 (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
                 let percent2 = (value[key2][2])
-                let expected = value[tileName+'progressbarColoredValue'][1].replace(' ','')
-                cy.log('2 decimals-'+expected)
-                
-               
-                expect(percent2).to.equal(expected)
+                expect(percent2).to.equal(value[tileName+'progressbarColoredValue'][1].replace(' ',''))
             
             } 
         })
@@ -70,6 +63,7 @@ class PercentValueInBars{
         bar.verifyColoredBarValue(TrackingAtAGlanceObjects.activeTeachersID)
         bar.verifyColoredBarValue(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
         bar.verifyColoredBarValue(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
+        bar.verifyColoredBarValue(TrackingAtAGlanceObjects.studenthotspotdistributionID)
     }
 }
 export default PercentValueInBars
