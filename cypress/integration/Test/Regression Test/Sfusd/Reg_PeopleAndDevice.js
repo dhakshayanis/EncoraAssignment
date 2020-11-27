@@ -20,6 +20,7 @@ describe('People and Device Regression Test',function()
        const chartsValues = new CheckChartsValue
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.districtEnrollment)
        chartsValues.writeValuesInchart(PeopleAndDeviceObjects.deviceDistribution)
+       chartsValues.writeValuesInchart
        write.end('SfusdPeopleAndDeviceChart')
    })
    it('read chart values and compare with total',function(){
@@ -56,7 +57,7 @@ describe('People and Device Regression Test',function()
     })
     it('compare table values in schools tab',function(){
         const table = new TableValues
-        table.compareTableValuesWithStudentsTable('SfusdPeopleAndDeviceSchoolsTable')
+        table.compareTableValuesWithStudentsTable('CfsPeopleAndDeviceSchoolsTable')
     })
     it('compare at a galnce',function(){
         const compare = new CompareValuesWithTrackingAtAGlance

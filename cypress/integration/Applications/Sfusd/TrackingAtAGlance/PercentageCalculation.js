@@ -8,7 +8,7 @@ class PercentageCalculation{
                 nr = nr.replace(',','')
                 dr = dr.replace(',','').replace('of ','')
                 let percentExpected = (nr*100/dr).toFixed(2).toString()+"%";
-                if(tileID == TrackingAtAGlanceObjects.devicesDistributionID){
+                if((tileID == TrackingAtAGlanceObjects.devicesDistributionID)||(tileID == TrackingAtAGlanceObjects.studentHotspotDistributionID)){
                     percentExpected = (nr*100/dr).toFixed(0).toString()+"%";
                 }
                 cy.log(percentExpected)
@@ -33,12 +33,12 @@ class PercentageCalculation{
         percent.percentageCheck(TrackingAtAGlanceObjects.activeTeachersID)
         percent.percentageCheck(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
         percent.percentageCheck(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
-       //  percent.percentageCheck(TrackingAtAGlanceObjects.studentHotspotDistributionID)
+        percent.percentageCheck(TrackingAtAGlanceObjects.studentHotspotDistributionID)
         return this 
     }
     percentageCheckInMiniKpi(tileID){
         cy.readFile('./cypress/fixtures/SfusdTrackingAtAGlance.json').then((value) => {
-            let key = TrackingAtAGlanceObjects.getTileTitle(tileID)+TrackingAtAGlanceObjects.getTileText2(tileID)
+            let key = TrackingAtAGlanceObjects.getTileTitle(tileID)+TrackingAtAGlanceObjects.getTitleText2(tileID)
             let nr = parseInt(value[key][0])
             let dr = parseInt(value[key][1])
             let res = (nr*100/dr).toFixed(2).toString()+'%';
@@ -52,7 +52,7 @@ class PercentageCalculation{
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.weeklyInActiveStudentID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
-        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.devicesDistributionID)
+       //  percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.devicesDistributionID)
        //  percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.studentHotspotDistributionID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.activeTeachersID) 
        
