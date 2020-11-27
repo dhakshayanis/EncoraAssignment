@@ -31,6 +31,7 @@ class PercentValueInBars{
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.devicesDistributionID)
+        //bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.applicationLoginsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.activeTeachersID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
@@ -40,24 +41,25 @@ class PercentValueInBars{
     verifyColoredBarValue(tileID){
         cy.readFile('./cypress/fixtures/BpsTrackingAtAGlance.json').then((value) => {
             let tileName = TrackingAtAGlanceObjects.getTileTitle(tileID)
-            let key1 = tileName+TrackingAtAGlanceObjects.getTitleText1(tileID)
-            let key2 = tileName+TrackingAtAGlanceObjects.getTitleText2(tileID)
+            let key1 = tileName+TrackingAtAGlanceObjects.getTileText1(tileID)
+            let key2 = tileName+TrackingAtAGlanceObjects.getTileText2(tileID)
             let percent1 = (value[key1][2])
             cy.log("1"+percent1) 
-           let expected1 = value[tileName+'progressbarColoredValue'][0].replace(' ','')
-           if (tileID==TrackingAtAGlanceObjects.devicesDistributionID){
-            expected1 =parseFloat(expected1).toFixed(0).toString()
-            cy.log('0 decimals-'+ expected1)
-        }
-            expect(percent1).to.equal()
+            let expected1 = parseFloat(value[tileName+'progressbarColoredValue'][0].replace('%','')).toFixed(2)+'%'
+            if(tileID==TrackingAtAGlanceObjects.devicesDistributionID){
+                expected1 = parseFloat(value[tileName+'progressbarColoredValue'][0].replace('%','')).toFixed(0)+'%'
+            }
+            expect(percent1).to.equal(expected1)
             if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
                 (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
                 let percent2 = (value[key2][2])
-                let expected = value[tileName+'progressbarColoredValue'][1].replace(' ','')
-                cy.log('2 decimals-'+expected)
-                
-               
-                expect(percent2).to.equal(expected)
+                let expected2 = +parseFloat(value[tileName+'progressbarColoredValue'][1].replace('%','')).toFixed(2)+'%'
+                expect(percent2).to.equal(expected2)
+            /* expect(percent1).to.equal(value[tileName+'progressbarColoredValue'][0].replace(' ',''))
+            if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
+                (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
+                let percent2 = (value[key2][2])
+                expect(percent2).to.equal(value[tileName+'progressbarColoredValue'][1].replace(' ',''))*/
             
             } 
         })

@@ -1,23 +1,18 @@
 { 
-"District EnrollmentTotal": "145,487",
-"ChartDistrict Enrollmentdropdown1": [247,1498,28855,99762,2767,141,7066,5151],
-"ChartDistrict Enrollmentdropdown2": [71392,74095],
-"ChartDistrict Enrollmentdropdown3": [417,1944,6916,10278,10577,10597,10462,10550,10813,10552,10594,10629,11488,11180,9676,8814],
-"ChartDistrict Enrollmentdropdown4": [145487,14256],
-"Device DistributionTotal": "126,519",
-"ChartDevice Distributiondropdown1": [217,1275,24872,88167,2434,134,5957,3463],
-"ChartDevice Distributiondropdown2": [62360,64159],
-<<<<<<< HEAD
-"ChartDevice Distributiondropdown3": [297,1529,6116,9621,10180,10229,9674,9791,9956,8842,8956,8671,9087,9108,7713,6749],
-"ChartDevice Distributiondropdown4": [126519,12142],
-=======
-"ChartDevice Distributiondropdown3": [62360,64159],
-"ChartDevice Distributiondropdown4": [62360,12142],
->>>>>>> a47614bdad2975cc02daa84b2470204e51be5c53
-"Hotspot DistributionTotal": "39,921",
-"ChartHotspot Distributiondropdown1": [74,228,9016,27820,701,21,1318,743],
-"ChartHotspot Distributiondropdown2": [19854,20067],
-"ChartHotspot Distributiondropdown3": [74,289,1308,2699,3102,3208,3481,3327,3380,3207,3167,3037,2970,2823,2124,1725],
-"ChartHotspot Distributiondropdown4": [39921,4308],
+"District EnrollmentTotal": "145,516",
+"ChartDistrict Enrollmentdropdown1": [247,1498,28860,99781,2769,141,7067,5153],
+"ChartDistrict Enrollmentdropdown2": [71416,74100],
+"ChartDistrict Enrollmentdropdown3": [417,1944,6912,10285,10587,10596,10462,10553,10812,10558,10597,10629,11484,11189,9675,8816],
+"ChartDistrict Enrollmentdropdown4": [145516,67899,135813,14240],
+"Device DistributionTotal": "126,592",
+"ChartDevice Distributiondropdown1": [217,1278,24875,88269,2435,134,5957,3427],
+"ChartDevice Distributiondropdown2": [62411,64181],
+"ChartDevice Distributiondropdown3": [296,1531,6105,9618,10187,10222,9672,9790,9958,8919,8960,8675,9084,9113,7713,6749],
+"ChartDevice Distributiondropdown4": [126592,60597,118623,12136],
+"Hotspot DistributionTotal": "39,592",
+"ChartHotspot Distributiondropdown1": [74,225,8922,27615,700,21,1309,726],
+"ChartHotspot Distributiondropdown2": [19670,19922],
+"ChartHotspot Distributiondropdown3": [71,288,1297,2687,3076,3179,3452,3296,3347,3173,3147,3007,2946,2803,2103,1720],
+"ChartHotspot Distributiondropdown4": [39592,20213,37923,4270],
 "End" : "dummy" 
  } 

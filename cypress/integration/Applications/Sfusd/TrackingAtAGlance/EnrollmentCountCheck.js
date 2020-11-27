@@ -2,7 +2,7 @@ import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 
 class EnrollemntCheck{
     verifyEnrollmentCountInTile(tileID){
-        cy.readFile('./cypress/fixtures/SfpsTrackingAtAGlance.json').then((enroll)=>{
+        cy.readFile('./cypress/fixtures/SfusdTrackingAtAGlance.json').then((enroll)=>{
             let main = TrackingAtAGlanceObjects.getTileTitle(tileID) + TrackingAtAGlanceObjects.getTitleText1(tileID)
             let expected = enroll["DAILY INACTIVE STUDENTSAvg. Daily Inactive Students"][1]
             expect(enroll[main][1].replace(' ','')).to.equal(expected)
