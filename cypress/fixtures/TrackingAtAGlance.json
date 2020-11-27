@@ -1,9 +1,37 @@
 { 
-"DAILY INACTIVE STUDENTSAvg. Daily Inactive Students": ["7933" ,"53016" ,"14.96%"] ,
-"DAILY INACTIVE STUDENTSLast 7 Days Avg": ["2056" ,"53016" ,"3.88%"] ,
-"DAILY ACTIVE STUDENTSAvg. Daily Active Students": ["45083" ," 53016" ,"85.04%"] ,
-"DAILY ACTIVE STUDENTS Last 7 Days Avg": ["47928" ," 53016" ,"90.4%"] ,
-"INACTIVE STUDENTS(YTD)Students with no login or <10% login(YTD)": ["1903" ,"53016" ,"3.59%"] ,
-"WEEKLY ACTIVE STUDENTSAvg. Weekly Active Students": ["50022" ,"53016" ,"94.35%"] ,
-"Weekly Inactive < 60%Avg Students Inactive < 60% per week": ["6153" ,"53016" ,"11.61%"] ,
-"DEVICESDISTRIBUTIONStudents With Devices": ["27927" ,"53016" ,"53%"] ,
+<<<<<<< HEAD
+"DAILY INACTIVE STUDENTSAvg. Daily Inactive Students": ["Blank" ,"3318" ,"No Data%"] ,
+"DAILY INACTIVE STUDENTSNo Login in Past 7 Days": ["56" ,"3318" ,"1.69%"] ,
+"DAILY ACTIVE STUDENTSAvg. Daily Active Students": ["Blank" ," 3318" ,"No Data%"] ,
+"DAILY ACTIVE STUDENTS Last 7 Days Avg": ["2969" ," 3318" ,"89.48%"] ,
+"WEEKLY ACTIVE STUDENTSAvg. Weekly Active Students": ["Blank" ,"3318" ,"No Data%"] ,
+"INACTIVE STUDENTS(YTD)Students with no login or <10% login(YTD)": ["45" ,"3318" ,"1.36%"] ,
+"DEVICESDISTRIBUTIONStudents With Devices": ["2841" ,"3318" ,"86%"] ,
+"DEVICESDISTRIBUTIONDevices Distributed": ["2841" ,"3318" ,"85.62%"] ,
+"DAILY INACTIVE STUDENTS": [" height: 9px"," 1.69%"] ,
+"DAILY ACTIVE STUDENTS": [" height: 9px"," 89.48%"] ,
+"DEVICESDISTRIBUTION": [" 85.62%"," 85.62%"] ,
+"ACTIVETEACHERS": [" height: 9px"," 84.63%"] ,
+"INACTIVE STUDENTS(YTD)": [" 1.36%"] ,
+"WEEKLY ACTIVE STUDENTS": [" height: 9px"] ,
+=======
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+<<<<<<< HEAD
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+=======
+>>>>>>> 56c793b74a890e6c2a2b28a33a73c7a596408b8a
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+"DAILY INACTIVE STUDENTS": [
+>>>>>>> 68cb675f20ecf20b833271302615c57d122601a1

@@ -18,7 +18,7 @@ class NavigateToPage{
         }
     goToPage(page)
     {
-        cy.wait(30000)
+        cy.wait(45000)
         cy.get('[class=long_label]').contains(page,{matchCase: false}).click({force : true})
         const titleCheck = new PageTitleCheck
         titleCheck.PageTitleTest(page)
