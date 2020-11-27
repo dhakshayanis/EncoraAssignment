@@ -43,6 +43,6 @@ describe('one',function()
     it('Verify enrollement counts',function()
     {
         const values = new EnrollemntCheck
-        values.verifyEnrollmentCountInAllTiles ()
+        values.verifyEnrollmentCountInAllTiles()
     })
 })
