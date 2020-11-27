@@ -1,3 +1,4 @@
+import FiltersDisplayedInAPage from '../Common/FiltersDisplayedInPage'
 import Filters from './Filters'
 
 class NavigationPanel{
@@ -8,6 +9,8 @@ class NavigationPanel{
     static filtersField ='(//*[@class="ant-select-selection__rendered"])'
     static filterHeaders ='(//*[@class="select-floating-text"])'
     static ddOptions ='//*[@role="option"]'
+    static apply = '//*[text()="Apply"]'
+    static reset ='//*[text()="Reset"]'
 
     hovernavfilter() {
         cy.xpath("(//i[@class='material-icons'])[3]").trigger('mouseover')
@@ -40,6 +43,7 @@ class NavigationPanel{
 
         })
     }
+
     static getExpectedDropdownOptions(pageName, i){
         let page = pageName.replace(/ /g,'')
         let filterName = Filters['filtersIn'+page][(i-1)].replace(/ /g,'')
@@ -48,12 +52,14 @@ class NavigationPanel{
         cy.log('options : '+options)
         return options
     }
+
     checkDropdownOption(pageName){
         let page = pageName.replace(/ /g,'')
         cy.xpath(NavigationPanel.filterHeaders).then((filters)=>{
             for(let i=1; i<=filters.length; i++){
+                cy.xpath(NavigationPanel.filtersField+'['+i+']').scrollIntoView()
                 cy.xpath(NavigationPanel.filtersField+'['+i+']').click()
-                cy.wait(2000)
+                cy.wait(3000)
                 let optionsExpected = NavigationPanel.getExpectedDropdownOptions(pageName,i)
                 cy.xpath(NavigationPanel.ddOptionsPrefix+'['+i+']'+NavigationPanel.ddOptions).then((dds)=>{
                     expect(optionsExpected.length).to.equal(dds.length)
@@ -67,7 +73,28 @@ class NavigationPanel{
             }
         })
     }
-    
-
+    applyFilters(pageName){
+        const fil = new NavigationPanel
+        fil.hovernavfilter()
+        const verify = new FiltersDisplayedInAPage
+        let page = pageName.replace(/ /g,'')
+        let filters = Filters['filtersIn'+page]
+            for(let i=1; i<=filters.length; i++){
+                cy.xpath(NavigationPanel.filtersField+'['+i+']').scrollIntoView()
+                cy.xpath(NavigationPanel.filtersField+'['+i+']').click()
+                cy.wait(3000)
+                let optionsExpected = NavigationPanel.getExpectedDropdownOptions(pageName,i)
+                    for(let option=1; option<=optionsExpected.length; option++){
+                        cy.xpath(NavigationPanel.ddOptionsPrefix+'['+i+']').contains(optionsExpected[option-1]).click()
+                        cy.wait(2000)
+                        cy.xpath(NavigationPanel.apply).click()
+                        cy.wait(10000)
+                        verify.writeFilters(pageName,optionsExpected[option-1])
+                        verify.checkFiltersAreApplied(pageName,optionsExpected[option-1])
+                        cy.xpath(NavigationPanel.reset).click()
+                        cy.wait(10000)
+                    }
+            }
+    }
 }
 export default NavigationPanel
