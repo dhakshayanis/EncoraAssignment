@@ -9,17 +9,14 @@ import dropdown from '../../../Applications/sfps/Common/DropDown'
 
 describe('People and Device Sanity Test',function()
 {
-    
    it('navigate to People and Device',function()
    {
         const np = new NavigateToPage
         np.goToTrackingAtAGlancePage()
         np.goToPage(PeopleAndDeviceObjects.pageTitle)
    })
-   
    it('verify page header and footer ',function()
    {
-        cy.wait(30000)
         const header = new PageHeader
         header.pageHeaderCheck()
         header.pageFooterCheck()
@@ -54,7 +51,6 @@ describe('People and Device Sanity Test',function()
    })
    it('Hotspot Distribution sanity',function()
    {
-       cy.get('.brintell-framework-footer-text').scrollIntoView()
        const sanity = new PeopleAndDeviceSanity
        sanity.sanity(PeopleAndDeviceObjects.hotspotDistribution)
    })

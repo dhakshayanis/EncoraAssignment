@@ -1,7 +1,7 @@
 import PeopleAndDeviceObjects from './PeopleAndDeviceObjects'
 
 import Dropdown from '../Common/DropDown'
-import DropDownObjects from '../Common/DropDownObjects'
+import DropDownObjects from '../Common/DropDownObjects' 
 
 class PeopleAndDeviceSanity{
     goToTab(option){

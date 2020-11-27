@@ -1,4 +1,5 @@
 { 
+<<<<<<< HEAD
 "DAILY INACTIVE STUDENTSAvg. Daily Inactive Students": ["40948" ,"145408" ,"28.16%"] ,
 "DAILY INACTIVE STUDENTSNo Login in Past 7 Days": ["10748" ,"145408" ,"7.39%"] ,
 "DAILY ACTIVE STUDENTSAvg. Daily Active Students": ["104460" ," 145408" ,"71.84%"] ,
@@ -17,6 +18,26 @@
 "ACTIVETEACHERSprogressbarColoredValue": ["86.14%","78.17%"] ,
 "INACTIVE STUDENTS(YTD)progressbarColoredValue": ["5.03%"] ,
 "WEEKLY ACTIVE STUDENTSprogressbarColoredValue": ["85.14%"] ,
+=======
+"DAILY INACTIVE STUDENTSAvg. Daily Inactive Students": ["42873" ,"145400" ,"29.49%"] ,
+"DAILY INACTIVE STUDENTSNo Login in Past 7 Days": ["14239" ,"145400" ,"9.79%"] ,
+"DAILY ACTIVE STUDENTSAvg. Daily Active Students": ["102527" ," 145400" ,"70.51%"] ,
+"DAILY ACTIVE STUDENTS Last 7 Days Avg": ["67147" ," 145400" ,"46.18%"] ,
+"WEEKLY ACTIVE STUDENTSAvg. Weekly Active Students": ["125803" ,"145400" ,"86.52%"] ,
+"INACTIVE STUDENTS(YTD)Students with no login or <10% login(YTD)": ["6948" ,"145400" ,"4.78%"] ,
+"DEVICESDISTRIBUTIONStudents With Devices": ["126391" ,"145400" ,"87%"] ,
+"DEVICESDISTRIBUTIONDevices Distributed": ["126391" ,"145400" ,"86.93%"] ,
+"APPLICATION LOGINSAverage Number of Apps Accessed per Student": ["2.58" ,"Blank" ,"Blank"] ,
+"ACTIVETEACHERSAvg # of Teachers Active": ["9283" ," 10968" ,"84.64%"] ,
+"ACTIVETEACHERSLast 7 Days Avg": ["6948" ," 10968" ,"63.35%"] ,
+"STUDENTHOTSPOT DISTRIBUTIONStudents Hotspot": ["40097" ,"145400" ,"28%"] ,
+"DAILY INACTIVE STUDENTSprogressbarColoredValue": ["29.49%","9.79%"] ,
+"DAILY ACTIVE STUDENTSprogressbarColoredValue": ["70.51%","46.18%"] ,
+"DEVICESDISTRIBUTIONprogressbarColoredValue": ["86.93%","86.93%"] ,
+"ACTIVETEACHERSprogressbarColoredValue": ["84.64%","63.35%"] ,
+"INACTIVE STUDENTS(YTD)progressbarColoredValue": ["4.78%"] ,
+"WEEKLY ACTIVE STUDENTSprogressbarColoredValue": ["86.52%"] ,
+>>>>>>> 96b22bbe263b82cef1a588084a30b617215b47fd
 "STUDENTHOTSPOT DISTRIBUTIONprogressbarColoredValue": ["27.58%"] ,
 "End" : "dummy" 
  } 

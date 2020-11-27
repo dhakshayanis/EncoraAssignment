@@ -1,5 +1,5 @@
 import writeJSON from '../Common/WriteJSON'
-import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
+import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects' 
 
 class WriteValuesInKPIs{
     writeAllValues(){

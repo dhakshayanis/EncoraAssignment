@@ -10,6 +10,7 @@ describe('one',function()
 {
     it('navigate to Tracking At a Glance',function()
     {
+        
         const np = new NavigateToPage
         np.goToTrackingAtAGlancePage()
         const titleCheck = new PageTitleCheck
