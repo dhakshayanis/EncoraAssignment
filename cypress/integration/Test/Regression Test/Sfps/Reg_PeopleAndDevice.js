@@ -32,7 +32,7 @@ describe('People and Device Regression Test',function()
     it('switch to table', function(){
         const sanity = new PeopleAndDeviceSanity
         sanity.switchTo(PeopleAndDeviceObjects.tableViewButton)
-    })
+        })
     it('write table values', function(){
         const write = new writeJSON
         write.start('SfpsPeopleAndDeviceStudentsTable')
