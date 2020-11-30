@@ -4,14 +4,14 @@ import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
 class PercentValueInBars{
     coloredValueInBarInTile(tileID){
         const write = new writeJSON
-        write.startArray('DisdTrackingAtAGlance',TrackingAtAGlanceObjects.getTileTitle(tileID)+'progressbarColoredValue')
+        write.startArray('SfpsTrackingAtAGlance',TrackingAtAGlanceObjects.getTileTitle(tileID)+'progressbarColoredValue')
         cy.get(tileID).within(()=>{
             cy.get(TrackingAtAGlanceObjects.progressBarBlueInMainKpi).invoke('attr','style').then((styleAttrInMainKpi)=>{
                 cy.log(styleAttrInMainKpi)
                 let splittedMainKpi = styleAttrInMainKpi.split(';')
                 let width1 = splittedMainKpi[1]
                 let coloredValue1 = width1.replace('width: ','').replace(' ','')
-                write.writeValuesInArray('DisdTrackingAtAGlance','"'+coloredValue1+'"')
+                write.writeValuesInArray('SfpsTrackingAtAGlance','"'+coloredValue1+'"')
                 if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
                 (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
                 cy.get(TrackingAtAGlanceObjects.progressBarBlueInMiniKpi).invoke('attr','style').then((styleAttrInMiniKpi)=>{
@@ -19,10 +19,10 @@ class PercentValueInBars{
                     let splittedMiniKpi = styleAttrInMiniKpi.split(';')
                     let width2 = splittedMiniKpi[1]
                     let coloredValue2 = width2.replace('width: ','').replace(' ','')
-                    write.writeValuesInArray('DisdTrackingAtAGlance',',"'+coloredValue2+'"')
+                    write.writeValuesInArray('SfpsTrackingAtAGlance',',"'+coloredValue2+'"')
                 }) 
                 }  
-                write.endArray('DisdTrackingAtAGlance')             
+                write.endArray('SfpsTrackingAtAGlance')             
             })
         })
     } 
@@ -37,10 +37,10 @@ class PercentValueInBars{
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
         bar.coloredValueInBarInTile(TrackingAtAGlanceObjects.studenthotspotdistributionID)
         const write = new writeJSON
-        write.end('DisdTrackingAtAGlance')
+        write.end('SfpsTrackingAtAGlance')
     }
     verifyColoredBarValue(tileID){
-        cy.readFile('./cypress/fixtures/DisdTrackingAtAGlance.json').then((value) => {
+        cy.readFile('./cypress/fixtures/SfpsTrackingAtAGlance.json').then((value) => {
             let tileName = TrackingAtAGlanceObjects.getTileTitle(tileID)
             let key1 = tileName+TrackingAtAGlanceObjects.getTitleText1(tileID)
             let key2 = tileName+TrackingAtAGlanceObjects.getTitleText2(tileID)
