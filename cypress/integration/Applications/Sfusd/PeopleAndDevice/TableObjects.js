@@ -10,8 +10,8 @@ class TableObjects{
     static getColumnNumber(columnName){
         var id = new Map();
         //tracking at a glance
-        id.set(PeopleAndDeviceObjects.districtEnrollment, 5);
-        id.set(PeopleAndDeviceObjects.deviceDistribution,6);
+        id.set(PeopleAndDeviceObjects.districtEnrollment, 4);
+        id.set(PeopleAndDeviceObjects.deviceDistribution,5);
         return id.get(columnName)
     }
 }
