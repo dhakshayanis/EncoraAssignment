@@ -1,0 +1,14 @@
+{ 
+"Avg # of Students Active": "85.08%",
+"Avg # of Students InActive": "14.92%",
+"Average Number of Apps Accessed per Student": "3.86",
+"Average Number of Emails Sent per Student": "0.25",
+"Average Number of Emails Received per Student": "8.5",
+"No of Drive Items Created": "865005",
+"Inactive Students ( Student with less than 10% or No Login)": "3.55%",
+"Avg # of Active Students (With atleast one Login for the week)": "94.39%",
+"Students With No logon for Past 7 days": "3.84%",
+"Daily Avg Meeting Minutes per Student": "1.94",
+"Weekly Inactive Students (< 60%)": "11.57%",
+"End" : "dummy" 
+ } 
