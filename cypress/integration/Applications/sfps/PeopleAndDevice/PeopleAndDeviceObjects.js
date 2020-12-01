@@ -11,6 +11,7 @@ class PeopleAndDeviceObjects{
     static schoolsDistrictChartcomponent =  'Students With One Laptop'
     static studentsTab = 'Students'
     static schoolsTab ='Schools / District'
+    static showmore= '(//*[@class="ant-select-selection-selected-value"])[3]'
     
     static districtEnrollmentDropdownName ='View by'
     static deviceDistributionDropdownName ='View by'

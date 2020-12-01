@@ -1,11 +1,11 @@
 import writeJSON from '../Common/WriteJSON'
-import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects'
+import TrackingAtAGlanceObjects from './TrackingAtAGlanceObjects' 
 
 class WriteValuesInKPIs{
     writeAllValues(){
         const val = new WriteValuesInKPIs
         const write = new writeJSON
-        write.start('SfusdTrackingAtAGlance')
+        write.start('SfpsTrackingAtAGlance')
         val.writeValuesInTile(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.dailyActiveStudentsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
@@ -13,6 +13,7 @@ class WriteValuesInKPIs{
         val.writeValuesInTile(TrackingAtAGlanceObjects.devicesDistributionID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.applicationLoginsID)
         val.writeValuesInTile(TrackingAtAGlanceObjects.activeTeachersID)
+        val.writeValuesInTile(TrackingAtAGlanceObjects.studenthotspotdistributionID)
     }
     static checkIfBlank(text){
         if(text==''){
@@ -32,23 +33,22 @@ class WriteValuesInKPIs{
                     nr = WriteValuesInKPIs.checkIfBlank(nr.replace(',',''))
                     dr = WriteValuesInKPIs.checkIfBlank(dr.replace(',','').replace('of ',''))
                     percent = WriteValuesInKPIs.checkIfBlank(percent)
-                    write.startArray('SfusdTrackingAtAGlance',tileName+mainKpiTitle)
-                    write.writeValuesInArray('SfusdTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
-                    write.endArray('SfusdTrackingAtAGlance')
+                    write.startArray('SfpsTrackingAtAGlance',tileName+mainKpiTitle)
+                    write.writeValuesInArray('SfpsTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
+                    write.endArray('SfpsTrackingAtAGlance')
                 })
             })
         })
         if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
-             (tileID==TrackingAtAGlanceObjects.activeTeachersID)){
+            (tileID==TrackingAtAGlanceObjects.devicesDistributionID|| (tileID==TrackingAtAGlanceObjects.activeTeachersID))){
             cy.get(tileID+TrackingAtAGlanceObjects.nrInMiniKpi).invoke('text').then((nr)=>{
                 cy.get(tileID+TrackingAtAGlanceObjects.drInKpi).invoke('text').then((dr)=>{
                     cy.get(tileID+TrackingAtAGlanceObjects.percentXpathInMiniKpi).invoke('text').then((percent)=>{
                         nr = nr.replace(',','')
                         dr = dr.replace(',','').replace('of ','')
-                        write.writeValuesInJSON('SfusdTrackingAtAGlance',tileName+miniKpiTitle,'[ '+nr+', '+dr+', '+ percent+']')
-                        write.startArray('SfusdTrackingAtAGlance',tileName+miniKpiTitle)
-                        write.writeValuesInArray('SfusdTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
-                        write.endArray('SfusdTrackingAtAGlance')
+                        write.startArray('SfpsTrackingAtAGlance',tileName+miniKpiTitle)
+                        write.writeValuesInArray('SfpsTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
+                        write.endArray('SfpsTrackingAtAGlance')
                     })
                 })
             })

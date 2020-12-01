@@ -23,6 +23,7 @@ class TableValues{
         cy.wait(2000)
     }
     writeTableValues(jsonName,pageNo,columnName){
+        cy.get(TableObjects.showsDropdown).click({force : true})
         const write = new writeJSON
         //write.start('PeopleAndDeviceStudentsTable')
         let colNum = TableObjects.getColumnNumber(columnName)

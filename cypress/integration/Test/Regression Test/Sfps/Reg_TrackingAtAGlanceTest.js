@@ -1,15 +1,16 @@
-import NavigateToPage from '../../../Applications/Sfusd/Common/NavigateToPage'
-import PageTitleCheck from '../../../Applications/Sfusd/Common/PageTitleCheck'
-import TrackingAtAGlanceObjects from '../../../Applications/Sfusd/TrackingAtAGlance/TrackingAtAGlanceObjects'
-import PercentageCalculation from '../../../Applications/Sfusd/TrackingAtAGlance/PercentageCalculation'
-import WriteValuesInKPIs from '../../../Applications/Sfusd/TrackingAtAGlance/WriteVauesInAtAGlancePage'
-import PercentValueInBars from '../../../Applications/Sfusd/TrackingAtAGlance/PercentValueInBars'
-import EnrollemntCheck from '../../../Applications/Sfusd/TrackingAtAGlance/EnrollmentCountCheck'
+import NavigateToPage from '../../../Applications/Sfps/Common/NavigateToPage'
+import PageTitleCheck from '../../../Applications/Sfps/Common/PageTitleCheck'
+import TrackingAtAGlanceObjects from '../../../Applications/Sfps/TrackingAtAGlance/TrackingAtAGlanceObjects'
+import PercentageCalculation from '../../../Applications/Sfps/TrackingAtAGlance/PercentageCalculation'
+import WriteValuesInKPIs from '../../../Applications/Sfps/TrackingAtAGlance/WriteVauesInAtAGlancePage'
+import PercentValueInBars from '../../../Applications/Sfps/TrackingAtAGlance/PercentValueInBars'
+import EnrollemntCheck from '../../../Applications/Sfps/TrackingAtAGlance/EnrollmentCountCheck'
 
 describe('one',function()
 {
     it('navigate to Tracking At a Glance',function()
     {
+        
         const np = new NavigateToPage
         np.goToTrackingAtAGlancePage()
         const titleCheck = new PageTitleCheck
