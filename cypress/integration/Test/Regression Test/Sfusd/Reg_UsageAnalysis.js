@@ -38,12 +38,12 @@ describe('Usage Analysisn Regression Test',function()
        const kpi = new KPI
        kpi.checkBarNames(UsageAnalysisObjects.teacherBoxName)
    })
-   it('verify tabs names', function()
+   it('verify Student tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.studentBoxName)
    })
-   it('verify tabs names', function()
+   it('verify Teacher tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.teacherBoxName)
