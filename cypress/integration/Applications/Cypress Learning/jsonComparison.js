@@ -26,5 +26,20 @@ describe('COmpre JSON ',function()
             cy.log(valueA.barname)
         })
     })
+    it('jso',function(){
+        var remoteJSON = {"allowExternalMembers": "false", "whoCanJoin": "CAN_REQUEST_TO_JOIN"};
+        var localJSON = {"whoCanJoin": "CAN_REQUEST_TO_JOIN", "allowExternalMembers": "false"};
+        expect(remoteJSON).to.equal(remoteJSON)
+    })
+    it('jso',function(){
+        cy.readFile('./cypress/fixtures/filterJson.json').then((val)=>{
+            var remoteJSON = JSON.stringify(val)
+            var localJSON = JSON.stringify(val)
+            expect(remoteJSON).to.equal(localJSON)
+        })
+        
+        
+        
+    })
 
 })

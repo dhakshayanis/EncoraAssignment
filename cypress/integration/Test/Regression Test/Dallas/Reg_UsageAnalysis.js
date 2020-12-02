@@ -4,7 +4,8 @@ import UsageAnalysisObjects from '../../../Applications/Dallas/UsageAnalysis/Usa
 import writeJSON from '../../../Applications/Dallas/Common/WriteJSON'
 import goToTab from '../../../Applications/Dallas/UsageAnalysis/GoToTab'
 import UsageVsAtAGlance from '../../../Applications/Dallas/UsageAnalysis/UsageVsAtAGlance'
-import CheckPercentageSum from '../../../Applications/Dallas/UsageAnalysis/CheckPercentageSum'
+import CheckPercentageSum from '../../../Applications/Dallas/UsageAnalysis/CheckPercentageSum' 
+
 
 describe('Usage Analysisn Regression Test',function()
 {
@@ -14,36 +15,36 @@ describe('Usage Analysisn Regression Test',function()
        np.goToTrackingAtAGlancePage()
        np.goToPage(UsageAnalysisObjects.pageTitle)
    })
-   it('bar names',function()
+   it('Student Tile bar names',function()
    {
        const kpi = new KPI
        const write = new writeJSON
        write.start('DisdUsageAnalysisKpis')
        kpi.getTextInAllBars(UsageAnalysisObjects.studentBoxName)
    })
-   it('bar names',function()
+   it('Teachers Tile bar names',function()
    {
        const kpi = new KPI
        const write = new writeJSON
        kpi.getTextInAllBars(UsageAnalysisObjects.teacherBoxName)
        write.end('DisdUsageAnalysisKpis')
    })
-   it('verify bar names', function()
+   it('verify Students Tile bar names', function()
    {
        const kpi = new KPI
        kpi.checkBarNames(UsageAnalysisObjects.studentBoxName)
    })
-   it('verify bar names', function()
+   it('verify Teachers Tile bar names', function()
    {
        const kpi = new KPI
        kpi.checkBarNames(UsageAnalysisObjects.teacherBoxName)
    })
-   it('verify tabs names', function()
+   it('verify Students tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.studentBoxName)
    })
-   it('verify tabs names', function()
+   it('verify Teachers tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.teacherBoxName)

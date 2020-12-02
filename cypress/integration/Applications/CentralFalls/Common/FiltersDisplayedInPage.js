@@ -41,7 +41,7 @@ class FiltersDisplayedInAPage{
             }
         })
         })
-    }
+    }/*
     checkFiltersAreApplied(pageName,filterOption){
         let expectedFilterOptions = NavigationPanelVerifications.getExpectedFilterOptions(pageName,filterOption)
         cy.log(expectedFilterOptions)
@@ -62,6 +62,15 @@ class FiltersDisplayedInAPage{
                     }
                 }
             })
+    }*/
+    checkFiltersAreApplied(){
+        cy.readFile('./cypress/fixtures/'+FiltersDisplayedInAPage.filterOptionsJsonName+'.json').then((fromPage)=>{
+            cy.readFile('./cypress/fixtures/'+FiltersDisplayedInAPage.filterOptionsJsonName+'.json').then((fromPanel)=>{
+                let fromPageJson = JSON.stringify(fromPage)
+                let fromPanelJson = JSON.stringify(fromPanel)
+                expect(fromPageJson).to.equal(fromPanelJson)
+            })
+        })
     }
     verifyDefaultFilters(pageName){
         const write = new WriteJson
@@ -81,7 +90,8 @@ class FiltersDisplayedInAPage{
             cy.writeFile('./cypress/fixtures/'+FiltersDisplayedInAPage.filterOptionsJsonName+'.json',parsedJson)
         })
         filters.writeFilters(pageName, 'Default')
-        filters.checkFiltersAreApplied(pageName, 'Default')
+        NavigationPanelVerifications.getJson(pageName,'Default','Default')
+        filters.checkFiltersAreApplied()
     }
 
 }

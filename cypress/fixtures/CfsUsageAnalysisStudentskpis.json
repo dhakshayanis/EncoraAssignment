@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+{ 
+=======
 { 
 "Avg # of Students Active": "21.48%",
 "Avg # of Students InActive": "78.52%",
@@ -11,3 +14,4 @@
 "Daily Avg Meeting Minutes per Student": "13.05",
 "End" : "dummy" 
  } 
+>>>>>>> ac842dc17fb184acb660804dc8f363d347c3258c

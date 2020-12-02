@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+{ 
+=======
 { 
 "Avg # of Teachers Active": "58.73%",
 "Avg # of Teachers InActive": "41.27%",
@@ -8,3 +11,4 @@
 "Inactive Teacher ( Teacher with less than 10% or No Login)": "14.29%",
 "End" : "dummy" 
  } 
+>>>>>>> ac842dc17fb184acb660804dc8f363d347c3258c
