@@ -13,7 +13,7 @@ describe('People and Device Regression Test',function()
         np.goToTrackingAtAGlancePage()
         np.goToPage(PeopleAndDeviceObjects.pageTitle)
    })
-   /*it('write chart values',function(){
+   it('write chart values',function(){
        const write = new writeJSON
        write.start('SfpsPeopleAndDeviceChart')
        const chartsValues = new CheckChartsValue
@@ -28,15 +28,11 @@ describe('People and Device Regression Test',function()
         prepareJSON.checkChartTotal(PeopleAndDeviceObjects.districtEnrollment)
         prepareJSON.checkChartTotal(PeopleAndDeviceObjects.deviceDistribution)
         prepareJSON.checkChartTotal(PeopleAndDeviceObjects.hotspotDistribution)
-    })*/
+    })
     it('switch to table', function(){
         const sanity = new PeopleAndDeviceSanity
         sanity.switchTo(PeopleAndDeviceObjects.tableViewButton)
-<<<<<<< HEAD
-        })
-=======
-    })/*
->>>>>>> 96b22bbe263b82cef1a588084a30b617215b47fd
+    })
     it('write table values', function(){
         const write = new writeJSON
         write.start('SfpsPeopleAndDeviceStudentsTable')
@@ -45,7 +41,7 @@ describe('People and Device Regression Test',function()
         table.writeTableValues('SfpsPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.deviceDistribution)
         table.writeTableValues('SfpsPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.hotspotDistribution)
         write.end('SfpsPeopleAndDeviceStudentsTable')
-    })*/
+    })
     it('read table values and compare with total', function(){
         const table = new TableValues
         table.compareChartTotalWithTableTotal(PeopleAndDeviceObjects.districtEnrollment)
