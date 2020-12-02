@@ -32,7 +32,6 @@ class goToTab{
     }
 
     goToTab(option){
-        cy.wait(4000)
         cy.contains(option).click()
         cy.wait(3000)
         return this
@@ -46,8 +45,8 @@ class goToTab{
             for(let i=1; i<= numberOfBars; i++){
                 cy.get(PageTitleCheck.pageTitle).scrollIntoView()
                 let barId = boxName + 'BarName' +(i+((page-1)*5))
-                cy.wait(5000)
                 let barName = UsageAnalysisObjects[barId]
+                cy.wait(5000)
                 cy.contains(barName).click()
                 cy.log('barname ='+barName)
                 let tabs = goToTab.getTabsInBar(barName)
@@ -70,6 +69,7 @@ class goToTab{
         })
     }
     clickBarsInAllPages(boxName, operation){
+        cy.wait(2000)
         const tab = new goToTab
         const kpiName = new KPI
         const boxNameXpath = KPI.getBoxNameXpath(boxName)
@@ -80,7 +80,7 @@ class goToTab{
             let lastPageNumber = parseInt(splittedText[1])
             cy.log('number of pages : '+lastPageNumber)
             for(let page = 1;page<=lastPageNumber; page++){
-                cy.pause()
+
                 tab.clickKpi(boxName, page, operation)
                 kpiName.navigateToPage(boxNameXpath)
             }
@@ -90,11 +90,14 @@ class goToTab{
         cy.wait(3000)
         const tab = new goToTab
         tab.clickBarsInAllPages(boxName, 'Tab name')
+        cy.wait(3000)
+
     }
     verifyTextInTabForAllKpis(boxName){
         cy.wait(3000)
         const tab = new goToTab
-        tab.clickBarsInAllPages(boxName, 'Tab text')        
+        tab.clickBarsInAllPages(boxName, 'Tab text')  
+        cy.wait(3000)      
     }
 }
 export default goToTab
