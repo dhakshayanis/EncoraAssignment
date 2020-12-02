@@ -22,7 +22,7 @@ class goToTab{
         tabs.set(UsageAnalysisObjects.StudentsBarName6, goToTab.twoTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName7, goToTab.twoTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName8, goToTab.fourTabsInStudent);
-        tabs.set(UsageAnalysisObjects.StudentsBarName9, goToTab.fourTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName9, goToTab.oneTabInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName10, goToTab.oneTabInStudent);
         tabs.set(UsageAnalysisObjects.TeachersBarName1, goToTab.threeTabsInTeacher);
         tabs.set(UsageAnalysisObjects.TeachersBarName2, goToTab.threeTabsInTeacher);

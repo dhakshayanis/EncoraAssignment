@@ -9,17 +9,17 @@ class NavigateToPage{
             return false
           })
           //Login for Electron browser
-          // cy.get('[name="Email"]').type('tambalavanan@inniveinc.com')//('demouser@inniveinc.com')
-          // cy.get('#next').click()
-          // cy.get('[type="password"]').type('9486304276')//('Innive@23')
-          // cy.get('#submit').click()
+           //cy.get('[name="Email"]').type('tambalavanan@inniveinc.com')//('demouser@inniveinc.com')
+           //cy.get('#next').click()
+           //cy.get('[type="password"]').type('9486304276')//('Innive@23')
+           //cy.get('#submit').click()
 
           //Login for Edge browser
-        //    cy.get('[name="identifier"]').type('tambalavanan@inniveinc.com')//('demouser@inniveinc.com')
-        //   cy.get('#identifierNext').click()
-        //  cy.wait(1000)
-        //  cy.get('[type="password"]').type('9486304276')//('Innive@23')
-        //   cy.get('#passwordNext').click()
+          //cy.get('[name="identifier"]').type('tambalavanan@inniveinc.com')//('demouser@inniveinc.com')
+          //cy.get('#identifierNext').click()
+          //cy.wait(3000)
+         //cy.get('[type="password"]').type('9486304276')//('Innive@23')
+         // cy.get('#passwordNext').click()
 
           cy.wait(30000)
           cy.get('[class=external-generic-component-child2]').contains('Remote').click()

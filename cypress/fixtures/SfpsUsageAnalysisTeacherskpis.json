@@ -1,0 +1,19 @@
+{ 
+<<<<<<< HEAD
+"Avg # of Teachers Active": "87.93%",
+"Avg # of Teachers InActive": "12.18%",
+"Average Emails Sent": "10.03",
+"Average Emails Received": "33.36",
+"No of Drive Items Created": "84486",
+"Daily Avg Meeting Minutes per Teacher": "169.37",
+=======
+"Avg # of Teachers Active": "86.44%",
+"Avg # of Teachers InActive": "13.56%",
+"Average Emails Sent": "9.98",
+"Average Emails Received": "33.39",
+"No of Drive Items Created": "12800",
+"Daily Avg Meeting Minutes per Teacher": "168.18",
+>>>>>>> 3993120f91e5083bda7afb06f5f93541ed47e5b0
+"Inactive Teacher ( Teacher with less than 10% or No Login)": "9.31%",
+"End" : "dummy" 
+ } 

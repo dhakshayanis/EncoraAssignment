@@ -1,10 +1,10 @@
-import NavigateToPage from '../../../Applications/boston/Common/NavigateToPage'
-import KPI from '../../../Applications/boston/UsageAnalysis/bars'
-import UsageAnalysisObjects from '../../../Applications/boston/UsageAnalysis/UsageAnalysisObjects'
-import writeJSON from '../../../Applications/boston/Common/WriteJSON'
-import goToTab from '../../../Applications/boston/UsageAnalysis/GoToTab'
-import UsageVsAtAGlance from '../../../Applications/boston/UsageAnalysis/UsageVsAtAGlance'
-import CheckPercentageSum from '../../../Applications/boston/UsageAnalysis/CheckPercentageSum'
+import NavigateToPage from '../../../Applications/Sfps/Common/NavigateToPage'
+import KPI from '../../../Applications/sfps/UsageAnalysis/bars'
+import UsageAnalysisObjects from '../../../Applications/sfps/UsageAnalysis/UsageAnalysisObjects'
+import writeJSON from '../../../Applications/sfps/Common/WriteJSON'
+import goToTab from '../../../Applications/sfps/UsageAnalysis/GoToTab'
+import UsageVsAtAGlance from '../../../Applications/sfps/UsageAnalysis/UsageVsAtAGlance'
+import CheckPercentageSum from '../../../Applications/sfps/UsageAnalysis/CheckPercentageSum'
 
 describe('Usage Analysisn Regression Test',function()
 {
@@ -14,11 +14,11 @@ describe('Usage Analysisn Regression Test',function()
        np.goToTrackingAtAGlancePage()
        np.goToPage(UsageAnalysisObjects.pageTitle)
    })
-   it('bar names',function()
+   /*it('bar names',function()
    {
        const kpi = new KPI
        const write = new writeJSON
-       write.start('BpsUsageAnalysisKpis')
+       write.start('SfpsUsageAnalysisKpis')
        kpi.getTextInAllBars(UsageAnalysisObjects.studentBoxName)
    })
    it('bar names',function()
@@ -26,41 +26,37 @@ describe('Usage Analysisn Regression Test',function()
        const kpi = new KPI
        const write = new writeJSON
        kpi.getTextInAllBars(UsageAnalysisObjects.teacherBoxName)
-       write.end('BpsUsageAnalysisKpis')
+       write.end('SfpsUsageAnalysisKpis')
    })
-   it('verify bar names', function()
+   it('verify student bar names', function()
    {
        const kpi = new KPI
        kpi.checkBarNames(UsageAnalysisObjects.studentBoxName)
    })
-   it('verify bar names', function()
+   it('verify teacher bar names', function()
    {
        const kpi = new KPI
        kpi.checkBarNames(UsageAnalysisObjects.teacherBoxName)
-   })
-   it('verify tabs names', function()
+   })*/
+   it('verify student tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.studentBoxName)
-       
    })
-   it('verify tabs names', function()
+   it('verify teacher tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.teacherBoxName)
-      
    })
    it('verify tabs text in students', function()
    {
        const tab = new goToTab
        tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.studentBoxName)
-       
    })
    it('verify tabs text in teachers', function()
    {
        const tab = new goToTab
        tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.teacherBoxName)
-       
    })
    it('compare usage and at a glance', function()
    {

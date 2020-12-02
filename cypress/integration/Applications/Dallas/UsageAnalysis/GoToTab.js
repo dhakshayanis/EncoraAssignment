@@ -18,19 +18,16 @@ class goToTab{
         tabs.set(UsageAnalysisObjects.StudentsBarName2, goToTab.fiveTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName3, goToTab.twoTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName4, goToTab.twoTabsInStudent);
-        tabs.set(UsageAnalysisObjects.StudentsBarName5, goToTab.twoTabsInStudent);
-        tabs.set(UsageAnalysisObjects.StudentsBarName6, goToTab.twoTabsInStudent);
-        tabs.set(UsageAnalysisObjects.StudentsBarName7, goToTab.twoTabsInStudent);
-        tabs.set(UsageAnalysisObjects.StudentsBarName8, goToTab.fourTabsInStudent);
-        tabs.set(UsageAnalysisObjects.StudentsBarName9, goToTab.fourTabsInStudent);
-        tabs.set(UsageAnalysisObjects.StudentsBarName10, goToTab.oneTabInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName5, goToTab.fourTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName6, goToTab.fourTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName7, goToTab.fourTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName8, goToTab.oneTabsInStudent);
         tabs.set(UsageAnalysisObjects.TeachersBarName1, goToTab.threeTabsInTeacher);
         tabs.set(UsageAnalysisObjects.TeachersBarName2, goToTab.threeTabsInTeacher);
         tabs.set(UsageAnalysisObjects.TeachersBarName3, goToTab.oneTabInTeacher);
         tabs.set(UsageAnalysisObjects.TeachersBarName4, goToTab.oneTabInTeacher);
-        tabs.set(UsageAnalysisObjects.TeachersBarName5, goToTab.oneTabInTeacher);
-        tabs.set(UsageAnalysisObjects.TeachersBarName6, goToTab.oneTabInTeacher);
-        tabs.set(UsageAnalysisObjects.TeachersBarName7, goToTab.twoTabsInTeacher);
+        tabs.set(UsageAnalysisObjects.TeachersBarName5, goToTab.twoTabInTeacher);
+       
         return tabs.get(barName)
     }
 
@@ -49,7 +46,7 @@ class goToTab{
                 cy.get(PageTitleCheck.pageTitle).scrollIntoView()
                 let barId = boxName + 'BarName' +(i+((page-1)*5))
                 let barName = UsageAnalysisObjects[barId]
-                cy.wait(2000)
+                cy.wait(5000)
                 cy.contains(barName).click()
                 cy.log('barname ='+barName)
                 let tabs = goToTab.getTabsInBar(barName)
@@ -62,7 +59,7 @@ class goToTab{
                     if(operation=='Tab text'){
                         cy.contains(tabs[j]).click()
                         cy.get(UsageAnalysisObjects.textInTab).contains(barName).should('be.visible')
-                        cy.readFile('./cypress/fixtures/CfsUsageAnalysis'+boxName+'kpis.json').then((name)=>{
+                        cy.readFile('./cypress/fixtures/DisdUsageAnalysis'+boxName+'kpis.json').then((name)=>{
                             let expectedValue = name[barName]
                             cy.get(UsageAnalysisObjects.textInTab).contains(expectedValue).should('be.visible')
                         })
@@ -72,27 +69,35 @@ class goToTab{
         })
     }
     clickBarsInAllPages(boxName, operation){
+        cy.wait(2000)
         const tab = new goToTab
         const kpiName = new KPI
         const boxNameXpath = KPI.getBoxNameXpath(boxName)
+        cy.wait(3000)
         cy.get(PageTitleCheck.pageTitle).scrollIntoView()
         cy.xpath(boxNameXpath+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let lastPageNumber = parseInt(splittedText[1])
             cy.log('number of pages : '+lastPageNumber)
             for(let page = 1;page<=lastPageNumber; page++){
+
                 tab.clickKpi(boxName, page, operation)
                 kpiName.navigateToPage(boxNameXpath)
             }
         })
     }
     verifyTabsInEachBars(boxName){
+        cy.wait(3000)
         const tab = new goToTab
         tab.clickBarsInAllPages(boxName, 'Tab name')
+        cy.wait(3000)
+
     }
     verifyTextInTabForAllKpis(boxName){
+        cy.wait(3000)
         const tab = new goToTab
-        tab.clickBarsInAllPages(boxName, 'Tab text')        
+        tab.clickBarsInAllPages(boxName, 'Tab text')  
+        cy.wait(3000)      
     }
 }
 export default goToTab
