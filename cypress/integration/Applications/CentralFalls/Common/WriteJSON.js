@@ -1,3 +1,5 @@
+import TrackingAtAGlanceObjects from "../TrackingAtAGlance/TrackingAtAGlanceObjects"
+
 class writeJSON{
     writeValuesInJSON(pageName,key,value){
         cy.writeFile('./cypress/fixtures/'+pageName+'.json','\n"'+key+'": "'+value+'",', { flag: 'a+' })
@@ -19,5 +21,9 @@ class writeJSON{
     }
     endArray(pageName){
         cy.writeFile('./cypress/fixtures/'+pageName+'.json','] ,' , { flag: 'a+' })
+    }
+    jsonWithinJson(pageName,filterOption){
+        if(pageName== TrackingAtAGlanceObjects.pagetitle)
+        cy.writeFile('./cypress/fixtures/'+pageName+'.json','{', { flag: 'a+' })
     }
 }export default writeJSON

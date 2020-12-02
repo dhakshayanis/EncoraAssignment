@@ -15,9 +15,9 @@ class PeopleAndDeviceObjects{
     static districtEnrollmentDropdownName ='View by'
     static deviceDistributionDropdownName ='View by'
     static hotspotDistributionDropdownName ='View by'
-    static districtEnrollmentDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
-    static deviceDistributionDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
-    static hotspotDistributionDropdownOptions = ['Ethnicity','Gender','Grade','Special Group']
+    static districtEnrollmentDropdownOptions = ['Ethnicity','Gender','Grade','Program']
+    static deviceDistributionDropdownOptions = ['Ethnicity','Gender','Grade','Program']
+    static hotspotDistributionDropdownOptions = ['Ethnicity','Gender','Grade','Program']
 
     static districtEnrollmentTotal = '(//*[@class="class-room-tile-component-body-col-1"])[4]'
 	static deviceDistributionTotal = '(//*[@class="class-room-tile-component-body-col-1"])[8]'

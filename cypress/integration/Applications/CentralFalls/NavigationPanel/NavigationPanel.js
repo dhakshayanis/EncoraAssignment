@@ -1,3 +1,4 @@
+import PageTitleCheck from '../../CentralFalls/Common/PageTitleCheck'
 import FiltersDisplayedInAPage from '../Common/FiltersDisplayedInPage'
 import Filters from './Filters'
 
@@ -87,11 +88,13 @@ class NavigationPanel{
                     for(let option=1; option<=optionsExpected.length; option++){
                         cy.xpath(NavigationPanel.ddOptionsPrefix+'['+i+']').contains(optionsExpected[option-1]).click()
                         cy.wait(2000)
-                        cy.xpath(NavigationPanel.apply).click()
+                        cy.xpath(NavigationPanel.apply).scrollIntoView()
+                        cy.xpath(NavigationPanel.apply).click({force: true})
+                        cy.get(PageTitleCheck.pageTitle).trigger('mouseover')
                         cy.wait(10000)
                         verify.writeFilters(pageName,optionsExpected[option-1])
                         verify.checkFiltersAreApplied(pageName,optionsExpected[option-1])
-                        cy.xpath(NavigationPanel.reset).click()
+                        cy.xpath(NavigationPanel.reset).click({force: true})
                         cy.wait(10000)
                     }
             }
