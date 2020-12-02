@@ -52,6 +52,7 @@ class PercentageCalculation{
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.devicesDistributionID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.activeTeachersID)
         
+        
     }
 }
 export default PercentageCalculation

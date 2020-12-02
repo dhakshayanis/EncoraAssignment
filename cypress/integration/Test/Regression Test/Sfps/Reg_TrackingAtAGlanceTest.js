@@ -1,6 +1,6 @@
 import NavigateToPage from '../../../Applications/Sfps/Common/NavigateToPage'
 import PageTitleCheck from '../../../Applications/Sfps/Common/PageTitleCheck'
-import TrackingAtAGlanceObjects from '../../../Applications/Sfps/TrackingAtAGlance/TrackingAtAGlanceObjects'
+import TrackingAtAGlanceObjects from '../../../Applications/sfps/TrackingAtAGlance/TrackingAtAGlanceObjects'
 import PercentageCalculation from '../../../Applications/Sfps/TrackingAtAGlance/PercentageCalculation'
 import WriteValuesInKPIs from '../../../Applications/Sfps/TrackingAtAGlance/WriteVauesInAtAGlancePage'
 import PercentValueInBars from '../../../Applications/Sfps/TrackingAtAGlance/PercentValueInBars'
