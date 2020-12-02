@@ -18,6 +18,7 @@ class Filters{
     static ethnicity = 'Ethnicity'
     static gender = 'Gender'
     static studentDeviceAssignment = 'Student Device Assignment'
+    static specialGroup = "Special Group"
 
     static filtersInAtaGlance=[Filters.schoolYear,Filters.schoolType,Filters.schoolName,Filters.grade,Filters.ethnicity,
                 Filters.gender,Filters.studentDeviceAssignment]

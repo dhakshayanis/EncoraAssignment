@@ -1,6 +1,7 @@
 import PageTitleCheck from '../../CentralFalls/Common/PageTitleCheck'
 import FiltersDisplayedInAPage from '../Common/FiltersDisplayedInPage'
 import Filters from './Filters'
+import NavigationPanelVerifications from './NavigationPanelVerifications'
 
 class NavigationPanel{
 
@@ -81,12 +82,13 @@ class NavigationPanel{
         let page = pageName.replace(/ /g,'')
         let filters = Filters['filtersIn'+page]
             for(let i=1; i<=filters.length; i++){
+                let filterName = Filters['filtersIn'+page][(i-1)]//newly added 
                 cy.xpath(NavigationPanel.filtersField+'['+i+']').scrollIntoView()
                 cy.xpath(NavigationPanel.filtersField+'['+i+']').click()
                 cy.wait(3000)
                 let optionsExpected = NavigationPanel.getExpectedDropdownOptions(pageName,i)
                     for(let option=1; option<=optionsExpected.length; option++){
-                        cy.xpath(NavigationPanel.ddOptionsPrefix+'['+i+']').contains(optionsExpected[option-1]).click()
+                        cy.xpath(NavigationPanel.ddOptionsPrefix+'['+i+']').contains(optionsExpected[option-1]).click({force: true})
                         cy.wait(2000)
                         cy.xpath(NavigationPanel.apply).scrollIntoView()
                         cy.xpath(NavigationPanel.apply).click({force: true})
@@ -94,6 +96,7 @@ class NavigationPanel{
                         cy.wait(10000)
                         verify.writeFilters(pageName,optionsExpected[option-1])
                         verify.checkFiltersAreApplied(pageName,optionsExpected[option-1])
+                        NavigationPanelVerifications.getJson(pageName,filterName,optionsExpected[option-1])
                         cy.xpath(NavigationPanel.reset).click({force: true})
                         cy.wait(10000)
                     }
