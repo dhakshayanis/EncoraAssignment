@@ -1,34 +1,50 @@
-import writeJson from '../WriteJSON'
+import writeJson from '../Common/WriteJSON'
+import UsageAnalysisObjects from './UsageAnalysisObjects'
 
 class KPI{
-    static title = "Usage Analysis"
+    
     static bars = '//*[@class="wrap-component printIgnore"]'//' .printIgnore>.wrap-component-container'
     static page = '//*[@class="multiple-instance-component-page-info"]'//' .multiple-instance-component-page-info'
     static students = '//*[@id="EXTERNAL_GENERIC_COMPONENT"][2]'//'#EXTERNAL_GENERIC_COMPONENT:nth-child(2)'
     static teachers = '//*[@id="EXTERNAL_GENERIC_COMPONENT"][3]'//'#EXTERNAL_GENERIC_COMPONENT:nth-child(3)'
+    static barName = '//*[@style="font-size: 12px; margin-right: 10px; width: 100%; line-height: 1;"]'
+    static barValue = '//*[@style="font-size: 16px; display: flex; flex-direction: row;"]'
     static nextIcon = '//*[@class="multiple-instance-component-next-icon"]//*[@viewBox="0 0 24 24"]'
     static previousIcon ='//*[@class="multiple-instance-component-previous-icon"]//*[@viewBox="0 0 24 24"]'
 
-    getKPINamesInaPage(boxName){
+
+    getKPINamesInaPage(jsonName,page,boxName){
         const writing = new writeJson
+        if(page>1){
+            cy.writeFile('./cypress/fixtures/SfpsUsageAnalysisKpis.json',' ,', { flag: 'a+' })
+        }
         cy.xpath(boxName+KPI.bars).then((barsCount)=>{
             let numberOfBars = barsCount.length;
-            writing.start('UsageAnalysisKpis')
-            writing.startArray('UsageAnalysisKpis',boxName)
-            //cy.writeFile('./cypress/fixtures/UsageAnalysisKpis.json','\n'+'"'+boxName+'Page1": [', { flag: 'a+' })
             for(let i=1; i<=numberOfBars; i++){
-                let kpiXpath = '('+boxName+KPI.bars+')['+i+']'
-                cy.xpath(kpiXpath).invoke('text').then(kpiNames=>{
-                    writing.writeValuesInArray('UsageAnalysisKpis',kpiNames)
+                let kpiNamesXpath = '('+boxName+KPI.barName+')['+i+']'
+                let kpiValueXpath = '('+boxName+KPI.barValue+')['+i+']'
+                cy.xpath(kpiNamesXpath).invoke('text').then(kpiNames=>{
+                    cy.xpath(kpiValueXpath).invoke('text').then(kpiValue=>{
+                        writing.writeValuesInJSON(jsonName,kpiNames, kpiValue)
+                    })
                 })
-                if(i < numberOfBars){
-                    cy.writeFile('./cypress/fixtures/'+'UsageAnalysisKpis'+'.json',' ,', { flag: 'a+' })
+                cy.xpath(kpiNamesXpath).invoke('text').then(kpiNames=>{
+                    writing.writeValuesInArray('SfpsUsageAnalysisKpis','"'+kpiNames+'"')
+                })
+                if(i<numberOfBars){
+                    cy.writeFile('./cypress/fixtures/SfpsUsageAnalysisKpis.json',' ,', { flag: 'a+' })
                 }
             }
-            writing.endArray('UsageAnalysisKpis')
         })
     }
+    static getBoxNameXpath(boxName){
+        let boxNameXpath = ""
+        if(boxName==UsageAnalysisObjects.studentBoxName){boxNameXpath = KPI.students}
+        else{boxNameXpath = KPI.teachers}
+        return boxNameXpath
+    }
     navigateToPage(boxName){
+        //const boxNameXpath = KPI.getBoxNameXpath(boxName)
         cy.xpath(boxName+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let pageNumber = parseInt(splittedText[0])
@@ -42,13 +58,29 @@ class KPI{
         })
     }
     getTextInAllBars(boxName){
+        const writing = new writeJson
+        const jsonName = 'SfpsUsageAnalysis'+boxName+'kpis'
+        writing.start(jsonName)
+        writing.startArray('SfpsUsageAnalysisKpis',boxName)
         const kpiName = new KPI
-        cy.xpath(boxName+KPI.page).invoke('text').then(pageText=>{
+        const boxNameXpath = KPI.getBoxNameXpath(boxName)
+        cy.xpath(boxNameXpath+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let lastPageNumber = parseInt(splittedText[1])
             for(let page = 1;page<=lastPageNumber; page++){
-                kpiName.getKPINamesInaPage(boxName)
-                kpiName.navigateToPage(boxName)
+                kpiName.getKPINamesInaPage(jsonName,page,boxNameXpath)
+                kpiName.navigateToPage(boxNameXpath)
+            }
+        })
+        writing.endArray('SfpsUsageAnalysisKpis')
+        writing.end(jsonName)
+    }
+    checkBarNames(boxName){
+        cy.readFile('./cypress/fixtures/SfpsUsageAnalysisKpis.json').then((name)=>{
+            for(let i=1; i<= name[boxName].length; i++){
+                let actualName = name[boxName][i-1]
+                let expectedName = UsageAnalysisObjects[boxName+'BarName'+i]
+                expect(actualName).to.equal(expectedName)
             }
         })
     }

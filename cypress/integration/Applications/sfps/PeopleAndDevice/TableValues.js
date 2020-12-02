@@ -19,6 +19,7 @@ class TableValues{
         })
     }
     goToFirstPage(){
+        
         cy.get('[title="1"] a').click()
         cy.wait(2000)
     }
