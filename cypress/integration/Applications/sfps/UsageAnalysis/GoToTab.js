@@ -55,6 +55,7 @@ class goToTab{
                 let tabs = goToTab.getTabsInBar(barName)
                 cy.log(tabs.length)
                 cy.get(UsageAnalysisObjects.textInTab).scrollIntoView()
+                cy.wait(2000)
                 for(let j=0; j< tabs.length; j++){
                     if(operation=='Tab name'){
                         cy.contains(tabs[j]).should('be.visible')
@@ -73,7 +74,7 @@ class goToTab{
         })
     }
     clickBarsInAllPages(boxName, operation){
-        cy.wait(2000)
+        cy.wait(4000)
         const tab = new goToTab
         const kpiName = new KPI
         const boxNameXpath = KPI.getBoxNameXpath(boxName)

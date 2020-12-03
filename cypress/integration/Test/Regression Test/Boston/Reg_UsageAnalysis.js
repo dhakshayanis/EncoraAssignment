@@ -42,21 +42,25 @@ describe('Usage Analysisn Regression Test',function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.studentBoxName)
+       
    })
    it('verify tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.teacherBoxName)
+      
    })
    it('verify tabs text in students', function()
    {
        const tab = new goToTab
        tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.studentBoxName)
+       
    })
    it('verify tabs text in teachers', function()
    {
        const tab = new goToTab
        tab.verifyTextInTabForAllKpis(UsageAnalysisObjects.teacherBoxName)
+       
    })
    it('compare usage and at a glance', function()
    {

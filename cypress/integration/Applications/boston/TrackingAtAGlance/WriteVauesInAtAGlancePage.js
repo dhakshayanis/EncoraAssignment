@@ -45,7 +45,7 @@ class WriteValuesInKPIs{
                     cy.get(tileID+TrackingAtAGlanceObjects.percentXpathInMiniKpi).invoke('text').then((percent)=>{
                         nr = nr.replace(',','')
                         dr = dr.replace(',','').replace('of ','')
-                        write.writeValuesInJSON('BpsTrackingAtAGlance',tileName+miniKpiTitle,'[ '+nr+', '+dr+', '+ percent+']')
+                       // write.writeValuesInJSON('BpsTrackingAtAGlance',tileName+miniKpiTitle,'[ '+nr+', '+dr+', '+ percent+']')
                         write.startArray('BpsTrackingAtAGlance',tileName+miniKpiTitle)
                         write.writeValuesInArray('BpsTrackingAtAGlance','"'+nr+'" ,"'+dr+'" ,"'+percent+'"')
                         write.endArray('BpsTrackingAtAGlance')

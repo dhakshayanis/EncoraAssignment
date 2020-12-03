@@ -44,20 +44,16 @@ class PercentValueInBars{
             let key2 = tileName+TrackingAtAGlanceObjects.getTitleText2(tileID)
             let percent1 = (value[key1][2])
             cy.log("1"+percent1) 
-           let expected1 = value[tileName+'progressbarColoredValue'][0].replace(' ','')
+           let expected1 = parseFloat(value[tileName+'progressbarColoredValue'][0].replace(' ','')).toFixed(2)+'%'
            if (tileID==TrackingAtAGlanceObjects.devicesDistributionID){
-            expected1 =parseFloat(expected1).toFixed(0).toString()
-            cy.log('0 decimals-'+ expected1)
-        }
-            expect(percent1).to.equal()
+               expected1 = parseFloat(value[tileName+'progressbarColoredValue'][0].replace(' ','')).toFixed(0)+'%'
+           }
+            expect(percent1).to.equal(expected1)
             if((tileID==TrackingAtAGlanceObjects.dailyActiveStudentsID) ||(tileID == TrackingAtAGlanceObjects.dailyInactiveStudentsID)||
                 (tileID==TrackingAtAGlanceObjects.devicesDistributionID)||(tileID==TrackingAtAGlanceObjects.activeTeachersID)){
                 let percent2 = (value[key2][2])
-                let expected = value[tileName+'progressbarColoredValue'][1].replace(' ','')
-                cy.log('2 decimals-'+expected)
-                
-               
-                expect(percent2).to.equal(expected)
+                let expected2 = +parseFloat(value[tileName+'progressbarColoredValue'][1].replace('% ',''))+'%'
+                expect(percent2).to.equal(expected2)
             
             } 
         })
