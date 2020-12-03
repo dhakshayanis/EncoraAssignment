@@ -11,6 +11,7 @@ class Filters{
                 'Native Hawaiian or Other Pacific Islander','White']
     static GenderOptions =['All', 'Female','Male']
     static StudentDeviceAssignmentOptions =['All','With Device','Without Device']
+    static SpecialGroupOptions =['All Students','EL','HispaniorLatino', 'SPED']
     static schoolYear = 'School Year'
     static schoolType = 'School Type'
     static schoolName = 'School Name'
@@ -20,7 +21,7 @@ class Filters{
     static studentDeviceAssignment = 'Student Device Assignment'
     static specialGroup = "Special Group"
 
-    static filtersInAtaGlance=[Filters.schoolYear,Filters.schoolType,Filters.schoolName,Filters.grade,Filters.ethnicity,
-                Filters.gender,Filters.studentDeviceAssignment]
+    static filtersInAtaGlance=[Filters.schoolYear,Filters.schoolType,Filters.schoolName,Filters.grade,
+        Filters.specialGroup,Filters.ethnicity,Filters.gender,Filters.studentDeviceAssignment]
 }
 export default Filters

@@ -2,7 +2,6 @@ import TrackingAtAGlanceObjects from "../TrackingAtAGlance/TrackingAtAGlanceObje
 import Filters from "./Filters";
 
 class NavigationPanelVerifications{
-    static one ='{"1":"aa", "2":"bb"}'
     static AtaGlanceDefaultFilterHeaders=[Filters.schoolYear, Filters.specialGroup]
     static AtaGlanceDefaultFilterOptions=["2021"]
     static AtaGlanceDefaultFilters = //'{ "'+TrackingAtAGlanceObjects.pagetitle+'" : {"Default":
@@ -29,20 +28,20 @@ class NavigationPanelVerifications{
                     cy.writeFile('./cypress/fixtures/CfsfiltersVerifications.json',parsedJson)
             }
         })
-    }
+    }/*
     static getExpectedFilterHeaders(pageName,filterOption){
         let expectedFilterHeaders = NavigationPanelVerifications[pageName.replace(/ /g,'')+filterOption+'FilterHeaders']
-        /*if(filterOptionsJsonName!='Default'){
+        ////*if(filterOptionsJsonName!='Default'){
             expectedFilterHeaders = expectedFilterHeaders+filterHeader
-        }*/
+        }////
         return expectedFilterHeaders;
     }
     static getExpectedFilterOptions(pageName,filterOption){
         let expectedFilterOptions = NavigationPanelVerifications[pageName.replace(/ /g,'')+filterOption+'FilterOptions']
-        /*if(filterOptionsJsonName!='Default'){
+        ////*if(filterOptionsJsonName!='Default'){
             expectedFilterOptions = expectedFilterOptions.concat(filterOption)
-        }*/
+        }////
         return expectedFilterOptions;
-    }
+    }*/
 }
 export default NavigationPanelVerifications
