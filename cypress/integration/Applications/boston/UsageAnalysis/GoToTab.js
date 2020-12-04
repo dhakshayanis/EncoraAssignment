@@ -62,7 +62,7 @@ class goToTab{
                     if(operation=='Tab text'){
                         cy.contains(tabs[j]).click()
                         cy.get(UsageAnalysisObjects.textInTab).contains(barName).should('be.visible')
-                        cy.readFile('./cypress/fixtures/CfsUsageAnalysis'+boxName+'kpis.json').then((name)=>{
+                        cy.readFile('./cypress/fixtures/BpsUsageAnalysis'+boxName+'kpis.json').then((name)=>{
                             let expectedValue = name[barName]
                             cy.get(UsageAnalysisObjects.textInTab).contains(expectedValue).should('be.visible')
                         })
