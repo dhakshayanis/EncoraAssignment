@@ -1,4 +1,4 @@
-import PeopleAndDeviceObjects from "./PeopleAndDeviceObjects";
+import PeopleAndDeviceObjects from "./PeopleAndDeviceObjects"; 
 
 class TableObjects{
     static nextPage = '.ant-pagination-next'
@@ -7,7 +7,6 @@ class TableObjects{
     //.ant-table-row:nth-child(1)>td:nth-child(5)
     static noOfStudents="# of Students"
     static noOfDevices="Total Device Distribution"
-    static showsDropdown = '(//*[@class="ant-select-selection-selected-value"])[3]'
 
     static getColumnNumber(columnName){
         var id = new Map();

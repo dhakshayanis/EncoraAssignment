@@ -7,6 +7,7 @@ class TimeSeries{
     static timeSeriesDropDownOptions = ['District Aggregate','Division','Ethnicity','Gender','Grade','School Level','Special Group','Student Device Assignment','Student Hotspot Assignment']
 
     sanity(){
+        cy.wait(3000)
         cy.get('#chartdiv').should('be.visible')
         return this
     }
