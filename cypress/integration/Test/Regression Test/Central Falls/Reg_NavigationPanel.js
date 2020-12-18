@@ -3,9 +3,10 @@ import NavigateToPage from '../../../Applications/CentralFalls/Common/NavigateTo
 import PageTitleCheck from '../../../Applications/CentralFalls/Common/PageTitleCheck'
 import NavigationPanel from '../../../Applications/CentralFalls/NavigationPanel/NavigationPanel'
 import TrackingAtAGlanceObjects from '../../../Applications/CentralFalls/TrackingAtAGlance/TrackingAtAGlanceObjects'
+import PeopleAndDeviceObjects from '../../../Applications/CentralFalls/PeopleAndDevice/PeopleAndDeviceObjects'
 
 describe('one',function()
-{
+{   /*
     it('navigate to Tracking At a Glance',function()
     {   
         const np = new NavigateToPage
@@ -14,14 +15,14 @@ describe('one',function()
         titleCheck.PageTitleTest(TrackingAtAGlanceObjects.pagetitle)    
     })
 
-    it('check navigation filters count', function()
+    it('check navigation filters count in at a glance', function()
     {   
         const np = new NavigationPanel
         np.checkNumberOfDropdowns(TrackingAtAGlanceObjects.pagetitle)
         np.checkDropdowns(TrackingAtAGlanceObjects.pagetitle)
     })
 
-    it('check navigation filters dropdown options', function()
+    it('check navigation filters dropdown options - at a glance', function()
     {   
         const np = new NavigationPanel
         np.checkDropdownOption(TrackingAtAGlanceObjects.pagetitle)
@@ -36,5 +37,31 @@ describe('one',function()
     {   
         const np = new NavigationPanel
         np.applyFilters(TrackingAtAGlanceObjects.pagetitle)
+    })*/
+    it('navigate to Tracking At a Glance',function()
+    {   
+        const np = new NavigateToPage
+        np.goToTrackingAtAGlancePage()
+        np.goToPage(PeopleAndDeviceObjects.pagetitle)   
     })
+
+    it('check navigation filters count - at a glance', function()
+    {   
+        const np = new NavigationPanel
+        np.checkNumberOfDropdowns(PeopleAndDeviceObjects.pagetitle)
+        np.checkDropdowns(PeopleAndDeviceObjects.pagetitle)
+    })
+
+    it('check navigation filters dropdown options - at a glance', function()
+    {   
+        const np = new NavigationPanel
+        np.checkDropdownOption(PeopleAndDeviceObjects.pagetitle)
+    })
+
+    it('default filters in at a glance page- at a glance', function()
+    {   
+        const np = new FiltersDisplayedInAPage
+        np.verifyDefaultFilters(PeopleAndDeviceObjects.pagetitle)
+    })
+
 })

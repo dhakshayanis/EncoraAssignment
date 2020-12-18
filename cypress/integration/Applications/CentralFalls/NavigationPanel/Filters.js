@@ -23,5 +23,7 @@ class Filters{
 
     static filtersInAtaGlance=[Filters.schoolYear,Filters.schoolType,Filters.schoolName,Filters.grade,
         Filters.specialGroup,Filters.ethnicity,Filters.gender,Filters.studentDeviceAssignment]
+    static filtersInPeopleandDevice=[Filters.schoolYear,Filters.schoolType,Filters.schoolName,Filters.grade,
+            Filters.ethnicity,Filters.gender,Filters.studentDeviceAssignment]
 }
 export default Filters

@@ -3,10 +3,11 @@ import Filters from "./Filters";
 
 class NavigationPanelVerifications{
     static AtaGlanceDefaultFilterHeaders=[Filters.schoolYear, Filters.specialGroup]
-    static AtaGlanceDefaultFilterOptions=["2021"]
+    //static AtaGlanceDefaultFilterOptions=["2021"]
     static AtaGlanceDefaultFilters = //'{ "'+TrackingAtAGlanceObjects.pagetitle+'" : {"Default":
                     '{"'+Filters.schoolYear+'":["'+Filters.SchoolYearOptions[1]+'"],"'+
                     Filters.specialGroup+'":["All students"]}'
+    static PeopleandDeviceDefaultFilters = '{"'+Filters.schoolYear+'":["'+Filters.SchoolYearOptions[1]+'"]"}'
 
     static getJson(pageName,filterHeader,filterOption){
         if((pageName == TrackingAtAGlanceObjects.pagetitle) && (filterOption=='Default')){
