@@ -1,8 +1,24 @@
 import PeopleAndDeviceSanity from './PeopleAndDeviceSanity'
 import TableObjects from './TableObjects'
 import writeJSON from '../../Dallas/Common/WriteJSON'
+import PageTitleCheck from '../../Dallas/Common/PageTitleCheck'
+import PeopleAndDeviceObjects from './PeopleAndDeviceObjects'
 
 class TableValues{
+
+    static showButton = '//*[@title="Show 10"]'
+    static showButtonDropdown = '(//*[contains(@class,"ant-select-dropdown")]//*[@role="option"])'
+
+    increaseNumberOfRows(){
+        cy.xpath(TableValues.showButton).click()
+        cy.wait(2000)
+        cy.xpath(TableValues.showButtonDropdown).then((showOptions)=>{
+            let count = showOptions.length;
+            cy.xpath(TableValues.showButtonDropdown+'['+count+']').click()
+            cy.wait(5000)
+            cy.get(PageTitleCheck.pageTitle).scrollIntoView()
+        })
+    }
     goToNextPage(jsonName,pageNo,columnName){
         const val= new TableValues
         cy.get(TableObjects.nextPage).invoke('attr','aria-disabled').then((disabled)=>{
@@ -19,16 +35,18 @@ class TableValues{
         })
     }
     goToFirstPage(){
+        
         cy.get('[title="1"] a').click()
         cy.wait(2000)
     }
     writeTableValues(jsonName,pageNo,columnName){
-        cy.get(TableObjects.showsDropdown).click({force : true})
         const write = new writeJSON
-        //write.start('PeopleAndDeviceStudentsTable')
+        const val= new TableValues
+        if((pageNo==1)&&(columnName==PeopleAndDeviceObjects.districtEnrollment)){
+            val.increaseNumberOfRows()
+        }
         let colNum = TableObjects.getColumnNumber(columnName)
         cy.log('Column number : '+colNum)
-        cy.wait(10000)
         cy.writeFile('./cypress/fixtures/'+jsonName+'.json','\n'+'"Column'+colNum+'Page'+pageNo+'": [', { flag: 'a+' })
         cy.get(TableObjects.rowCount).its('length').then(numberOfRows=>{
             for(let row=1; row<=numberOfRows; row++){
@@ -37,15 +55,15 @@ class TableValues{
                 let locator = TableObjects.rowCount+':nth-child('+row+')>td:nth-child('+colNum+')'
                 cy.get(locator).invoke('text').then(value=>{
                     cy.writeFile('./cypress/fixtures/'+jsonName+'.json',value , { flag: 'a+' })
+                    cy.log('Row Number is' + row)
                 })
                 if(row < numberOfRows){
-                    cy.wait(1000)
                     cy.writeFile('./cypress/fixtures/'+jsonName+'.json',' ,', { flag: 'a+' })
                 }
             }
             cy.writeFile('./cypress/fixtures/'+jsonName+'.json','] ,' , { flag: 'a+' })
         })
-        const val= new TableValues
+        
         cy.log('Page : '+pageNo)
         val.goToNextPage(jsonName,pageNo,columnName)
         //write.end('PeopleAndDeviceStudentsTable')
@@ -58,7 +76,13 @@ class TableValues{
             cy.log(totalActual)
             let sum = 0;
             let colNum = TableObjects.getColumnNumber(dropdownID)
-            let dataKey = 'Column'+colNum 
+            let prefix = 'Column'+colNum/*+'Page1'
+            cy.readFile('./cypress/fixtures/SfpsPeopleAndDeviceStudentsTable.json').then((value) => {
+                for(let i=0; i<(value[dataKey].length); i++){
+                    sum = value[dataKey][i]+sum
+                }
+                expect(totalActual).to.equal(sum)
+            })*/
             cy.readFile('./cypress/fixtures/DisdPeopleAndDeviceStudentsTable.json').then((val)=>{
                 let res = Object.keys(val).filter(name => name.startsWith(prefix));
                 cy.log(res.length);

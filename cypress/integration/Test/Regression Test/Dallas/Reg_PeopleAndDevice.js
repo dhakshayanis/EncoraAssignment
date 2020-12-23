@@ -38,7 +38,23 @@ describe('People and Device Regression Test',function()
         write.start('DisdPeopleAndDeviceStudentsTable')
         const table = new TableValues
         table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.districtEnrollment)
+        //table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.deviceDistribution)
+        //table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.hotspotDistribution)
+        //write.end('DisdPeopleAndDeviceStudentsTable')
+    })
+    it('write table values', function(){
+        const write = new writeJSON
+        const table = new TableValues
+        //table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.districtEnrollment)
         table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.deviceDistribution)
+        //table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.hotspotDistribution)
+        //write.end('DisdPeopleAndDeviceStudentsTable')
+    })
+    it('write table values', function(){
+        const write = new writeJSON
+        const table = new TableValues
+        //table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.districtEnrollment)
+        //table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.deviceDistribution)
         table.writeTableValues('DisdPeopleAndDeviceStudentsTable',1,PeopleAndDeviceObjects.hotspotDistribution)
         write.end('DisdPeopleAndDeviceStudentsTable')
     })
