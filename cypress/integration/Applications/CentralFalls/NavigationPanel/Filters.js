@@ -11,7 +11,6 @@ class Filters{
                 'Native Hawaiian or Other Pacific Islander','White']
     static GenderOptions =['All', 'Female','Male']
     static StudentDeviceAssignmentOptions =['All','With Device','Without Device']
-    static SpecialGroupOptions =['All Students','EL','HispaniorLatino', 'SPED']
     static schoolYear = 'School Year'
     static schoolType = 'School Type'
     static schoolName = 'School Name'

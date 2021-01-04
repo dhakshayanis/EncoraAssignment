@@ -1,4 +1,4 @@
-import NavigateToPage from '../../../Applications/Dallas/Common/NavigateToPage'
+import NavigateToPage from '../../../Applications/Dallas/Common/NavigateToPage' 
 import KPI from '../../../Applications/Dallas/UsageAnalysis/bars'
 import UsageAnalysisObjects from '../../../Applications/Dallas/UsageAnalysis/UsageAnalysisObjects'
 import writeJSON from '../../../Applications/Dallas/Common/WriteJSON'
@@ -15,36 +15,36 @@ describe('Usage Analysisn Regression Test',function()
        np.goToTrackingAtAGlancePage()
        np.goToPage(UsageAnalysisObjects.pageTitle)
    })
-   it('Student Tile bar names',function()
+   it('bar names',function()
    {
        const kpi = new KPI
        const write = new writeJSON
        write.start('DisdUsageAnalysisKpis')
        kpi.getTextInAllBars(UsageAnalysisObjects.studentBoxName)
    })
-   it('Teachers Tile bar names',function()
+   it('bar names',function()
    {
        const kpi = new KPI
        const write = new writeJSON
        kpi.getTextInAllBars(UsageAnalysisObjects.teacherBoxName)
        write.end('DisdUsageAnalysisKpis')
    })
-   it('verify Students Tile bar names', function()
+   it('verify student bar names', function()
    {
        const kpi = new KPI
        kpi.checkBarNames(UsageAnalysisObjects.studentBoxName)
    })
-   it('verify Teachers Tile bar names', function()
+   it('verify teacher bar names', function()
    {
        const kpi = new KPI
        kpi.checkBarNames(UsageAnalysisObjects.teacherBoxName)
    })
-   it('verify Students tabs names', function()
+   it('verify student tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.studentBoxName)
    })
-   it('verify Teachers tabs names', function()
+   it('verify teacher tabs names', function()
    {
        const tab = new goToTab
        tab.verifyTabsInEachBars(UsageAnalysisObjects.teacherBoxName)

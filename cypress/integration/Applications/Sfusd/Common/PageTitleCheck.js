@@ -7,4 +7,3 @@ class PageTitleCheck{
     }
 }
 export default PageTitleCheck
-

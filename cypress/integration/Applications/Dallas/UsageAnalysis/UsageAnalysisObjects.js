@@ -1,4 +1,4 @@
-class UsageAnalysisObjects{ 
+class UsageAnalysisObjects{
     static pageTitle = "Usage Analysis"
     static UsageAnalysisSchoolView = "School View"
     static UsageAnalysisMapView = "Map View"
@@ -24,6 +24,7 @@ class UsageAnalysisObjects{
     static TeachersBarName5 = 'Inactive Teacher ( Teacher with less than 10% or No Login)'
 
     static textInTab = 'section.tree_graph'
+    static tabplace = 'performance-tabs'
 
 
 }

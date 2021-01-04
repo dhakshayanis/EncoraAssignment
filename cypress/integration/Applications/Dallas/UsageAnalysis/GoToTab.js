@@ -1,6 +1,6 @@
 import UsageAnalysisObjects from "./UsageAnalysisObjects"
 import KPI from './bars'
-import PageTitleCheck from "../Common/PageTitleCheck"
+import PageTitleCheck from "../Common/PageTitleCheck" 
 
 class goToTab{
 
@@ -17,21 +17,25 @@ class goToTab{
         tabs.set(UsageAnalysisObjects.StudentsBarName1, goToTab.fiveTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName2, goToTab.fiveTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName3, goToTab.twoTabsInStudent);
+        //tabs.set(UsageAnalysisObjects.StudentsBarName4, goToTab.twoTabsInStudent);
+       // tabs.set(UsageAnalysisObjects.StudentsBarName5, goToTab.twoTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName4, goToTab.twoTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName5, goToTab.fourTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName6, goToTab.fourTabsInStudent);
         tabs.set(UsageAnalysisObjects.StudentsBarName7, goToTab.fourTabsInStudent);
-        tabs.set(UsageAnalysisObjects.StudentsBarName8, goToTab.oneTabsInStudent);
+        tabs.set(UsageAnalysisObjects.StudentsBarName8, goToTab.oneTabInStudent);
         tabs.set(UsageAnalysisObjects.TeachersBarName1, goToTab.threeTabsInTeacher);
         tabs.set(UsageAnalysisObjects.TeachersBarName2, goToTab.threeTabsInTeacher);
+        //tabs.set(UsageAnalysisObjects.TeachersBarName3, goToTab.oneTabInTeacher);
+       // tabs.set(UsageAnalysisObjects.TeachersBarName4, goToTab.oneTabInTeacher);
         tabs.set(UsageAnalysisObjects.TeachersBarName3, goToTab.oneTabInTeacher);
         tabs.set(UsageAnalysisObjects.TeachersBarName4, goToTab.oneTabInTeacher);
-        tabs.set(UsageAnalysisObjects.TeachersBarName5, goToTab.twoTabInTeacher);
-       
+        tabs.set(UsageAnalysisObjects.TeachersBarName5, goToTab.twoTabsInTeacher);
         return tabs.get(barName)
     }
 
     goToTab(option){
+        cy.wait(3000)
         cy.contains(option).click()
         cy.wait(3000)
         return this
@@ -44,22 +48,25 @@ class goToTab{
             cy.log('bars ='+numberOfBars)
             for(let i=1; i<= numberOfBars; i++){
                 cy.get(PageTitleCheck.pageTitle).scrollIntoView()
+                cy.wait(3000)
                 let barId = boxName + 'BarName' +(i+((page-1)*5))
                 let barName = UsageAnalysisObjects[barId]
-                cy.wait(5000)
+                cy.wait(4000)
                 cy.contains(barName).click()
                 cy.log('barname ='+barName)
                 let tabs = goToTab.getTabsInBar(barName)
                 cy.log(tabs.length)
-                cy.get(UsageAnalysisObjects.textInTab).scrollIntoView()
+                //cy.get(UsageAnalysisObjects.textInTab).scrollIntoView()
+                cy.get(UsageAnalysisObjects.tabplace).scrollIntoView()
                 for(let j=0; j< tabs.length; j++){
                     if(operation=='Tab name'){
                         cy.contains(tabs[j]).should('be.visible')
                     }
                     if(operation=='Tab text'){
+                        cy.wait(3000)
                         cy.contains(tabs[j]).click()
                         cy.get(UsageAnalysisObjects.textInTab).contains(barName).should('be.visible')
-                        cy.readFile('./cypress/fixtures/DisdUsageAnalysis'+boxName+'kpis.json').then((name)=>{
+                        cy.readFile('./cypress/fixtures/SfpsUsageAnalysis'+boxName+'kpis.json').then((name)=>{
                             let expectedValue = name[barName]
                             cy.get(UsageAnalysisObjects.textInTab).contains(expectedValue).should('be.visible')
                         })
@@ -73,31 +80,29 @@ class goToTab{
         const tab = new goToTab
         const kpiName = new KPI
         const boxNameXpath = KPI.getBoxNameXpath(boxName)
-        cy.wait(3000)
         cy.get(PageTitleCheck.pageTitle).scrollIntoView()
         cy.xpath(boxNameXpath+KPI.page).invoke('text').then(pageText=>{
             let splittedText = pageText.split(' of ')
             let lastPageNumber = parseInt(splittedText[1])
             cy.log('number of pages : '+lastPageNumber)
             for(let page = 1;page<=lastPageNumber; page++){
-
                 tab.clickKpi(boxName, page, operation)
                 kpiName.navigateToPage(boxNameXpath)
             }
         })
     }
+    
     verifyTabsInEachBars(boxName){
         cy.wait(3000)
         const tab = new goToTab
         tab.clickBarsInAllPages(boxName, 'Tab name')
         cy.wait(3000)
-
     }
     verifyTextInTabForAllKpis(boxName){
         cy.wait(3000)
         const tab = new goToTab
-        tab.clickBarsInAllPages(boxName, 'Tab text')  
-        cy.wait(3000)      
+        tab.clickBarsInAllPages(boxName, 'Tab text')      
+        cy.wait(3000)  
     }
 }
 export default goToTab

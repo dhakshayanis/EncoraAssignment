@@ -87,8 +87,7 @@ class NavigationPanel{
                 cy.xpath(NavigationPanel.filtersField+'['+i+']').click()
                 cy.wait(3000)
                 let optionsExpected = NavigationPanel.getExpectedDropdownOptions(pageName,i)
-                for(let option=1; option<=2; option++){
-                    //for(let option=1; option<=optionsExpected.length; option++){
+                    for(let option=1; option<=optionsExpected.length; option++){
                         cy.xpath(NavigationPanel.ddOptionsPrefix+'['+i+']').contains(optionsExpected[option-1]).click({force: true})
                         cy.wait(2000)
                         cy.xpath(NavigationPanel.apply).scrollIntoView()

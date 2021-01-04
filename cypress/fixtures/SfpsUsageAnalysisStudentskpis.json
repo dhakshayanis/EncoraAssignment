@@ -1,16 +1,4 @@
 { 
-<<<<<<< HEAD
-"Avg # of Students Active": "82.61%",
-"Avg # of Students InActive": "17.39%",
-"Average Number of Apps Accessed per Student": "6.77",
-"Average Number of Emails Sent per Student": "0.75",
-"Average Number of Emails Received per Student": "4.35",
-"No of Drive Items Created": "300686",
-"Inactive Students ( Student with less than 10% or No Login)": "6.98%",
-"Avg # of Active Students (With atleast one Login for the week)": "90.31%",
-"Students With No logon for Past 7 days": "10.46%",
-"Daily Avg Meeting Minutes per Student": "98.74",
-=======
 "Avg # of Students Active": "80.9%",
 "Avg # of Students InActive": "19.1%",
 "Average Number of Apps Accessed per Student": "6.58",
@@ -21,6 +9,5 @@
 "Avg # of Active Students (With atleast one Login for the week)": "90.01%",
 "Students With No logon for Past 7 days": "12.74%",
 "Daily Avg Meeting Minutes per Student": "97.77",
->>>>>>> 3993120f91e5083bda7afb06f5f93541ed47e5b0
 "End" : "dummy" 
  } 

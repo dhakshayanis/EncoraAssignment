@@ -7,7 +7,8 @@ class PeopleAndDeviceObjects{
     static deviceDistribution = 'Device Distribution'
     static hotspotDistribution = 'Hotspot Distribution'
 
-    static tableViewButton = 'Table View'
+    static showmore= '(//*[@class="ant-select-selection-selected-value"])[3]'
+    static tableViewButton = 'Table View' 
     static schoolsDistrictChartcomponent =  'Students With One Laptop'
     static studentsTab = 'Students'
     static schoolsTab ='Schools / District'

@@ -14,7 +14,7 @@ describe('Usage Analysisn Regression Test',function()
        np.goToTrackingAtAGlancePage()
        np.goToPage(UsageAnalysisObjects.pageTitle)
    })
-   /*it('bar names',function()
+   it('bar names',function()
    {
        const kpi = new KPI
        const write = new writeJSON
@@ -37,7 +37,7 @@ describe('Usage Analysisn Regression Test',function()
    {
        const kpi = new KPI
        kpi.checkBarNames(UsageAnalysisObjects.teacherBoxName)
-   })*/
+   })
    it('verify student tabs names', function()
    {
        const tab = new goToTab

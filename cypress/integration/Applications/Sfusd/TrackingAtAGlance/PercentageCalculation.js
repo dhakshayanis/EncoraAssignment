@@ -49,9 +49,9 @@ class PercentageCalculation{
         const percent = new PercentageCalculation
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.dailyInactiveStudentsID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.dailyActiveStudentsID)
-        // percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
-        // percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.weeklyInActiveStudentID)
-        // percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
+        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.inactiveStudentsYtdID)
+        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.weeklyInActiveStudentID)
+        percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.weeklyActiveStudentsID)
        //  percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.devicesDistributionID)
        //  percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.studentHotspotDistributionID)
         percent.percentageCheckInMiniKpi(TrackingAtAGlanceObjects.activeTeachersID) 

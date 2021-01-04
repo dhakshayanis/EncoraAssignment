@@ -39,8 +39,41 @@
       "Special Group": [
         " All Students"
       ],
-      "School Type": [
+      "School Name": [
         " Central Falls Tuitioned"
+      ]
+    },
+    "Elementary School": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "School Type": [
+        " Elementary School"
+      ]
+    },
+    "High School": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "School Type": [
+        " High School"
+      ]
+    },
+    "Middle School": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "School Type": [
+        " Middle School"
       ]
     },
     "Calcutt Middle School": {
@@ -54,6 +87,61 @@
         " Calcutt Middle School"
       ]
     },
+    "Captain Hunt Early Learning Ce": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "School Name": [
+        " Captain Hunt Early Learning Ce"
+      ]
+    },
+    "Central Falls High School": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "School Name": [
+        " Central Falls High School"
+      ]
+    },
+    "Ella Risk Elementary": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "School Name": [
+        " Ella Risk Elementary"
+      ]
+    },
+    "Raices Dual Language Academy": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "School Name": [
+        " Raices Dual Language Academy"
+      ]
+    },
+    "Veterans Memorial Elementary": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "School Name": [
+        " Veterans Memorial Elementary"
+      ]
+    },
     "PK": {
       "School Year": [
         " 2021"
@@ -63,6 +151,28 @@
       ],
       "Grade": [
         " PK"
+      ]
+    },
+    "PK3": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "Grade": [
+        " PK3"
+      ]
+    },
+    "PK4": {
+      "School Year": [
+        " 2021"
+      ],
+      "Special Group": [
+        " All Students"
+      ],
+      "Grade": [
+        " PK4"
       ]
     }
   },

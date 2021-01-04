@@ -2,6 +2,7 @@ import TrackingAtAGlanceObjects from "../TrackingAtAGlance/TrackingAtAGlanceObje
 import Filters from "./Filters";
 
 class NavigationPanelVerifications{
+    static one ='{"1":"aa", "2":"bb"}'
     static AtaGlanceDefaultFilterHeaders=[Filters.schoolYear, Filters.specialGroup]
     static AtaGlanceDefaultFilters = '{"'+Filters.schoolYear+'":["'+Filters.SchoolYearOptions[1]+'"],"'+
                                         Filters.specialGroup+'":["All students"]}'
@@ -30,5 +31,6 @@ class NavigationPanelVerifications{
             }
         })
     }
+   
 }
 export default NavigationPanelVerifications

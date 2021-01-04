@@ -15,7 +15,7 @@ describe('one',function()
         np.goToTrackingAtAGlancePage()
         const titleCheck = new PageTitleCheck
         titleCheck.PageTitleTest(TrackingAtAGlanceObjects.pagetitle)    
-    })
+    })/*
 
     it('check navigation filters count in at a glance', function()
     {   
@@ -28,7 +28,7 @@ describe('one',function()
     {   
         const np = new NavigationPanel
         np.checkDropdownOption(TrackingAtAGlanceObjects.pagetitle)
-    })
+    })*/
 
     it('default filters in at a glance page', function()
     {   
