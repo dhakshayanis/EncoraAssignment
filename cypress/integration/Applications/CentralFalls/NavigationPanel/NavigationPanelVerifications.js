@@ -29,20 +29,6 @@ class NavigationPanelVerifications{
                     cy.writeFile('./cypress/fixtures/CfsfiltersVerifications.json',parsedJson)
             }
         })
-    }/*
-    static getExpectedFilterHeaders(pageName,filterOption){
-        let expectedFilterHeaders = NavigationPanelVerifications[pageName.replace(/ /g,'')+filterOption+'FilterHeaders']
-        ////*if(filterOptionsJsonName!='Default'){
-            expectedFilterHeaders = expectedFilterHeaders+filterHeader
-        }////
-        return expectedFilterHeaders;
     }
-    static getExpectedFilterOptions(pageName,filterOption){
-        let expectedFilterOptions = NavigationPanelVerifications[pageName.replace(/ /g,'')+filterOption+'FilterOptions']
-        ////*if(filterOptionsJsonName!='Default'){
-            expectedFilterOptions = expectedFilterOptions.concat(filterOption)
-        }////
-        return expectedFilterOptions;
-    }*/
 }
 export default NavigationPanelVerifications
