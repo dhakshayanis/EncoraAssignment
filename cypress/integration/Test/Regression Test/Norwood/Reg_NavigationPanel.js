@@ -1,11 +1,11 @@
-import FiltersDisplayedInAPage from '../../../Applications/CentralFalls/Common/FiltersDisplayedInPage'
-import NavigateToPage from '../../../Applications/CentralFalls/Common/NavigateToPage'
-import PageTitleCheck from '../../../Applications/CentralFalls/Common/PageTitleCheck'
-import NavigationPanel from '../../../Applications/CentralFalls/NavigationPanel/NavigationPanel'
-import TrackingAtAGlanceObjects from '../../../Applications/CentralFalls/TrackingAtAGlance/TrackingAtAGlanceObjects'
-import PeopleAndDeviceObjects from '../../../Applications/CentralFalls/PeopleAndDevice/PeopleAndDeviceObjects'
-import UsageAnalysisObjects from '../../../Applications/CentralFalls/UsageAnalysis/UsageAnalysisObjects'
-import EdTechOverviewObjects from '../../../Applications/CentralFalls/EdTechOverview/EdTechOverviewObjects'
+import FiltersDisplayedInAPage from '../../../Applications/Norwood/Common/FiltersDisplayedInPage'
+import NavigateToPage from '../../../Applications/Norwood/Common/NavigateToPage'
+import PageTitleCheck from '../../../Applications/Norwood/Common/PageTitleCheck'
+import NavigationPanel from '../../../Applications/Norwood/NavigationPanel/NavigationPanel'
+import TrackingAtAGlanceObjects from '../../../Applications/Norwood/TrackingAtAGlance/TrackingAtAGlanceObjects'
+import PeopleAndDeviceObjects from '../../../Applications/Norwood/PeopleAndDevice/PeopleAndDeviceObjects'
+import UsageAnalysisObjects from '../../../Applications/Norwood/UsageAnalysis/UsageAnalysisObjects'
+import EdTechOverviewObjects from '../../../Applications/Norwood/EdTechOverview/EdTechOverviewObjects'
 
 describe('one',function()
 {   
