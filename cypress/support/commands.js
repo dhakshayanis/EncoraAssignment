@@ -44,4 +44,13 @@ Cypress.Commands.add("login", (emailID,password) =>
             }
         });
     //})
+
+
+    Cypress.Commands.add('invoketext', (result,datatobeverified, data) => {
+        cy.xpath(datatobeverified).as('data1')
+    cy.get('@data1')
+        .invoke('text').then(value => {
+         cy.writeFile('./cypress/fixtures/' + result + '.json', '"' + data + '":'  + '"' + value + '",'+"\n", { flag: 'a+' })
+        })
+    })
 })
