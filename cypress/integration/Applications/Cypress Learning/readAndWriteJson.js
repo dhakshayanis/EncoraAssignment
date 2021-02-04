@@ -4,10 +4,13 @@ describe('one',function()
 
    it('write Json',function()
    {
-      cy.writeFile('testData.json', '{ \n"name": '+'"Eliza"'+',\n "email": "eliza@example.com"'+' ,')
-   })
+      cy.writeFile('testData.json', '{ \n"name": '+'"Eliza"'+',\n "email": "eliza@example.com"')
+      cy.writeFile('./cypress/fixtures/testData.json', '{ \n"name": '+'"Eliza"'+',\n "email": "eliza@example.com"'+' ,')
+      cy.writeFile('testData.json', ' }', { flag: 'a+' })
 
-   it('read Json',function()
+   })
+/*
+   it('write Json',function()
    {
       cy.writeFile('testData.json', '{\n'+'"'+'data'+'":'+''+'"'+'subpagescount'+'"'+',')
    })
@@ -45,6 +48,6 @@ describe('one',function()
          }
      
          cy.writeFile('testData.json','0]\n}', { flag: 'a+' })
-   })
+   })*/
 })
 
