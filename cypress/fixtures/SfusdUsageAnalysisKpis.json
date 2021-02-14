@@ -1,5 +1,0 @@
-{ 
-"Students": ["Avg # of Students Active" ,"Avg # of Students InActive" ,"Average Number of Apps Accessed per Student" ,"Average Number of Emails Sent per Student" ,"Average Number of Emails Received per Student" ,"No of Drive Items Created" ,"Inactive Students ( Student with less than 10% or No Login)" ,"Avg # of Active Students (With atleast one Login for the week)" ,"Students With No logon for Past 7 days" ,"Daily Avg Meeting Minutes per Student" ,"Weekly Inactive Students (< 60%)"] ,
-"Teachers": ["Avg # of Teachers Active" ,"Avg # of Teachers InActive" ,"Average Emails Sent" ,"Average Emails Received" ,"No of Drive Items Created" ,"Daily Avg Meeting Minutes per Teacher" ,"Inactive Teacher ( Teacher with less than 10% or No Login)"] ,
-"End" : "dummy" 
- } 
